@@ -10,7 +10,6 @@ class ProfileTeamAdmin(admin.ModelAdmin):
     search_fields = ('fullname','role')
     list_filter = ('role','created_at')
     readonly_fields = ('created_at','updated_at')
-    list_per_page = 20
     fieldsets = (
         ('Information', {'fields': ('user','fullname','role','bio','photo')}),
         ('Timestamps', {'fields': ('created_at','updated_at')}),
