@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 load_dotenv(dotenv_path=BASE_DIR / '.env')
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY','django-insecure-d0ha(d2z994d8r!zpqcb#s+gn*=4wymp=d6)q8817sjl^-96^v')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = True
 
@@ -108,11 +108,11 @@ USE_TZ = True
 # # Static files (CSS, JavaScript, Images)
 # # https://docs.djangoproject.com/en/5.1/howto/static-files/
 STATIC_URL = '/static/'
-STATIC_ROOT = os.getenv('STATIC_ROOT')
+#STATIC_ROOT = os.getenv('STATIC_ROOT')
 
-#STATICFILES_DIRS = [
-#    os.getenv('STATICFILES_DIRS', BASE_DIR / 'static/assets/'),
-#]
+STATICFILES_DIRS = [
+   os.getenv('STATICFILES_DIRS', BASE_DIR / 'static/assets/'),
+]
 
 # Media
 MEDIA_URL = '/media/'
@@ -127,8 +127,6 @@ if int(os.getenv('ENABLE_WHITENOISE', default=0)):
     STATICFILES_STORAGE = 'whitenoise.storage.StaticFilesStorage'
 
 
-# Auth user model
-#AUTH_USER_MODEL = 'account.User'
 
 # Redis db config
 REDIS_CONFIG = {

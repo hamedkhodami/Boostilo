@@ -1,0 +1,720 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>application</title>
+    <link rel="stylesheet" href="{% static 'public/styles/app.css' %}">
+</head>
+<body>
+     <!-- svg icons -->
+     <svg class="hidden">
+        <symbol id="bars-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </symbol>
+
+        <symbol id="user" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+        </symbol>
+
+        <symbol id="x-mark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </symbol>
+
+        <symbol id="arrow-left" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
+        </symbol>
+
+        <symbol id="home" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+        </symbol>
+
+        <symbol id="service" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 17.25v-.228a4.5 4.5 0 0 0-.12-1.03l-2.268-9.64a3.375 3.375 0 0 0-3.285-2.602H7.923a3.375 3.375 0 0 0-3.285 2.602l-2.268 9.64a4.5 4.5 0 0 0-.12 1.03v.228m19.5 0a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3m19.5 0a3 3 0 0 0-3-3H5.25a3 3 0 0 0-3 3m16.5 0h.008v.008h-.008v-.008Zm-3 0h.008v.008h-.008v-.008Z" />
+        </symbol>
+        
+        <symbol id="about" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+        </symbol>
+        
+        <symbol id="team" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+        </symbol>
+
+        <symbol id="blog" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+        </symbol>
+
+        <symbol id="chevron-down" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </symbol>
+
+        <symbol id="contact" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0 6-6m-3 18c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 0 1 4.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 0 0-.38 1.21 12.035 12.035 0 0 0 7.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 0 1 1.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 0 1-2.25 2.25h-2.25Z" />
+        </symbol>
+
+        <symbol id="chevron-left" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+        </symbol>
+
+        <symbol id="chevron-right"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+        </symbol>
+
+        <symbol id="arrow-up-right" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+        </symbol>
+        <symbol id="arrow-right" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+        </symbol>
+        <!-- the end svg icons  -->
+    </svg>
+    <!-- header desktop -->
+    <header class="container h-24 hidden md:flex items-center justify-between  bg-black p-4">
+        <div class="max-w-40">
+            <img src="{% static 'public/images/logo-navbar.png' %}" alt="لوگو بوستیلو">
+        </div>
+        <nav>
+            <ul class="flex gap-x-9 text-l text-white">
+                <li class="text-violet-900">
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">services</a>
+                </li>
+                <li>
+                    <a href="#">about</a>
+                </li>
+                <li>
+                    <a href="#">team</a>
+                </li>
+                <li>
+                    <a href="#">blog</a>
+                </li>
+            </ul>
+        </nav>
+    
+        <div>
+            <a href="#" class="flex justify-center items-center">
+                <svg class="w-6 h-6 border-2 border-stone-200 rounded-xl p-0.5  text-white">
+                    <use xlink:href="#user"></use>
+                </svg>
+              <span class="bg-zinc-50 text-zinc-950 rounded-2xl text-sm px-2.5 py-1.5">sign up / Login</span>
+            </a>
+        </div>
+    </header>
+   <!--  header desktop -->
+   <!-- header mobile -->
+   <div class=" flex md:hidden justify-between items-center bg-white px-4 h-16">
+    <div class="nav-icon">
+        <svg class="w-6 h-6">
+            <use xlink:href="#bars-3"></use>
+        </svg>
+    </div>
+
+    <div class="max-w-40">
+        <img src="{% static 'public/images/logo.png' %}" alt="لوگو بوستیلو">
+    </div>
+    
+    <div class=" nav fixed top-0 -left-64 bottom-0 bg-neutral-900  w-64 min-h-screen pt-3 px-4 z-20 transition-all overflow-y-auto">
+        <div class="flex items-center justify-between gap-x-3.5 mb-6 pb-5  border-b border-b-white/20">
+
+            <div class="max-w-40">
+                <img src=".{% static 'public/images/logo-navbar.png' %}" alt="لوگو بوستیلو">
+            </div>
+
+            <div class="inline-flex items-center nav-close-btn">
+                <svg class="w-6 h-6 text-white">
+                    <use xlink:href="#x-mark"></use>
+                </svg>
+            </div> 
+
+        </div>
+
+        <nav>
+            <ul class="text-white child: pl-4 space-y-6 text-sm">
+                <li class="flex items-center bg-purple-600 text-white pr-0 mb-4 h-10 pl-1 rounded-md">
+                    <a href="#" class="flex items-center gap-x-2">
+                        <svg class="w-6 h-6">
+                            <use xlink:href="#home"></use>
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center justify-between">
+                        <a href="#" class="flex items-center gap-x-2">
+                            <svg class="w-6 h-6">
+                                <use xlink:href="#service"></use>
+                            </svg>
+                            Service
+                        </a>
+                        <span class="submenu-open-btn">
+                            <svg class="w-6 h-6">
+                                <use xlink:href="#chevron-down"></use>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="submenu ">
+                        <a href="#">Special coffee</a>
+                        <a href="#" class="submenu_item--active">First class coffee</a>
+                        <a href="#">Special</a>
+                        <a href="#">Special coffee</a>
+                        <a href="#">First class coffee</a>
+                        <a href="#">Special coffee</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center gap-x-2">
+                        <svg class="w-6 h-6">
+                            <use xlink:href="#about"></use>
+                        </svg>
+                        about
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center gap-x-2">
+                        <svg class="w-6 h-6">
+                            <use xlink:href="#team"></use>
+                        </svg>
+                        Team
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center gap-x-2">
+                        <svg class="w-6 h-6">
+                            <use xlink:href="#blog"></use>
+                        </svg>
+                       Blog
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="flex items-center gap-x-2">
+                        <svg class="w-6 h-6">
+                            <use xlink:href="#contact"></use>
+                        </svg>
+                       Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="py-8 mt-8 border-t border-t-white/20 text-violet-400">
+            <a href="#" class="flex items-center gap-x-2">
+                <svg class="w-6 h-6  text-violet-400">
+                    <use xlink:href="#arrow-left"></use>
+                </svg>
+                signin/up
+            </a>
+        </div>
+    </div>
+
+   </div>
+   <!-- header mobile -->
+   <section class="service-description">
+    <div class="container bg-backservices bg-cover h-auto md:h-[450px] rounded-bl-2xl rounded-br-2xl px-10 py-10 md:py-0  flex items-end ">
+        <div class="flex flex-wrap justify-center">
+            <div class="w-full md:w-1/2 p-3">
+               <div class="highlight-title">
+                <span>Boostilo</span><br />
+                <span>Application</span>
+               </div>
+               <p class="text-white text-sm md:text-lg mt-5">adipisicing elit. Expedita pariaturLorem ipsum dolor sit amet consectetur adipisicing elit. Expedita pariatur deleniti aut dolor quos porro, doloremque, aperiam, aliquam dicta repellendus ipsam similique omnis! Doloribus ratione, mollitia illo tempora quibusdam maiores!</p>
+               <div class="flex gap-2 mt-5 ">
+                <button class="btn-gradient-purple">
+                    <a href="#">
+                        see portfolio
+                    </a>
+                </button>
+                <button class="btn-transparent">
+                    <a href="#">
+                       contact us
+                    </a>
+                </button>
+               </div>
+            </div>
+            <div class="w-full md:w-1/2 flex items-end">
+               <img src="{% static 'public/images/عکس سئو.webp' %}" alt="" class=" w-full md:w-4/5">
+            </div>
+        </div>
+    </div>
+   </section>
+
+
+   <section class="service-item">
+    <div class="container p-2 md:px-10">
+        <div class="flex flex-col-reverse md:flex-row flex-wrap items-center justify-center">
+            <div class="w-full md:w-3/5 p-4 flex justify-center flex-col">
+                <div class="item-highlight">
+                    <span>crafting , sucsess digital</span><br>
+                    <span>Boostilo</span>
+                </div>
+                <p class="mt-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima ducimus expedita eaque cum voluptas mollitia libero, consectetur esse unde sunt pariatur autem est aspernatur saepe. Veritatis ad nemo aspernatur corporis.</p>
+                <div class="mt-2">
+                    <a href="#" class="more-info-button">
+                        <span>learn More</span>
+                        <svg>
+                            <use xlink:href="#arrow-right"></use>
+                        </Svg>
+                    </a>
+                </div>
+            </div>
+            <div class="w-full md:w-2/5 p-4">
+                <img src="{% static 'public/images/service-item.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+   </section>
+
+   <section class="service-item individual-item">
+    <div class="container p-2 md:px-10">
+        <div class="flex  flex-wrap">
+            <div class="w-full md:w-2/5 p-4">
+                <img src="{% static 'public' %}./images/service-item.png" alt="">
+            </div>
+            <div class="w-full md:w-3/5 p-4 flex justify-center flex-col">
+                <div class="item-highlight">
+                    <span>crafting , sucsess digital</span><br>
+                    <span>Boostilo</span>
+                </div>
+                <p class="mt-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima ducimus expedita eaque cum voluptas mollitia libero, consectetur esse unde sunt pariatur autem est aspernatur saepe. Veritatis ad nemo aspernatur corporis.</p>
+                <div class="mt-2">
+                    <a href="#" class="more-info-button">
+                        <span>learn More</span>
+                        <svg>
+                            <use xlink:href="#arrow-right"></use>
+                        </Svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+   </section>
+
+
+   <section class="services mt-5">
+    <div class="container lg:px-8">
+        <div class="flex flex-col md:flex-row gap-4 bg-gray-100 rounded-md px-2 py-3 md:px-9 md:py-5">
+            <div class=" w-full md:w-2/5 space-y-[15px] mt-5">
+                <button class="btn custom-services-button group active" data-content="content1"  >
+                    <div class="flex items-center gap-3">
+                        <span class="number group-focus:text-purple-500">01</span>
+                        <span class="text">Digital Markting</span>
+                    </div>
+                    <span class="arrow">&#8594;</span>
+                </button>
+                <button class="btn custom-services-button group" data-content="content2">
+                    <div class="flex items-center gap-3">
+                        <span class="number group-focus:text-purple-500">02</span>
+                        <span class="text">Web Development</span>
+                    </div>
+                    <span class="arrow">&#8594;</span>
+                </button>
+                <button class="btn custom-services-button group" data-content="content3">
+                    <div class="flex items-center gap-3">
+                        <span class="number group-focus:text-purple-500">03</span>
+                        <span class="text">SEo</span>
+                    </div>
+                    <span class="arrow">&#8594;</span>
+                </button>
+                <button class="btn custom-services-button group" data-content="content4">
+                    <div class="flex items-center gap-3">
+                        <span class="number group-focus:text-purple-500">04</span>
+                        <span class="text">Social Media Marketing </span>
+                    </div>
+                    <span class="arrow">&#8594;</span>
+                </button>
+                <button class="btn custom-services-button group" data-content="content3">
+                    <div class="flex items-center gap-3">
+                        <span class="number group-focus:text-purple-500">05</span>
+                        <span class="text">SEo</span>
+                    </div>
+                    <span class="arrow">&#8594;</span>
+                </button>
+            </div>
+            <div class=" w-full md:w-3/5">
+                <div id="content1" class="content">
+                    <div class="custom-flex-container">
+                        <div class=" custom-img-container">
+                            <img src="{% static 'public/images/services.webp' %}" alt="" >
+                        </div>
+                        <div class=" custom-info-container">
+                            <div class="custom-gradient-box">
+                                <p>ghori Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>about<br>
+                                     services</span>
+                                    <div class="custom-button-info custom-button-white">
+                                        <svg class="custom-svg">
+                                            <use xlink:href="#arrow-up-right"></use>
+                                        </Svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="custom-dark-box ">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
+                                <div class="flex justify-between items-end font-bold">
+                                    <span>see<br>
+                                     portfolio</span>
+                                    <div class="custom-button-info custom-button-gray">
+                                        <svg class="custom-svg">
+                                            <use xlink:href="#arrow-up-right"></use>
+                                        </Svg>
+                                    </div>
+                                </div>
+                                <div class="custom-box-container">
+                                    <span class="custom-box"></span>
+                                    <span class="custom-box-alternate"></span> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="content2" class="content hidden">
+                    <div class="custom-flex-container">
+                        <div class=" custom-img-container">
+                            <img src="{% static 'public/images/services.webp' %}" alt="" >
+                        </div>
+                        <div class=" custom-info-container">
+                            <div class="custom-gradient-box">
+                                <p>ghori Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>about<br>
+                                     services</span>
+                                    <div class="custom-button-info custom-button-white">
+                                        <svg class="custom-svg">
+                                            <use xlink:href="#arrow-up-right"></use>
+                                        </Svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="custom-dark-box ">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
+                                <div class="flex justify-between items-end font-bold">
+                                    <span>see<br>
+                                     portfolio</span>
+                                    <div class="custom-button-info custom-button-gray">
+                                        <svg class="custom-svg">
+                                            <use xlink:href="#arrow-up-right"></use>
+                                        </Svg>
+                                    </div>
+                                </div>
+                                <div class="custom-box-container">
+                                    <span class="custom-box"></span>
+                                    <span class="custom-box-alternate"></span> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="content3" class="content hidden">
+                    <div class="custom-flex-container">
+                        <div class=" custom-img-container">
+                            <img src="{% static 'public/images/services.webp' %}" alt="" >
+                        </div>
+                        <div class=" custom-info-container">
+                            <div class="custom-gradient-box">
+                                <p>ghori Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>about<br>
+                                     services</span>
+                                    <div class="custom-button-info custom-button-white">
+                                        <svg class="custom-svg">
+                                            <use xlink:href="#arrow-up-right"></use>
+                                        </Svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="custom-dark-box ">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
+                                <div class="flex justify-between items-end font-bold">
+                                    <span>see<br>
+                                     portfolio</span>
+                                    <div class="custom-button-info custom-button-gray">
+                                        <svg class="custom-svg">
+                                            <use xlink:href="#arrow-up-right"></use>
+                                        </Svg>
+                                    </div>
+                                </div>
+                                <div class="custom-box-container">
+                                    <span class="custom-box"></span>
+                                    <span class="custom-box-alternate"></span> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="content4" class="content hidden">
+                    <div class="custom-flex-container">
+                        <div class=" custom-img-container">
+                            <img src="{% static 'public/images/services.webp' %}" alt="" >
+                        </div>
+                        <div class=" custom-info-container">
+                            <div class="custom-gradient-box">
+                                <p>ghori Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>about<br>
+                                     services</span>
+                                    <div class="custom-button-info custom-button-white">
+                                        <svg class="custom-svg">
+                                            <use xlink:href="#arrow-up-right"></use>
+                                        </Svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="custom-dark-box ">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
+                                <div class="flex justify-between items-end font-bold">
+                                    <span>see<br>
+                                     portfolio</span>
+                                    <div class="custom-button-info custom-button-gray">
+                                        <svg class="custom-svg">
+                                            <use xlink:href="#arrow-up-right"></use>
+                                        </Svg>
+                                    </div>
+                                </div>
+                                <div class="custom-box-container">
+                                    <span class="custom-box"></span>
+                                    <span class="custom-box-alternate"></span> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="content5" class="content hidden">
+                    <div class="custom-flex-container">
+                        <div class=" custom-img-container">
+                            <img src="{% static 'public/images/services.webp' %}" alt="" >
+                        </div>
+                        <div class=" custom-info-container">
+                            <div class="custom-gradient-box">
+                                <p>ghori Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
+                                <div class="flex justify-between items-center font-bold">
+                                    <span>about<br>
+                                     services</span>
+                                    <div class="custom-button-info custom-button-white">
+                                        <svg class="custom-svg">
+                                            <use xlink:href="#arrow-up-right"></use>
+                                        </Svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="custom-dark-box ">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
+                                <div class="flex justify-between items-end font-bold">
+                                    <span>see<br>
+                                     portfolio</span>
+                                    <div class="custom-button-info custom-button-gray">
+                                        <svg class="custom-svg">
+                                            <use xlink:href="#arrow-up-right"></use>
+                                        </Svg>
+                                    </div>
+                                </div>
+                                <div class="custom-box-container">
+                                    <span class="custom-box"></span>
+                                    <span class="custom-box-alternate"></span> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+   </section> 
+
+   <section class="portfolio-category mt-5 px-2 md:px-10">
+    <div class="container">
+        <div class="category-buttons">
+            <button class="btn-category">Shop site design</button> 
+            <button class="btn-category">Corporate website design</button>
+            <button class="btn-category">Lawyers website design</button>
+            <button class="btn-category">Educational site design</button> 
+            <button class="btn-category">Shipping site design</button>
+        </div>
+    
+    <div class="container mx-auto my-5">
+        <div class="grid-container" id="images">
+            <div class="test grid-item">
+                <img src="{% static 'public/images/عکس1.png' %}" alt="تصویر ۱" class="img-cover">
+            </div> 
+            <div class="test grid-item">
+                <img src="{% static 'public/images/عکس2.png' %}" alt="تصویر ۱" class="img-cover">
+            </div> 
+            <div class="test grid-item">
+                <img src="{% static 'public/images/عکس3.png' %}" alt="تصویر ۱" class="img-cover">
+            </div>
+            <div class="test grid-item">
+                <img src="{% static 'public/images/عکس4.png' %}" alt="تصویر ۱" class="img-cover">
+            </div> 
+            <div class="test grid-item">
+                <img src="{% static 'public/images/عکس1.png' %}" alt="تصویر ۱" class="img-cover">
+            </div> 
+            <div class="test grid-item">
+                <img src="{% static 'public/images/عکس2.png' %}" alt="تصویر ۱" class="img-cover">
+            </div> 
+            <div class="test grid-item">
+                <img src="{% static 'public/images/عکس3.png' %}" alt="تصویر ۱" class="img-cover">
+            </div>
+            <div class="test grid-item">
+                <img src="{% static 'public/images/عکس4.png' %}" alt="تصویر ۱" class="img-cover">
+            </div>  
+        </div>
+        
+    </div>
+   </section>
+
+
+   <section class="service-item">
+    <div class="container p-2 md:px-10">
+        <div class="flex flex-col-reverse md:flex-row flex-wrap items-center justify-center">
+            <div class="w-full md:w-3/5 p-4 flex justify-center flex-col">
+                <div class="item-highlight">
+                    <span>crafting , sucsess digital</span><br>
+                    <span>Boostilo</span>
+                </div>
+                <p class="mt-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima ducimus expedita eaque cum voluptas mollitia libero, consectetur esse unde sunt pariatur autem est aspernatur saepe. Veritatis ad nemo aspernatur corporis.</p>
+                <div class="mt-2">
+                    <a href="#" class="more-info-button">
+                        <span>learn More</span>
+                        <svg>
+                            <use xlink:href="#arrow-right"></use>
+                        </Svg>
+                    </a>
+                </div>
+            </div>
+            <div class="w-full md:w-2/5 p-4">
+                <img src="{% static 'public/images/service-item.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+   </section>
+
+   <section class="service-item individual-item">
+    <div class="container p-2 md:px-10">
+        <div class="flex  flex-wrap">
+            <div class="w-full md:w-2/5 p-4">
+                <img src="{% static 'public/images/service-item.png' %}" alt="">
+            </div>
+            <div class="w-full md:w-3/5 p-4 flex justify-center flex-col">
+                <div class="item-highlight">
+                    <span>crafting , sucsess digital</span><br>
+                    <span>Boostilo</span>
+                </div>
+                <p class="mt-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima ducimus expedita eaque cum voluptas mollitia libero, consectetur esse unde sunt pariatur autem est aspernatur saepe. Veritatis ad nemo aspernatur corporis.</p>
+                <div class="mt-2">
+                    <a href="#" class="more-info-button">
+                        <span>learn More</span>
+                        <svg>
+                            <use xlink:href="#arrow-right"></use>
+                        </Svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+   </section>
+
+
+   <section class="service-item">
+    <div class="container p-2 md:px-10">
+        <div class="flex flex-col-reverse md:flex-row flex-wrap items-center justify-center">
+            <div class="w-full md:w-3/5 p-4 flex justify-center flex-col">
+                <div class="item-highlight">
+                    <span>crafting , sucsess digital</span><br>
+                    <span>Boostilo</span>
+                </div>
+                <p class="mt-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima ducimus expedita eaque cum voluptas mollitia libero, consectetur esse unde sunt pariatur autem est aspernatur saepe. Veritatis ad nemo aspernatur corporis.</p>
+                <div class="mt-2">
+                    <a href="#" class="more-info-button">
+                        <span>learn More</span>
+                        <svg>
+                            <use xlink:href="#arrow-right"></use>
+                        </Svg>
+                    </a>
+                </div>
+            </div>
+            <div class="w-full md:w-2/5 p-4">
+                <img src="{% static 'public/images/service-item.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+   </section>
+
+
+
+   <footer class="container">
+    <div class="up-footer flex justify-between items-center mt-20 p-2">
+        <div class="max-w-40">
+            <img src="{% static 'public/images/logo.png' %}" alt="">
+        </div>
+        <div class="social-media flex space-x-4 items-center">
+            <a href="https://www.instagram.com">
+                <svg class="w-6 h-6 border-2 bg-slate-300 rounded-full p-1  ">
+                    <use xlink:href="#user"></use>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com">
+                <svg class="w-6 h-6 border-2 bg-slate-300 rounded-full p-1  ">
+                    <use xlink:href="#user"></use>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com">
+                <svg class="w-6 h-6 border-2 bg-slate-300 rounded-full p-1  ">
+                    <use xlink:href="#user"></use>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com">
+                <svg class="w-6 h-6 border-2 bg-slate-300 rounded-full p-1  ">
+                    <use xlink:href="#user"></use>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com">
+                <svg class="w-6 h-6 border-2 bg-slate-300 rounded-full p-1  ">
+                    <use xlink:href="#user"></use>
+                </svg>
+              </a>
+        </div>
+    </div>
+    <div class="w-full h-[2px] bg-gray-300 my-2"></div>
+    <div class="down-footer block ap-y-3 md:flex justify-between p-2">
+        <div class="text-xs md:text-base  text-gray-500">
+            2023,All right reserved by boostilo
+        </div>
+        <div>
+            <nav>
+                <ul class="flex gap-x-3 text-xs md:text-base text-gray-500">
+                    <li class="text-violet-900">
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">services</a>
+                    </li>
+                    <li>
+                        <a href="#">about</a>
+                    </li>
+                    <li>
+                        <a href="#">team</a>
+                    </li>
+                    <li>
+                        <a href="#">blog</a>
+                    </li>
+                </ul>
+            </nav> 
+        </div>
+    </div>
+   </footer>
+
+<!-- overlay for menu bobile -->
+<div class="overlay"></div>
+
+ <script src="{% static 'public/js/application.js' %}"></script>
+ <script src="{% static 'public/js/scripts.js' %}"></script>
+ <!-- Masonry library -->
+ <script src="{% static 'public/js/masonry.pkgd.min.js' %}"></script>
+ <!-- image library -->
+ <script src="{% static 'public/js/imageloaded.js' %}"></script>
+</body>
+</html>

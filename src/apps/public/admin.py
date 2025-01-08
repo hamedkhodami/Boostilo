@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ContactModel,ArticleModel,AboutModel,ReviewModel
+from .models import ContactModel,ArticleModel,AboutModel,ReviewModel,NewsModel
 # Register your models here.
 
 @admin.register(ContactModel)
@@ -47,4 +47,14 @@ class ReviewModelAdmin(admin.ModelAdmin):
     list_per_page = 20
     fieldsets = (
         ('Information', {'fields': ('name','feedback','photo','video')}),
+    )
+
+@admin.register(NewsModel)
+class NewsModelAdmin(admin.ModelAdmin):
+    list_display = ('id','title',)
+    search_fields = ('title',)
+    list_filter = ('title',)
+    list_per_page = 20
+    fieldsets = (
+        ('Information', {'fields': ('title','content',)}),
     )

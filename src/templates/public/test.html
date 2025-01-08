@@ -1,0 +1,672 @@
+{% extends "public/main_layout.html" %}
+{% load static %}
+<html lang="en">
+<head>
+{% block title %} Home {% endblock %}
+</head>
+{% block body %}
+
+   <main>
+    <section class="slider-boostilo  mt-2">
+        <div class="container flex justify-center items-center">
+            <div class="w-full flex flex-col-reverse md:flex-row flex-wrap items-center justify-center p-3">
+                <div class="w-full md:w-2/5 text-left space-y-4" >
+                    <div class="swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                          <!-- Slides -->
+                          <div class="swiper-slide">
+                            <div class="flex flex-col justify-center items-center md:justify-start md:items-start  ">
+                                <h1 class="text-3xl md:text-5xl	xl:text-5xl font-bold ">
+                                    <span class="text-purple-600">Boostilo</span>crafting</br>
+                                    Success , Digital
+                                </h1>
+                                <div class="flex justify-start items-center gap-x-3 mt-3 md:mt-6">
+                                   <button class=" text-sm px-4 py-2 text-white font-bold rounded-full bg-gradient-to-r from-purple-700 to-purple-900">
+                                    <a href="#" class="text-white">Read More</a>
+                                   </button>
+                                </div>
+                                <hr class="border-t border-black w-10 mt-4">
+                                <p class="mt-4 text-zinc-800">sense of growth and power</p>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="flex flex-col justify-center items-center md:justify-start md:items-start ">
+                                <h1 class="text-3xl md:text-5xl	xl:text-5xl font-bold ">
+                                    <span class="text-purple-600">Boostilo</span>crafting</br>
+                                    Success , Digital
+                                </h1>
+                                <div class="flex justify-start items-center gap-x-3 mt-3 md:mt-6">
+                                   <button class=" text-sm px-4 py-2 text-white font-bold rounded-full bg-gradient-to-r from-purple-700 to-purple-900">
+                                    <a href="#" class="text-white">Read More</a>
+                                   </button>
+                                </div>
+                                <hr class="border-t border-black w-10 mt-4">
+                                <p class="mt-4 text-zinc-800">sense of growth and power</p>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="flex flex-col justify-center items-center md:justify-start md:items-start">
+                                <h1 class="text-3xl md:text-5xl	xl:text-5xl font-bold ">
+                                    <span class="text-purple-600">Boostilo</span>crafting</br>
+                                    Success , Digital
+                                </h1>
+                                <div class="flex justify-start items-center gap-x-3 mt-3 md:mt-6">
+                                   <button class=" text-sm px-4 py-2 text-white font-bold rounded-full bg-gradient-to-r from-purple-700 to-purple-900">
+                                    <a href="#" class="text-white">Read More</a>
+                                   </button>
+                                </div>
+                                <hr class="border-t border-black w-10 mt-4">
+                                <p class="mt-4 text-zinc-800">sense of growth and power</p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="gap-x-3 flex justify-center items-center md:justify-start md:items-start">
+                        <div class="swiper-button-prev-custom">
+                            <svg class="w-10 h-5 md:w-[20px] md:h-[20px]">
+                                <use xlink:href="#chevron-left"></use>
+                            </Svg>
+                        </div>
+                        <div class="swiper-button-next-custom">
+                            <svg class="w-5 h-5 md:w-[20px] md:h-[20px]">
+                                <use xlink:href="#chevron-right"></use>
+                            </Svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <img src="{% static 'public/images/aboutboostilo.webp' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services mt-5">
+        <div class="container lg:px-8">
+            <div class="flex flex-col md:flex-row gap-4 bg-gray-100 rounded-md px-2 py-3 md:px-9 md:py-5">
+                <div class=" w-full md:w-2/5 space-y-[15px] mt-5 ">
+                    <button class="btn custom-services-button group active" data-content="content1"  >
+                        <div class="flex items-center gap-3">
+                            <span class="number group-focus:text-purple-500">01</span>
+                            <span class="text">Digital Markting</span>
+                        </div>
+                        <span class="arrow">&#8594;</span>
+                    </button>
+                    <button class="btn custom-services-button group" data-content="content2">
+                        <div class="flex items-center gap-3">
+                            <span class="number group-focus:text-purple-500">02</span>
+                            <span class="text">Web Development</span>
+                        </div>
+                        <span class="arrow">&#8594;</span>
+                    </button>
+                    <button class="btn custom-services-button group" data-content="content3">
+                        <div class="flex items-center gap-3">
+                            <span class="number group-focus:text-purple-500">03</span>
+                            <span class="text">SEo</span>
+                        </div>
+                        <span class="arrow">&#8594;</span>
+                    </button>
+                    <button class="btn custom-services-button group" data-content="content4">
+                        <div class="flex items-center gap-3">
+                            <span class="number group-focus:text-purple-500">04</span>
+                            <span class="text">Social Media Marketing </span>
+                        </div>
+                        <span class="arrow">&#8594;</span>
+                    </button>
+                    <button class="btn custom-services-button group" data-content="content3">
+                        <div class="flex items-center gap-3">
+                            <span class="number group-focus:text-purple-500">05</span>
+                            <span class="text">SEo</span>
+                        </div>
+                        <span class="arrow">&#8594;</span>
+                    </button>
+                </div>
+                <div class=" w-full md:w-3/5">
+                    <div id="content1" class="content">
+                        <div class="custom-flex-container">
+                            <div class=" custom-img-container">
+                                <img src="{% static 'public/images/services.webp' %}" alt="" >
+                            </div>
+                            <div class=" custom-info-container">
+                                <div class="custom-gradient-box">
+                                    <p>ghori Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
+                                    <div class="flex justify-between items-center font-bold">
+                                        <span>about<br>
+                                         services</span>
+                                        <div class="custom-button-info custom-button-white">
+                                            <svg class="custom-svg">
+                                                <use xlink:href="#arrow-up-right"></use>
+                                            </Svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="custom-dark-box ">
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
+                                    <div class="flex justify-between items-end font-bold">
+                                        <span>see<br>
+                                         portfolio</span>
+                                        <div class="custom-button-info custom-button-gray">
+                                            <svg class="custom-svg">
+                                                <use xlink:href="#arrow-up-right"></use>
+                                            </Svg>
+                                        </div>
+                                    </div>
+                                    <div class="custom-box-container">
+                                        <span class="custom-box"></span>
+                                        <span class="custom-box-alternate"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content2" class="content hidden">
+                        <div class="custom-flex-container">
+                            <div class=" custom-img-container">
+                                <img src="{% static 'public/images/services.webp' %}" alt="" >
+                            </div>
+                            <div class=" custom-info-container">
+                                <div class="custom-gradient-box">
+                                    <p>ghori Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
+                                    <div class="flex justify-between items-center font-bold">
+                                        <span>about<br>
+                                         services</span>
+                                        <div class="custom-button-info custom-button-white">
+                                            <svg class="custom-svg">
+                                                <use xlink:href="#arrow-up-right"></use>
+                                            </Svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="custom-dark-box ">
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
+                                    <div class="flex justify-between items-end font-bold">
+                                        <span>see<br>
+                                         portfolio</span>
+                                        <div class="custom-button-info custom-button-gray">
+                                            <svg class="custom-svg">
+                                                <use xlink:href="#arrow-up-right"></use>
+                                            </Svg>
+                                        </div>
+                                    </div>
+                                    <div class="custom-box-container">
+                                        <span class="custom-box"></span>
+                                        <span class="custom-box-alternate"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content3" class="content hidden">
+                        <div class="custom-flex-container">
+                            <div class=" custom-img-container">
+                                <img src="{% static 'public/images/services.webp' %}" alt="" >
+                            </div>
+                            <div class=" custom-info-container">
+                                <div class="custom-gradient-box">
+                                    <p>ghori Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
+                                    <div class="flex justify-between items-center font-bold">
+                                        <span>about<br>
+                                         services</span>
+                                        <div class="custom-button-info custom-button-white">
+                                            <svg class="custom-svg">
+                                                <use xlink:href="#arrow-up-right"></use>
+                                            </Svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="custom-dark-box ">
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
+                                    <div class="flex justify-between items-end font-bold">
+                                        <span>see<br>
+                                         portfolio</span>
+                                        <div class="custom-button-info custom-button-gray">
+                                            <svg class="custom-svg">
+                                                <use xlink:href="#arrow-up-right"></use>
+                                            </Svg>
+                                        </div>
+                                    </div>
+                                    <div class="custom-box-container">
+                                        <span class="custom-box"></span>
+                                        <span class="custom-box-alternate"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content4" class="content hidden">
+                        <div class="custom-flex-container">
+                            <div class=" custom-img-container">
+                                <img src="{% static 'public/images/services.webp' %}" alt="" >
+                            </div>
+                            <div class=" custom-info-container">
+                                <div class="custom-gradient-box">
+                                    <p>ghori Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
+                                    <div class="flex justify-between items-center font-bold">
+                                        <span>about<br>
+                                         services</span>
+                                        <div class="custom-button-info custom-button-white">
+                                            <svg class="custom-svg">
+                                                <use xlink:href="#arrow-up-right"></use>
+                                            </Svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="custom-dark-box ">
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
+                                    <div class="flex justify-between items-end font-bold">
+                                        <span>see<br>
+                                         portfolio</span>
+                                        <div class="custom-button-info custom-button-gray">
+                                            <svg class="custom-svg">
+                                                <use xlink:href="#arrow-up-right"></use>
+                                            </Svg>
+                                        </div>
+                                    </div>
+                                    <div class="custom-box-container">
+                                        <span class="custom-box"></span>
+                                        <span class="custom-box-alternate"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content5" class="content hidden">
+                        <div class="custom-flex-container">
+                            <div class=" custom-img-container">
+                                <img src="{% static 'public/images/services.webp' %}" alt="" >
+                            </div>
+                            <div class=" custom-info-container">
+                                <div class="custom-gradient-box">
+                                    <p>ghori Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
+                                    <div class="flex justify-between items-center font-bold">
+                                        <span>about<br>
+                                         services</span>
+                                        <div class="custom-button-info custom-button-white">
+                                            <svg class="custom-svg">
+                                                <use xlink:href="#arrow-up-right"></use>
+                                            </Svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="custom-dark-box ">
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
+                                    <div class="flex justify-between items-end font-bold">
+                                        <span>see<br>
+                                         portfolio</span>
+                                        <div class="custom-button-info custom-button-gray">
+                                            <svg class="custom-svg">
+                                                <use xlink:href="#arrow-up-right"></use>
+                                            </Svg>
+                                        </div>
+                                    </div>
+                                    <div class="custom-box-container">
+                                        <span class="custom-box"></span>
+                                        <span class="custom-box-alternate"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="boostilo-about mt-5">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="w-full md:w-1/2 p-4">
+                    <img src="{% static 'public/images/videoboostilo.webp' %}" alt="">
+                </div>
+                <div class="w-full md:w-1/2 p-4 flex flex-col items-center md:items-baseline md:justify-around ">
+                    <h1 class="text-xl md:text-2xl	xl:text-4xl font-bold mt-2 text-center md:text-start  ">
+                        crafting Success,Digital</br>
+                        <span class="text-purple-600">Boostilo</span>
+                    </h1>
+                    <p class=" text-sm md:text-xl text-zinc-800 mt-2 text-center md:text-start ">
+                        "Boostilo", soundslike a blend of "boost" and a dynamic innovative sufix,possibly
+                        suggesting and a focuse on growth,improvement,and forward momentum. the "Boost" part
+                        clearly impliese enhancement , while "ilo" gives it a unique , almost teach-savvy or creative twist.
+                    </p>
+
+                    <div class=" mt-3 md:mt-6">
+                        <a href="#" class="flex justify-start items-center">
+                            <button class="btn-gradient-purple">
+                                Read More
+                            </button>
+                            <div class="border border-black rounded-full p-1">
+                                <svg class="w-3 h-3 md:w-[20px] md:h-[20px] text-zinc-700 ">
+                                    <use xlink:href="#arrow-up-right"></use>
+                                 </Svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-boostilo-portfolio bg-cover bg-no-repeat bg-center mt-10 p-5">
+        <div class="flex flex-col justify-center items-center">
+            <div class="flex items-center space-x-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span> <!-- نقطه گرد بنفش -->
+              <p class="text-sm md:text-lg text-white">Our Works</p> <!-- توضیح عنوان -->
+            </div>
+            <h2 class="text-lg md:text-lg lg:text-4xl font-extrabold text-white pb-2 mt-2">Boostilo Portfolio</h2> <!-- عنوان اصلی -->
+        </div>
+        <div class="container mt-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 p-5">
+                <div class="relative">
+                    <div class="rounded-3xl post-img-wrapp ">
+                       <img src="{% static 'public/images/websiteportfolio.webp' %}" alt="" class="rounded-3xl w-full h-auto ">
+                    </div>
+                    <div class="text-gray-300 py-3">
+                       <span>2024</span>
+                       <span>Project Name</span>
+                    </div>
+                    <div class="absolute top-2 left-2 flex gap-2 z-10">
+                        <button class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
+                            <a href="#">seo</a>
+                        </button>
+                        <button class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
+                            <a href="#">digital marketing</a>
+                        </button>
+                    </div>
+                </div>
+                <div class=" relative mt-0 md:mt-14">
+                    <div class="rounded-3xl post-img-wrapp">
+                        <img src="{% static 'public/images/appportfolio.webp' %}" alt="" class="rounded-3xl w-full h-auto ">
+                     </div>
+                     <div class="text-gray-300 py-3">
+                        <span>2024</span>
+                        <span>Project Name</span>
+                     </div>
+                     <div class="absolute top-2 left-2 flex gap-2 z-10">
+                        <button class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
+                            <a href="#">seo</a>
+                        </button>
+                        <button class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
+                            <a href="#">digital marketing</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="rounded-3xl post-img-wrapp">
+                        <img src="{% static 'public/images/logoportfolio.webp' %}" alt="" class="rounded-3xl w-full h-auto ">
+                     </div>
+                     <div class="text-gray-300 py-3">
+                        <span>2024</span>
+                        <span>Project Name</span>
+                     </div>
+                     <div class="absolute top-2 left-2 flex gap-2 z-10">
+                        <button class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
+                            <a href="#">seo</a>
+                        </button>
+                        <button class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
+                            <a href="#">digital marketing</a>
+                        </button>
+                    </div>
+                </div>
+                <div class=" relative mt-0 md:mt-14">
+                    <div class="rounded-3xl post-img-wrapp">
+                        <img src="{% static 'public/images/seoportfolio.webp' %}" alt="" class="rounded-3xl w-full h-auto ">
+                     </div>
+                     <div class="text-gray-300 py-3">
+                        <span>2024</span>
+                        <span>Project Name</span>
+                     </div>
+                     <div class="absolute top-2 left-2 flex gap-2 z-10">
+                        <button class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
+                            <a href="#">seo</a>
+                        </button>
+                        <button class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
+                            <a href="#">digital marketing</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center items-center mt-3 md:mt-5">
+                <button class="btn-gradient-purple">
+                 <a href="#" class="text-white">view all work</a>
+                </button>
+                <div class="border border-white bg-white rounded-full p-1">
+                    <svg class="w-3 h-3 md:w-[20px] md:h-[20px] text-zinc-700 ">
+                        <use xlink:href="#arrow-up-right"></use>
+                    </Svg>
+                </div>
+             </div>
+        </div>
+    </section>
+
+    <div class="bg-backcomment bg-cover bg-no-repeat bg-center">
+        <section class="boostilo-team mt-4 px-5">
+            <div class="container">
+                <div class="flex flex-wrap">
+                    <div class="w-full md:w-1/2 p-3">
+                        <img src="{% static 'public/images/team.webp' %}" alt="">
+                    </div>
+                    <div class="w-full md:w-1/2 p-3 flex flex-col items-center md:items-baseline md:justify-around">
+                        <h1 class="text-xl md:text-2xl	xl:text-4xl font-bold mt-2 ">
+                            Meet Our Team
+                        </h1>
+                        <p class=" text-sm md:text-xl text-zinc-700 text-center md:text-start mt-3">
+                            "Boostilo", soundslike a blend of "boost" and a dynamic innovative sufix,possibly
+                            suggesting and a focuse on growth,improvement,and forward momentum. the "Boost" part
+                            clearly impliese enhancement
+                        </p>
+
+                        <div class="flex justify-start items-center mt-3 md:mt-2">
+                            <button class="btn-gradient-purple">
+                             <a href="#" class="text-white">Read More</a>
+                            </button>
+                            <div class="border border-black rounded-full p-1">
+                                <svg class="w-3 h-3 md:w-[20px] md:h-[20px] text-zinc-700 ">
+                                    <use xlink:href="#arrow-up-right"></use>
+                                </Svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="user-comments">
+            <div class="container">
+                <div class="py-7 px-3 md:px-6" >
+                    <div class="flex gap-x-3">
+                        <div class="swiper-button-prev-custom">
+                            <svg class="w-5 h-5 md:w-[20px] md:h-[20px]">
+                                <use xlink:href="#chevron-left"></use>
+                            </Svg>
+                        </div>
+                        <div class="swiper-button-next-custom">
+                            <svg class="w-5 h-5 md:w-[20px] md:h-[20px]">
+                                <use xlink:href="#chevron-right"></use>
+                            </Svg>
+                        </div>
+                    </div>
+                    <div class="swiper" id="jjj">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                          <!-- Slides -->
+                          <div class="swiper-slide py-3">
+                            <div class="px-2 md:px-10 py-3 bg-white  rounded-3xl flex justify-center flex-col items-center">
+                                <img src="{% static 'public/images/baccomment.svg' %}" alt="" class="w-12 md:w-24">
+                                <p class="text-center text-xs md:text-base text-gray-600"> Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quidem quam tempore sed quisquam aperia</p>
+                                <button class="bg-slate-400 rounded-full py-1 px-3 text-sm mt-3"><a href="#">see video</a></button>
+                                <div class="w-20 h-20 rounded-full mb-[-24px] mt-2 ">
+                                  <img src="{% static 'public/images/user1.webp' %}" alt="">
+                                </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide py-3">
+                            <div class="px-2 md:px-10 py-3 bg-white  rounded-3xl flex justify-center flex-col items-center">
+                                <img src="{% static 'public/images/baccomment.svg' %}" alt="" class="w-12 md:w-24">
+                                <p class="text-center text-xs md:text-base text-gray-600"> Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quidem quam tempore sed quisquam aperia</p>
+                                <button class="bg-slate-400 rounded-full py-1 px-3 text-sm mt-3"><a href="#">see video</a></button>
+                                <div class="w-20 h-20 rounded-full mb-[-24px] mt-2 ">
+                                  <img src="{% static 'public/images/user1.webp' %}" alt="">
+                                </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide py-3">
+                            <div class="px-2 md:px-10 py-3 bg-white  rounded-3xl flex justify-center flex-col items-center">
+                                <img src="{% static 'public/images/baccomment.svg' %}" alt="" class="w-12 md:w-24">
+                                <p class="text-center text-xs md:text-base text-gray-600"> Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quidem quam tempore sed quisquam aperia</p>
+                                <button class="bg-slate-400 rounded-full py-1 px-3 text-sm mt-3"><a href="#">see video</a></button>
+                                <div class="w-20 h-20 rounded-full mb-[-24px] mt-2 ">
+                                  <img src="{% static 'public/images/user1.webp' %}" alt="">
+                                </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide py-3">
+                            <div class="px-2 md:px-10 py-3 bg-white  rounded-3xl flex justify-center flex-col items-center">
+                                <img src="{% static 'public/images/baccomment.svg' %}" alt="" class="w-12 md:w-24">
+                                <p class="text-center text-xs md:text-base text-gray-600"> Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quidem quam tempore sed quisquam aperia</p>
+                                <button class="bg-slate-400 rounded-full py-1 px-3 text-sm mt-3"><a href="#">see video</a></button>
+                                <div class="w-20 h-20 rounded-full mb-[-24px] mt-2 ">
+                                  <img src="{% static 'public/images/user1.webp' %}" alt="">
+                                </div>
+                            </div>
+                          </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <section class="social-media mt-10 md:mt-32 p-2">
+        <div class="container">
+            <div class="flex justify-center bg-gray-100 rounded-lg p-2 ">
+                <div class="w-full md:w-4/5 flex flex-wrap">
+                    <div class="w-2/4 mt-[-10%] md:mt-[-5%]">
+                        <img src="{% static 'public/images/socialmedia.png' %}" alt="">
+                        <div class="flex items-center gap-1 p-2">
+                            <div class="flex items-center gap-x-1 text-xs md:text-base">
+                                <span class="w-4 h-4 md:w-7 md:h-7"><img src="{% static 'public/images/instagram.png' %}" alt=""></span>
+                                <span>Boostilo.com</span>
+                            </div>
+                            <div class="flex items-center gap-x-1 text-xs md:text-base">
+                                <span class=" w-4 h-4 md:w-7 md:h-7"><img src="{% static 'public/images/linkdin.png' %}" alt=""></span>
+                                <span class="z-20">Boostilo.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-2/4 mt-[-10%]">
+                        <img src="{% static 'public/images/instagram.webp' %}" alt="" class="z-10">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="boostilo-blog mt-10">
+        <div class="container">
+            <div class="flex items-center justify-center space-x-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span> <!-- نقطه گرد بنفش -->
+                <p class="text-sm md:text-3xl text-black">LASTEST BLOG</p> <!-- توضیح عنوان -->
+             </div>
+              <div class="flex flex-wrap gap-3 mt-8 p-3">
+                <div class="swiper blog">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                      <!-- Slides -->
+                      <div class="swiper-slide">
+                        <div class=" bg-gray-100">
+                            <div class="w-full h-48 md:h-72">
+                                <img src="{% static 'public/images/blog2.webp' %}" alt="" class="h-full w-full">
+                            </div>
+                            <div class="px-5 py-2">
+                                <h1>Blog Title</h1>
+                                <p class="mt-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum eaque, corporis.</p>
+                                <div class="flex justify-between items-center mt-5">
+                                  <div>
+                                      <span>22 feb</span><br>
+                                      <span>2023</span>
+                                  </div>
+                                  <div>
+                                      <button class="bg-purple-950 text-white p-2 rounded-lg">
+                                          <a href="#">
+                                              <svg class="w-3 h-3 md:w-[20px] md:h-[20px] text-white ">
+                                                  <use xlink:href="#arrow-up-right"></use>
+                                              </Svg>
+                                          </a>
+                                      </button>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class=" bg-gray-100">
+                            <div class="w-full h-48 md:h-72">
+                                <img src="{% static 'public/images/blog2.webp' %}" alt="" class="h-full w-full">
+                            </div>
+                            <div class="px-5 py-2">
+                                <h1>Blog Title</h1>
+                                <p class="mt-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum eaque, corporis.</p>
+                                <div class="flex justify-between items-center mt-5">
+                                  <div>
+                                      <span>22 feb</span><br>
+                                      <span>2023</span>
+                                  </div>
+                                  <div>
+                                      <button class="bg-purple-950 text-white p-2 rounded-lg">
+                                          <a href="#">
+                                              <svg class="w-3 h-3 md:w-[20px] md:h-[20px] text-white ">
+                                                  <use xlink:href="#arrow-up-right"></use>
+                                              </Svg>
+                                          </a>
+                                      </button>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class=" bg-gray-100">
+                            <div class="w-full h-48 md:h-72">
+                                <img src="{% static 'public/images/blog2.webp' %}" alt="" class="h-full w-full">
+                            </div>
+                            <div class="px-5 py-2">
+                                <h1>Blog Title</h1>
+                                <p class="mt-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum eaque, corporis.</p>
+                                <div class="flex justify-between items-center mt-5">
+                                  <div>
+                                      <span>22 feb</span><br>
+                                      <span>2023</span>
+                                  </div>
+                                  <div>
+                                      <button class="bg-purple-950 text-white p-2 rounded-lg">
+                                          <a href="#">
+                                              <svg class="w-3 h-3 md:w-[20px] md:h-[20px] text-white ">
+                                                  <use xlink:href="#arrow-up-right"></use>
+                                              </Svg>
+                                          </a>
+                                      </button>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- If we need pagination -->
+                  </div>
+              </div>
+        </div>
+    </section>
+   </main>
+<!-- overlay for menu bobile -->
+<div class="overlay"></div>
+<!-- overlay for menu bobile -->
+
+
+
+{% endblock %}
+</html>

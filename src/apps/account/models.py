@@ -19,25 +19,11 @@ class ProfileTeam(BaseModel):
         verbose_name = "Profile"
         verbose_name_plural = "Profiles"
 
-class ClientModel(models.Model):
+class ClientModel(BaseModel):
     fullname = models.CharField(max_length=150,verbose_name='Full Name')
     jobs = models.CharField(max_length=150,verbose_name='Job Title')
     email = models.EmailField(unique=True,verbose_name='Email Address')
-    created_at = models.DateTimeField(auto_now_add=True,verbose_name='Creation Date')
 
     class Meta:
         verbose_name = 'Client'
         verbose_name_plural = 'Clients'
-
-class AccessControl(models.Model):
-    user = models.OneToOneField(User,on_delete=models.CASCADE,related_name='access_control')
-    is_active = models.BooleanField(default=True,verbose_name='Active Status')
-    can_edit = models.BooleanField(default=False,verbose_name='Can Edit Content')
-    can_delete = models.BooleanField(default=False,verbose_name='Can Delete Content')
-    is_superuser = models.BooleanField(default=False,verbose_name='Superuser Status')
-
-    objects = ActiveUserManager()
-
-    class Meta:
-        verbose_name = 'Access Control'
-        verbose_name_plural = 'Access Controls'

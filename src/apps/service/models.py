@@ -3,7 +3,7 @@ from smart_selects.db_fields import ChainedForeignKey
 from apps.core.models import BaseModel
 # Create your models here.
 
-class ServiceModel(models.Model):
+class ServiceModel(BaseModel):
     name = models.CharField(max_length=150,verbose_name='Service')
     description_about = models.TextField(verbose_name='Description About Service')
     description_product = models.TextField(verbose_name='Description Product Service')
@@ -17,11 +17,14 @@ class ServiceModel(models.Model):
         verbose_name_plural = "Services"
 
 
-class CategoryModel(models.Model):
+class CategoryModel(BaseModel):
     service = models.ForeignKey(ServiceModel,on_delete=models.CASCADE,
                                 related_name='categories')
     name = models.CharField(max_length=150,verbose_name='Category Name')
     description = models.TextField(verbose_name='Category Description')
+    image = models.ImageField(upload_to='category/images/',null=True,blank=True,
+                              verbose_name='Category Image')
+
 
 
     def __str__(self):
@@ -32,7 +35,9 @@ class CategoryModel(models.Model):
         verbose_name_plural = "Categories"
 
 
-class ProductModel(BaseModel):
+
+
+class PortfolioModel(BaseModel):
     category = ChainedForeignKey(CategoryModel,chained_field='service',chained_model_field='service',
                                  show_all=False,auto_choose=False,sort=True)
     service = models.ForeignKey(ServiceModel, on_delete=models.CASCADE,
@@ -46,5 +51,5 @@ class ProductModel(BaseModel):
         return self.name
 
     class Meta:
-        verbose_name = "Product"
-        verbose_name_plural = "Products"
+        verbose_name = "Portfolio"
+        verbose_name_plural = "Portfolios"

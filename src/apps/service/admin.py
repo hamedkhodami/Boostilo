@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ServiceModel,CategoryModel,ProductModel
+from .models import ServiceModel,CategoryModel,PortfolioModel
 # Register your models here.
 
 
@@ -23,14 +23,14 @@ class CategoryModelAdmin(admin.ModelAdmin):
     list_filter = ('service',)
     ordering = ('service',)
     fieldsets = (
-        ('Information', {'fields': ('name',)}),
+        ('Information', {'fields': ('service','name','image')}),
         ('Description', {'fields': ('description',)}),
     )
 
 
-@admin.register(ProductModel)
-class ProductModelAdmin(admin.ModelAdmin):
-    list_display = ('id','category','name',)
+@admin.register(PortfolioModel)
+class PortfolioModelAdmin(admin.ModelAdmin):
+    list_display = ('id','service','category','name',)
     list_display_links = ('id','name')
     search_fields = ('category','name')
     list_filter = ('category',)

@@ -1,0 +1,20 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+{% include "public/links.html" %}
+
+</head>
+
+<body>
+{% include "public/headers.html" %}
+
+{% block body %}{% endblock %}
+
+{% include "public/footers.html" %}
+
+{% include "public/links.html" %}
+</body>
+</html>
