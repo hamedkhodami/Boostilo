@@ -14,21 +14,20 @@ btns.forEach((button) => {
 // Masonry gallery
 document.addEventListener("DOMContentLoaded", function() {
     var elem = document.querySelector('.grid-container');
-    
+
     var msnry = new Masonry(elem, {
-        itemSelector: '.grid-item', 
-        columnWidth: '.grid-item', 
-        percentPosition: true, 
-        gutter: 2, 
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-item',
+        percentPosition: true,
+        gutter: 2,
     });
 
     imagesLoaded(elem, function() {
-        msnry.layout(); 
+        msnry.layout();
     });
 
-    
-});
 
+});
 
 
 
