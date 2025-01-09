@@ -53,3 +53,8 @@ class PortfolioModel(BaseModel):
     class Meta:
         verbose_name = "Portfolio"
         verbose_name_plural = "Portfolios"
+
+    def get_image(self):
+        if self.image:
+            return self.image.url
+        return '/static/assets/public/images/logo.png' # TODO: should change image

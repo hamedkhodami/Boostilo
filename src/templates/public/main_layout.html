@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
-{% include "public/links.html" %}
+
+    <link rel="stylesheet" href="{% static 'public/styles/swiper-bundle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'public/styles/app.css' %}">
 
 </head>
 
@@ -15,6 +17,9 @@
 
 {% include "public/footers.html" %}
 
-{% include "public/links.html" %}
+ <script src="{% static 'public/js/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'public/js/scripts.js' %}"></script>
+  <script src="{% static 'public/js/sliders.js' %}"></script>
+
 </body>
 </html>

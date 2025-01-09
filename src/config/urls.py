@@ -9,6 +9,7 @@ urlpatterns = [
     path('chaining/', include('smart_selects.urls')),
     path('chaining/', include('smart_selects.urls')),
     path('', include('apps.public.urls',namespace='public')),
+    path('service/', include('apps.service.urls',namespace='service')),
 
 
 ]

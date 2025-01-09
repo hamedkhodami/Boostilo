@@ -3,6 +3,11 @@ from django.views.generic.base import TemplateView
 from .models import NewsModel,ArticleModel,AboutModel,ReviewModel
 from apps.account.models import ProfileTeam
 from apps.service.models import ServiceModel,PortfolioModel
+from django.shortcuts import render
+
+
+def Test(request):
+    return render(request,'public/test.html')
 
 
 class HomePageView(TemplateView):
