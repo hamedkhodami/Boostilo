@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ProfileTeam,ClientModel
+from .models import ProfileTeam,AccessControl,ClientModel
 
 # Register your models here.
 
@@ -27,4 +27,16 @@ class ClientModelAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Information', {'fields': ('fullname','jobs','email')}),
         ('Registration Date', {'fields': ('created_at',)}),
+    )
+
+@admin.register(AccessControl)
+class AccessControlAdmin(admin.ModelAdmin):
+    list_display = ('id','user','is_active','can_edit','can_delete','is_superuser')
+    list_display_links = ('id','user')
+    search_fields = ('user__username','user__email')
+    list_filter = ('is_active','can_edit','can_delete','is_superuser')
+    list_editable = ('is_active','can_edit','can_delete','is_superuser')
+    fieldsets = (
+        ('Information', {'fields': ('user',)}),
+        ('Permissions', {'fields': ('is_active','can_edit','can_delete','is_superuser')}),
     )
