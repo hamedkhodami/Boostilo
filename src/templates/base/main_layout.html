@@ -11,15 +11,23 @@
 </head>
 
 <body>
-{% include "public/headers.html" %}
+
 
 {% block body %}{% endblock %}
 
-{% include "public/footers.html" %}
+{% include "base/footers.html" %}
 
- <script src="{% static 'public/js/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'public/js/swiper-bundle.min.js' %}"></script>
   <script src="{% static 'public/js/scripts.js' %}"></script>
   <script src="{% static 'public/js/sliders.js' %}"></script>
+  <script src="{% static 'public/js/application.js' %}"></script>
+<!-- Masonry library -->
+  <script src="{% static 'public/js/masonry.pkgd.min.js' %}"></script>
+<!-- image library -->
+  <script src="{% static 'public/js/imageloaded.js' %}"></script>
+
+<!-- signup and in  -->
+  <script src="{% static 'public/js/signupin.js' %}"></script>
 
 </body>
 </html>

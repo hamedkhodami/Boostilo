@@ -20,8 +20,8 @@ class ProfileTeam(BaseModel):
         verbose_name_plural = "Profiles"
 
 class ClientModel(BaseModel):
-    fullname = models.CharField(max_length=150,verbose_name='Full Name')
-    jobs = models.CharField(max_length=150,verbose_name='Job Title')
+    username = models.CharField(max_length=150,verbose_name='Username')
+    password = models.CharField(max_length=150,verbose_name='Password')
     email = models.EmailField(unique=True,verbose_name='Email Address')
 
     class Meta:

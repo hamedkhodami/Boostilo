@@ -137,3 +137,24 @@ window.addEventListener('DOMContentLoaded', () => {
         activeButton.insertAdjacentElement('afterend', content);
     }
 });
+// popup video//
+const openPopupButtons = document.querySelectorAll('.openPopup');
+const closePopupButtons = document.querySelectorAll('.closePopup');
+
+openPopupButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const popupId = button.getAttribute("data-popup-target");
+    document.getElementById(popupId).classList.remove("hidden");
+  });
+});
+
+closePopupButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const popup = button.closest('.popup');
+    if (popup) {
+      popup.classList.add("hidden");
+    }
+  });
+});
+
+// end popup video//

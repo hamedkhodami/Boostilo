@@ -4,6 +4,9 @@ from .models import ProfileTeam
 
 # Create your views here.
 
+def accountest(request):
+    return render(request,"account/signup.html")
+
 class TeamListView(ListView):
     model = ProfileTeam
     template_name = ''

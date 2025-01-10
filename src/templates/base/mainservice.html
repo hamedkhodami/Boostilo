@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% load static %}
+
     <section class="services mt-5">
         <div class="container lg:px-8">
             <div class="flex flex-col md:flex-row gap-4 bg-gray-100 rounded-md px-2 py-3 md:px-9 md:py-5">
@@ -58,9 +53,11 @@
                                         <span>about<br>
                                          {{ digital_marketing.name }}</span>
                                         <div class="custom-button-info custom-button-white">
-                                            <svg class="custom-svg">
-                                                <use xlink:href="#arrow-up-right"></use>
-                                            </Svg>
+                                            <a href="{% url 'service:marketing' %}">
+                                                <svg class="custom-svg">
+                                                    <use xlink:href="#arrow-up-right"></use>
+                                                </Svg>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -95,9 +92,11 @@
                                         <span>about<br>
                                          {{ web_dev.name }}</span>
                                         <div class="custom-button-info custom-button-white">
-                                            <svg class="custom-svg">
-                                                <use xlink:href="#arrow-up-right"></use>
-                                            </Svg>
+                                            <a href="{% url 'service:web' %}">
+                                                <svg class="custom-svg">
+                                                    <use xlink:href="#arrow-up-right"></use>
+                                                </Svg>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -132,9 +131,11 @@
                                         <span>about<br>
                                          {{ seo.name }}</span>
                                         <div class="custom-button-info custom-button-white">
-                                            <svg class="custom-svg">
-                                                <use xlink:href="#arrow-up-right"></use>
-                                            </Svg>
+                                            <a href="{% url 'service:seo' %}">
+                                                <svg class="custom-svg">
+                                                    <use xlink:href="#arrow-up-right"></use>
+                                                </Svg>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -169,9 +170,11 @@
                                         <span>about<br>
                                          {{ social_media.name }}</span>
                                         <div class="custom-button-info custom-button-white">
-                                            <svg class="custom-svg">
-                                                <use xlink:href="#arrow-up-right"></use>
-                                            </Svg>
+                                            <a href="{% url 'service:application' %}">
+                                                <svg class="custom-svg">
+                                                    <use xlink:href="#arrow-up-right"></use>
+                                                </Svg>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -237,5 +240,3 @@
 
         </div>
     </section>
-</body>
-</html>

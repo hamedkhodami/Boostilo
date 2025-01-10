@@ -3,10 +3,7 @@ from apps.service.models import ServiceModel,PortfolioModel,CategoryModel
 from django.views.generic.list import ListView
 from django.views.generic.base import TemplateView
 
-'''
-def TestServiceView(request):
-    return render(request,'service/seo.html')
-'''
+
 
 class ServiceApplicationPageView(TemplateView):
     template_name = 'service/application.html'

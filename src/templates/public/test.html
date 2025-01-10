@@ -1,4 +1,4 @@
-{% extends "public/main_layout.html" %}
+{% extends "base/main_layout.html" %}
 {% load static %}
 
 
@@ -14,12 +14,14 @@
                     <div class="swiper">
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
+
                           <!-- Slides -->
+                        {% for news in latest_news %}
                           <div class="swiper-slide">
                             <div class="flex flex-col justify-center items-center md:justify-start md:items-start  ">
                                 <h1 class="text-3xl md:text-5xl	xl:text-5xl font-bold ">
                                     <span class="text-purple-600">Boostilo</span>crafting</br>
-                                    Success , Digital
+                                    {{ news.title }}
                                 </h1>
                                 <div class="flex justify-start items-center gap-x-3 mt-3 md:mt-6">
                                    <button class=" text-sm px-4 py-2 text-white font-bold rounded-full bg-gradient-to-r from-purple-700 to-purple-900">
@@ -30,36 +32,7 @@
                                 <p class="mt-4 text-zinc-800">sense of growth and power</p>
                             </div>
                           </div>
-                          <div class="swiper-slide">
-                            <div class="flex flex-col justify-center items-center md:justify-start md:items-start ">
-                                <h1 class="text-3xl md:text-5xl	xl:text-5xl font-bold ">
-                                    <span class="text-purple-600">Boostilo</span>crafting</br>
-                                    Success , Digital
-                                </h1>
-                                <div class="flex justify-start items-center gap-x-3 mt-3 md:mt-6">
-                                   <button class=" text-sm px-4 py-2 text-white font-bold rounded-full bg-gradient-to-r from-purple-700 to-purple-900">
-                                    <a href="#" class="text-white">Read More</a>
-                                   </button>
-                                </div>
-                                <hr class="border-t border-black w-10 mt-4">
-                                <p class="mt-4 text-zinc-800">sense of growth and power</p>
-                            </div>
-                          </div>
-                          <div class="swiper-slide">
-                            <div class="flex flex-col justify-center items-center md:justify-start md:items-start">
-                                <h1 class="text-3xl md:text-5xl	xl:text-5xl font-bold ">
-                                    <span class="text-purple-600">Boostilo</span>crafting</br>
-                                    Success , Digital
-                                </h1>
-                                <div class="flex justify-start items-center gap-x-3 mt-3 md:mt-6">
-                                   <button class=" text-sm px-4 py-2 text-white font-bold rounded-full bg-gradient-to-r from-purple-700 to-purple-900">
-                                    <a href="#" class="text-white">Read More</a>
-                                   </button>
-                                </div>
-                                <hr class="border-t border-black w-10 mt-4">
-                                <p class="mt-4 text-zinc-800">sense of growth and power</p>
-                            </div>
-                          </div>
+                        {% endfor %}
                         </div>
                     </div>
                     <div class="gap-x-3 flex justify-center items-center md:justify-start md:items-start">
@@ -82,243 +55,13 @@
         </div>
     </section>
 
-    <section class="services mt-5">
-        <div class="container lg:px-8">
-            <div class="flex flex-col md:flex-row gap-4 bg-gray-100 rounded-md px-2 py-3 md:px-9 md:py-5">
-                <div class=" w-full md:w-2/5 space-y-[15px] mt-5 ">
-                    <button class="btn custom-services-button group active" data-content="content1"  >
-                        <div class="flex items-center gap-3">
-                            <span class="number group-focus:text-purple-500">01</span>
-                            <span class="text">Digital Markting</span>
-                        </div>
-                        <span class="arrow">&#8594;</span>
-                    </button>
-                    <button class="btn custom-services-button group" data-content="content2">
-                        <div class="flex items-center gap-3">
-                            <span class="number group-focus:text-purple-500">02</span>
-                            <span class="text">Web Development</span>
-                        </div>
-                        <span class="arrow">&#8594;</span>
-                    </button>
-                    <button class="btn custom-services-button group" data-content="content3">
-                        <div class="flex items-center gap-3">
-                            <span class="number group-focus:text-purple-500">03</span>
-                            <span class="text">SEo</span>
-                        </div>
-                        <span class="arrow">&#8594;</span>
-                    </button>
-                    <button class="btn custom-services-button group" data-content="content4">
-                        <div class="flex items-center gap-3">
-                            <span class="number group-focus:text-purple-500">04</span>
-                            <span class="text">Social Media Marketing </span>
-                        </div>
-                        <span class="arrow">&#8594;</span>
-                    </button>
-                    <button class="btn custom-services-button group" data-content="content3">
-                        <div class="flex items-center gap-3">
-                            <span class="number group-focus:text-purple-500">05</span>
-                            <span class="text">SEo</span>
-                        </div>
-                        <span class="arrow">&#8594;</span>
-                    </button>
-                </div>
-                <div class=" w-full md:w-3/5">
-                    <div id="content1" class="content">
-                        <div class="custom-flex-container">
-                            <div class=" custom-img-container">
-                                <img src="{% static 'public/images/services.webp' %}" alt="" >
-                            </div>
-                            <div class=" custom-info-container">
-                                <div class="custom-gradient-box">
-                                    <p>ghori Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
-                                    <div class="flex justify-between items-center font-bold">
-                                        <span>about<br>
-                                         services</span>
-                                        <div class="custom-button-info custom-button-white">
-                                            <svg class="custom-svg">
-                                                <use xlink:href="#arrow-up-right"></use>
-                                            </Svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="custom-dark-box ">
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
-                                    <div class="flex justify-between items-end font-bold">
-                                        <span>see<br>
-                                         portfolio</span>
-                                        <div class="custom-button-info custom-button-gray">
-                                            <svg class="custom-svg">
-                                                <use xlink:href="#arrow-up-right"></use>
-                                            </Svg>
-                                        </div>
-                                    </div>
-                                    <div class="custom-box-container">
-                                        <span class="custom-box"></span>
-                                        <span class="custom-box-alternate"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="content2" class="content hidden">
-                        <div class="custom-flex-container">
-                            <div class=" custom-img-container">
-                                <img src="{% static 'public/images/services.webp' %}" alt="" >
-                            </div>
-                            <div class=" custom-info-container">
-                                <div class="custom-gradient-box">
-                                    <p>ghori Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
-                                    <div class="flex justify-between items-center font-bold">
-                                        <span>about<br>
-                                         services</span>
-                                        <div class="custom-button-info custom-button-white">
-                                            <svg class="custom-svg">
-                                                <use xlink:href="#arrow-up-right"></use>
-                                            </Svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="custom-dark-box ">
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
-                                    <div class="flex justify-between items-end font-bold">
-                                        <span>see<br>
-                                         portfolio</span>
-                                        <div class="custom-button-info custom-button-gray">
-                                            <svg class="custom-svg">
-                                                <use xlink:href="#arrow-up-right"></use>
-                                            </Svg>
-                                        </div>
-                                    </div>
-                                    <div class="custom-box-container">
-                                        <span class="custom-box"></span>
-                                        <span class="custom-box-alternate"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="content3" class="content hidden">
-                        <div class="custom-flex-container">
-                            <div class=" custom-img-container">
-                                <img src="{% static 'public/images/services.webp' %}" alt="" >
-                            </div>
-                            <div class=" custom-info-container">
-                                <div class="custom-gradient-box">
-                                    <p>ghori Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
-                                    <div class="flex justify-between items-center font-bold">
-                                        <span>about<br>
-                                         services</span>
-                                        <div class="custom-button-info custom-button-white">
-                                            <svg class="custom-svg">
-                                                <use xlink:href="#arrow-up-right"></use>
-                                            </Svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="custom-dark-box ">
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
-                                    <div class="flex justify-between items-end font-bold">
-                                        <span>see<br>
-                                         portfolio</span>
-                                        <div class="custom-button-info custom-button-gray">
-                                            <svg class="custom-svg">
-                                                <use xlink:href="#arrow-up-right"></use>
-                                            </Svg>
-                                        </div>
-                                    </div>
-                                    <div class="custom-box-container">
-                                        <span class="custom-box"></span>
-                                        <span class="custom-box-alternate"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="content4" class="content hidden">
-                        <div class="custom-flex-container">
-                            <div class=" custom-img-container">
-                                <img src="{% static 'public/images/services.webp' %}" alt="" >
-                            </div>
-                            <div class=" custom-info-container">
-                                <div class="custom-gradient-box">
-                                    <p>ghori Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
-                                    <div class="flex justify-between items-center font-bold">
-                                        <span>about<br>
-                                         services</span>
-                                        <div class="custom-button-info custom-button-white">
-                                            <svg class="custom-svg">
-                                                <use xlink:href="#arrow-up-right"></use>
-                                            </Svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="custom-dark-box ">
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
-                                    <div class="flex justify-between items-end font-bold">
-                                        <span>see<br>
-                                         portfolio</span>
-                                        <div class="custom-button-info custom-button-gray">
-                                            <svg class="custom-svg">
-                                                <use xlink:href="#arrow-up-right"></use>
-                                            </Svg>
-                                        </div>
-                                    </div>
-                                    <div class="custom-box-container">
-                                        <span class="custom-box"></span>
-                                        <span class="custom-box-alternate"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="content5" class="content hidden">
-                        <div class="custom-flex-container">
-                            <div class=" custom-img-container">
-                                <img src="{% static 'public/images/services.webp' %}" alt="" >
-                            </div>
-                            <div class=" custom-info-container">
-                                <div class="custom-gradient-box">
-                                    <p>ghori Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
-                                    <div class="flex justify-between items-center font-bold">
-                                        <span>about<br>
-                                         services</span>
-                                        <div class="custom-button-info custom-button-white">
-                                            <svg class="custom-svg">
-                                                <use xlink:href="#arrow-up-right"></use>
-                                            </Svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="custom-dark-box ">
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore neque off</p>
-                                    <div class="flex justify-between items-end font-bold">
-                                        <span>see<br>
-                                         portfolio</span>
-                                        <div class="custom-button-info custom-button-gray">
-                                            <svg class="custom-svg">
-                                                <use xlink:href="#arrow-up-right"></use>
-                                            </Svg>
-                                        </div>
-                                    </div>
-                                    <div class="custom-box-container">
-                                        <span class="custom-box"></span>
-                                        <span class="custom-box-alternate"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
+   {% include 'base/mainservice.html' %}
 
     <section class="boostilo-about mt-5">
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full md:w-1/2 p-4">
-                    <img src="{% static 'public/images/videoboostilo.webp' %}" alt="">
+                    <img src="" alt="About">
                 </div>
                 <div class="w-full md:w-1/2 p-4 flex flex-col items-center md:items-baseline md:justify-around ">
                     <h1 class="text-xl md:text-2xl	xl:text-4xl font-bold mt-2 text-center md:text-start  ">
@@ -326,9 +69,7 @@
                         <span class="text-purple-600">Boostilo</span>
                     </h1>
                     <p class=" text-sm md:text-xl text-zinc-800 mt-2 text-center md:text-start ">
-                        "Boostilo", soundslike a blend of "boost" and a dynamic innovative sufix,possibly
-                        suggesting and a focuse on growth,improvement,and forward momentum. the "Boost" part
-                        clearly impliese enhancement , while "ilo" gives it a unique , almost teach-savvy or creative twist.
+                        {{ about.content }}
                     </p>
 
                     <div class=" mt-3 md:mt-6">
@@ -358,74 +99,25 @@
         </div>
         <div class="container mt-5">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 p-5">
+                {% for key, portfolio in latest_portfolios.items %}
                 <div class="relative">
                     <div class="rounded-3xl post-img-wrapp ">
-                       <img src="{% static 'public/images/websiteportfolio.webp' %}" alt="" class="rounded-3xl w-full h-auto ">
+                       <img src="{{ portfolio.image.url }}" alt="{{ portfolio.name }}" class="rounded-3xl w-full h-auto ">
                     </div>
                     <div class="text-gray-300 py-3">
-                       <span>2024</span>
-                       <span>Project Name</span>
+                       <span>{{ portfolio.created_at|date:"Y" }}</span>
+                       <span>{{ portfolio.name }}</span>
                     </div>
                     <div class="absolute top-2 left-2 flex gap-2 z-10">
                         <button class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
-                            <a href="#">seo</a>
+                            <a href="#">{{ portfolio.service }}</a>
                         </button>
                         <button class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
-                            <a href="#">digital marketing</a>
+                            <a href="#">{{ portfolio.category }}</a>
                         </button>
                     </div>
                 </div>
-                <div class=" relative mt-0 md:mt-14">
-                    <div class="rounded-3xl post-img-wrapp">
-                        <img src="{% static 'public/images/appportfolio.webp' %}" alt="" class="rounded-3xl w-full h-auto ">
-                     </div>
-                     <div class="text-gray-300 py-3">
-                        <span>2024</span>
-                        <span>Project Name</span>
-                     </div>
-                     <div class="absolute top-2 left-2 flex gap-2 z-10">
-                        <button class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
-                            <a href="#">seo</a>
-                        </button>
-                        <button class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
-                            <a href="#">digital marketing</a>
-                        </button>
-                    </div>
-                </div>
-                <div class="relative">
-                    <div class="rounded-3xl post-img-wrapp">
-                        <img src="{% static 'public/images/logoportfolio.webp' %}" alt="" class="rounded-3xl w-full h-auto ">
-                     </div>
-                     <div class="text-gray-300 py-3">
-                        <span>2024</span>
-                        <span>Project Name</span>
-                     </div>
-                     <div class="absolute top-2 left-2 flex gap-2 z-10">
-                        <button class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
-                            <a href="#">seo</a>
-                        </button>
-                        <button class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
-                            <a href="#">digital marketing</a>
-                        </button>
-                    </div>
-                </div>
-                <div class=" relative mt-0 md:mt-14">
-                    <div class="rounded-3xl post-img-wrapp">
-                        <img src="{% static 'public/images/seoportfolio.webp' %}" alt="" class="rounded-3xl w-full h-auto ">
-                     </div>
-                     <div class="text-gray-300 py-3">
-                        <span>2024</span>
-                        <span>Project Name</span>
-                     </div>
-                     <div class="absolute top-2 left-2 flex gap-2 z-10">
-                        <button class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
-                            <a href="#">seo</a>
-                        </button>
-                        <button class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
-                            <a href="#">digital marketing</a>
-                        </button>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <div class="flex justify-center items-center mt-3 md:mt-5">
                 <button class="btn-gradient-purple">
@@ -491,51 +183,21 @@
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                           <!-- Slides -->
+                          {% for review in latest_reviews %}
                           <div class="swiper-slide py-3">
                             <div class="px-2 md:px-10 py-3 bg-white  rounded-3xl flex justify-center flex-col items-center">
                                 <img src="{% static 'public/images/baccomment.svg' %}" alt="" class="w-12 md:w-24">
-                                <p class="text-center text-xs md:text-base text-gray-600"> Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quidem quam tempore sed quisquam aperia</p>
+                                <p class="text-center text-xs md:text-base text-gray-600">{{ review.feedback }}</p>
                                 <button class="bg-slate-400 rounded-full py-1 px-3 text-sm mt-3"><a href="#">see video</a></button>
                                 <div class="w-20 h-20 rounded-full mb-[-24px] mt-2 ">
-                                  <img src="{% static 'public/images/user1.webp' %}" alt="">
+                                  <img src="{{ review.photo.url }}" alt="{{ review.name }}">
                                 </div>
                             </div>
                           </div>
-                          <div class="swiper-slide py-3">
-                            <div class="px-2 md:px-10 py-3 bg-white  rounded-3xl flex justify-center flex-col items-center">
-                                <img src="{% static 'public/images/baccomment.svg' %}" alt="" class="w-12 md:w-24">
-                                <p class="text-center text-xs md:text-base text-gray-600"> Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quidem quam tempore sed quisquam aperia</p>
-                                <button class="bg-slate-400 rounded-full py-1 px-3 text-sm mt-3"><a href="#">see video</a></button>
-                                <div class="w-20 h-20 rounded-full mb-[-24px] mt-2 ">
-                                  <img src="{% static 'public/images/user1.webp' %}" alt="">
-                                </div>
-                            </div>
-                          </div>
-                          <div class="swiper-slide py-3">
-                            <div class="px-2 md:px-10 py-3 bg-white  rounded-3xl flex justify-center flex-col items-center">
-                                <img src="{% static 'public/images/baccomment.svg' %}" alt="" class="w-12 md:w-24">
-                                <p class="text-center text-xs md:text-base text-gray-600"> Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quidem quam tempore sed quisquam aperia</p>
-                                <button class="bg-slate-400 rounded-full py-1 px-3 text-sm mt-3"><a href="#">see video</a></button>
-                                <div class="w-20 h-20 rounded-full mb-[-24px] mt-2 ">
-                                  <img src="{% static 'public/images/user1.webp' %}" alt="">
-                                </div>
-                            </div>
-                          </div>
-                          <div class="swiper-slide py-3">
-                            <div class="px-2 md:px-10 py-3 bg-white  rounded-3xl flex justify-center flex-col items-center">
-                                <img src="{% static 'public/images/baccomment.svg' %}" alt="" class="w-12 md:w-24">
-                                <p class="text-center text-xs md:text-base text-gray-600"> Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quidem quam tempore sed quisquam aperia</p>
-                                <button class="bg-slate-400 rounded-full py-1 px-3 text-sm mt-3"><a href="#">see video</a></button>
-                                <div class="w-20 h-20 rounded-full mb-[-24px] mt-2 ">
-                                  <img src="{% static 'public/images/user1.webp' %}" alt="">
-                                </div>
-                            </div>
-                          </div>
-
+                          {% endfor %}
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
     </div>
@@ -577,6 +239,33 @@
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                       <!-- Slides -->
+                      {% for article in latest_articles %}
+                      <div class="swiper-slide">
+                        <div class=" bg-gray-100">
+                            <div class="w-full h-48 md:h-72">
+                                <img src="{{ article.images.url }}" alt="{{ article.title }}" class="h-full w-full">
+                            </div>
+                            <div class="px-5 py-2">
+                                <h1>{{ article.title }}</h1>
+                                <p class="mt-1">{{ article.summary }}</p>
+                                <div class="flex justify-between items-center mt-5">
+                                  <div>
+                                      <span>{{ article.created_at }}</span>
+                                  </div>
+                                  <div>
+                                      <button class="bg-purple-950 text-white p-2 rounded-lg">
+                                          <a href="#">
+                                              <svg class="w-3 h-3 md:w-[20px] md:h-[20px] text-white ">
+                                                  <use xlink:href="#arrow-up-right"></use>
+                                              </Svg>
+                                          </a>
+                                      </button>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                    {% empty %}
                       <div class="swiper-slide">
                         <div class=" bg-gray-100">
                             <div class="w-full h-48 md:h-72">
@@ -603,58 +292,7 @@
                             </div>
                         </div>
                       </div>
-                      <div class="swiper-slide">
-                        <div class=" bg-gray-100">
-                            <div class="w-full h-48 md:h-72">
-                                <img src="{% static 'public/images/blog2.webp' %}" alt="" class="h-full w-full">
-                            </div>
-                            <div class="px-5 py-2">
-                                <h1>Blog Title</h1>
-                                <p class="mt-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum eaque, corporis.</p>
-                                <div class="flex justify-between items-center mt-5">
-                                  <div>
-                                      <span>22 feb</span><br>
-                                      <span>2023</span>
-                                  </div>
-                                  <div>
-                                      <button class="bg-purple-950 text-white p-2 rounded-lg">
-                                          <a href="#">
-                                              <svg class="w-3 h-3 md:w-[20px] md:h-[20px] text-white ">
-                                                  <use xlink:href="#arrow-up-right"></use>
-                                              </Svg>
-                                          </a>
-                                      </button>
-                                  </div>
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class=" bg-gray-100">
-                            <div class="w-full h-48 md:h-72">
-                                <img src="{% static 'public/images/blog2.webp' %}" alt="" class="h-full w-full">
-                            </div>
-                            <div class="px-5 py-2">
-                                <h1>Blog Title</h1>
-                                <p class="mt-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum eaque, corporis.</p>
-                                <div class="flex justify-between items-center mt-5">
-                                  <div>
-                                      <span>22 feb</span><br>
-                                      <span>2023</span>
-                                  </div>
-                                  <div>
-                                      <button class="bg-purple-950 text-white p-2 rounded-lg">
-                                          <a href="#">
-                                              <svg class="w-3 h-3 md:w-[20px] md:h-[20px] text-white ">
-                                                  <use xlink:href="#arrow-up-right"></use>
-                                              </Svg>
-                                          </a>
-                                      </button>
-                                  </div>
-                              </div>
-                            </div>
-                        </div>
-                      </div>
+                    {% endfor %}
                     </div>
                     <!-- If we need pagination -->
                   </div>
