@@ -126,9 +126,9 @@
         <div class="container mt-5">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 p-5">
                 {% for key, portfolio in latest_portfolios.items %}
-                <div class="relative">
-                    <div class="rounded-3xl post-img-wrapp ">
-                       <img src="{{ portfolio.image.url }}" alt="{{ portfolio.name }}" class="rounded-3xl w-full h-auto ">
+                <div class="relative h-[250px] md:h-[300px] lg:h-[350px] xl:h-[420px]">
+                    <div class="rounded-3xl post-img-wrapp h-[50%]">
+                       <img src="{{ portfolio.image.url }}" alt="{{ portfolio.name }}" class="rounded-3xl w-full h-full ">
                     </div>
                     <div class="text-gray-300 py-3">
                        <span>{{ portfolio.created_at|date:"Y" }}</span>

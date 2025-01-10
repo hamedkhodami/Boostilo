@@ -1,12 +1,25 @@
 {
+  "name": "boostilo",
+  "version": "1.0.0",
+  "description": "BOOSTILO",
+  "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/input.css -o ./public/styles/app.css --watch"
+    "build": "tailwindcss build input.css -o output.css"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/hamedkhodami/boostilo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hamedkhodami/boostilo/issues"
+  },
+  "homepage": "https://github.com/hamedkhodami/boostilo#readme",
   "devDependencies": {
-    "tailwindcss": "^3.4.15"
-  },
-  "dependencies": {
-    "masonry-layout": "^4.2.2",
-    "tailwind-clip-path": "^1.0.0"
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17"
   }
 }
