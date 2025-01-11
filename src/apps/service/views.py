@@ -92,3 +92,25 @@ class ServiceDigitalMarketingPageView(TemplateView):
         context['odd_categories'] = [category for category in categories if category.id % 2 == 1]
 
         return context
+
+class ServiceContentCreationPageView(TemplateView):
+    template_name = 'service/content-creation.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['seo'] = ServiceModel.objects.filter(name__iexact='SEO').first()
+        context['digital_marketing'] = ServiceModel.objects.filter(name__iexact='Digital Marketing').first()
+        context['web_dev'] = ServiceModel.objects.filter(name__iexact='Web Development').first()
+        context['social_media'] = ServiceModel.objects.filter(name__iexact='Social Media Marketing').first()
+        context['content_create'] = ServiceModel.objects.filter(name__iexact='Content Creation').first()
+
+        context['service'] = ServiceModel.objects.filter(name__iexact='Content Creation').first()
+        context['products'] = PortfolioModel.objects.filter(service__name__iexact='Content Creation')
+
+        categories = CategoryModel.objects.filter(service__name__iexact='Content Creation')
+        context['categories'] = categories
+        context['even_categories'] = [category for category in categories if category.id % 2 == 0]
+        context['odd_categories'] = [category for category in categories if category.id % 2 == 1]
+
+        return context

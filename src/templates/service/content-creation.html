@@ -1,0 +1,317 @@
+{% extends "base/main_layout.html" %}
+{% load static %}
+
+
+{% block title %} Social Media Marketing {% endblock %}
+    <style>
+     @media only screen and (max-width: 600px) {
+        canvas {
+            width: 100% !important;
+            height: auto !important;
+        }
+    }</style>
+{% block body %}
+
+   {% include 'base/headers_service.html' %}
+
+    <main>
+        <section class="service-description">
+            <div class="container bg-backservices bg-cover h-auto md:h-[450px] rounded-bl-2xl rounded-br-2xl px-10 py-10 md:py-0  flex items-end ">
+                <div class="flex flex-wrap justify-center">
+                    <div class="w-full md:w-1/2 p-3">
+                       <div class="highlight-title">
+                        <span>Boostilo</span><br />
+                        <span>Marketing</span>
+                       </div>
+                       <p class="text-white text-sm md:text-lg mt-5">adipisicing elit. Expedita pariaturLorem ipsum dolor sit amet consectetur adipisicing elit. Expedita pariatur deleniti aut dolor quos porro, doloremque, aperiam, aliquam dicta repellendus ipsam similique omnis! Doloribus ratione, mollitia illo tempora quibusdam maiores!</p>
+                       <div class="flex gap-2 mt-5 ">
+                        <button class="btn-gradient-purple">
+                            <a href="#">
+                                see portfolio
+                            </a>
+                        </button>
+                        <button class="btn-transparent">
+                            <a href="#">
+                               contact us
+                            </a>
+                        </button>
+                       </div>
+                    </div>
+                    <div class="w-full md:w-1/2 flex items-end">
+                       <img src="./images/content-creation.png" alt="" class=" w-full md:w-4/5">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-marketing-cycl p-2 "
+        >
+            <div class="container p-2 md:p-4 bg-home-desktop bg-cover bg-no-repeat bg-center">
+                <div class="mx-0 md:mx-10 lg:mx-72">
+                    <canvas id="myChart" width="400" height="400"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        {% include 'base/mainservice.html' %}
+
+        <div class="categories">
+           {% for category in categories %}
+
+           {% if forloop.counter|divisibleby:2 %}<section class="service-item">
+            <div class="container p-2 md:px-10">
+                <div class="flex flex-col-reverse md:flex-row flex-wrap items-center justify-center">
+                    <div class="w-full md:w-3/5 p-4 flex justify-center flex-col">
+                        <div class="item-highlight">
+                            <span>{{ category.name }}</span><br>
+                            <span>{{ category.service.name }}</span>
+                        </div>
+                        <p class="mt-5">{{ category.description }}</p>
+                        <div class="mt-2">
+                            <a href="#" class="more-info-button">
+                                <span>learn More</span>
+                                <svg>
+                                    <use xlink:href="#arrow-right"></use>
+                                </Svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/5 p-4">
+                        <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                    </div>
+                </div>
+            </div>
+           </section>{% else %} <section class="service-item individual-item">
+            <div class="container p-2 md:px-10">
+                <div class="flex  flex-wrap">
+                    <div class="w-full md:w-2/5 p-4">
+                        <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                    </div>
+                    <div class="w-full md:w-3/5 p-4 flex justify-center flex-col">
+                        <div class="item-highlight">
+                            <span>{{ category.name }}</span><br>
+                            <span>{{ category.service.name }}</span>
+                        </div>
+                        <p class="mt-5">{{ category.description }}</p>
+                        <div class="mt-2">
+                            <a href="#" class="more-info-button">
+                                <span>learn More</span>
+                                <svg>
+                                    <use xlink:href="#arrow-right"></use>
+                                </Svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           </section>{% endif %}
+           {% endfor %}
+
+
+       </div>
+
+        <section class="advantage mt-10">
+            <div class="container">
+                <div class="flex items-center justify-center space-x-2 p-10">
+                    <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span>
+                    <p class="text-sm md:text-2xl text-black">ADVANTAGE</p>
+                  </div>
+                <div class="flex flex-wrap justify-center mt-5">
+                  <div class="w-full sm:w-1/2 lg:w-1/4 p-4  flex items-center mb-4">
+                     <img src="./images/svg/advantage1.svg" alt="" class="px-2">
+                     <div class="pl-2">
+                       <h2 class="text-base md:text-xl font-bold">increase sales</h2>
+                       <p class="text-zinc-900">and revenu</p>
+                     </div>
+                  </div>
+                  <div class="w-full sm:w-1/2 lg:w-1/4 p-4  flex items-center mb-4">
+                    <img src="./images/svg/advantage2.svg" alt="" class="px-2">
+                    <div class="pl-2">
+                      <h2 class="text-base md:text-xl font-bold">increase sales</h2>
+                      <p class="text-zinc-900">and revenu</p>
+                    </div>
+                 </div>
+                 <div class="w-full sm:w-1/2 lg:w-1/4 p-4  flex items-center mb-4">
+                    <img src="./images/svg/advantage3.svg" alt="" class="px-2">
+                    <div class="pl-2">
+                      <h2 class="text-base md:text-xl font-bold">increase sales</h2>
+                      <p class="text-zinc-900">and revenu</p>
+                    </div>
+                 </div>
+                 <div class="w-full sm:w-1/2 lg:w-1/4 p-4  flex items-center mb-4">
+                    <img src="./images/svg/advantage4.svg" alt="" class="px-2">
+                    <div class="pl-2">
+                      <h2 class="text-base md:text-xl font-bold">increase sales</h2>
+                      <p class="text-zinc-900">and revenu</p>
+                    </div>
+                 </div>
+                  
+                </div>
+            </div>
+        </section>
+
+        <section class="service-item">
+            <div class="container p-2 md:px-10">
+                <div class="flex flex-col-reverse md:flex-row flex-wrap items-center justify-center">
+                    <div class="w-full md:w-3/5 p-4 flex justify-center flex-col">
+                        <div class="item-highlight">
+                            <span>crafting , sucsess digital</span><br>
+                            <span>Boostilo</span>
+                        </div>
+                        <p class="mt-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima ducimus expedita eaque cum voluptas mollitia libero, consectetur esse unde sunt pariatur autem est aspernatur saepe. Veritatis ad nemo aspernatur corporis.</p>
+                        <div class="mt-2">
+                            <a href="#" class="more-info-button">
+                                <span>learn More</span>
+                                <svg>
+                                    <use xlink:href="#arrow-right"></use>
+                                </Svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/5 p-4 h-[280px] md:h-[300px] lg:h-[300px] xl:h-[420px]">
+                        <img src="./images/service-item.png" alt="" class="w-full h-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="service-item individual-item">
+            <div class="container p-2 md:px-10">
+                <div class="flex  flex-wrap">
+                    <div class="w-full md:w-2/5 p-4 h-[280px] md:h-[300px] lg:h-[300px] xl:h-[420px]">
+                        <img src="./images/service-item.png" alt="" class="w-full h-full">
+                    </div>
+                    <div class="w-full md:w-3/5 p-4 flex justify-center flex-col">
+                        <div class="item-highlight">
+                            <span>crafting , sucsess digital</span><br>
+                            <span>Boostilo</span>
+                        </div>
+                        <p class="mt-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima ducimus expedita eaque cum voluptas mollitia libero, consectetur esse unde sunt pariatur autem est aspernatur saepe. Veritatis ad nemo aspernatur corporis.</p>
+                        <div class="mt-2">
+                            <a href="#" class="more-info-button">
+                                <span>learn More</span>
+                                <svg>
+                                    <use xlink:href="#arrow-right"></use>
+                                </Svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="service-item">
+            <div class="container p-2 md:px-10">
+                <div class="flex flex-col-reverse md:flex-row flex-wrap items-center justify-center">
+                    <div class="w-full md:w-3/5 p-4 flex justify-center flex-col">
+                        <div class="item-highlight">
+                            <span>crafting , sucsess digital</span><br>
+                            <span>Boostilo</span>
+                        </div>
+                        <p class="mt-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima ducimus expedita eaque cum voluptas mollitia libero, consectetur esse unde sunt pariatur autem est aspernatur saepe. Veritatis ad nemo aspernatur corporis.</p>
+                        <div class="mt-2">
+                            <a href="#" class="more-info-button">
+                                <span>learn More</span>
+                                <svg>
+                                    <use xlink:href="#arrow-right"></use>
+                                </Svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/5 p-4 h-[280px] md:h-[300px] lg:h-[300px] xl:h-[420px]">
+                        <img src="./images/service-item.png" alt="" class="w-full h-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-item individual-item">
+            <div class="container p-2 md:px-10">
+                <div class="flex  flex-wrap">
+                    <div class="w-full md:w-2/5 p-4 h-[280px] md:h-[300px] lg:h-[300px] xl:h-[420px]">
+                        <img src="./images/blog1.webp" alt="" class="w-full h-full">
+                    </div>
+                    <div class="w-full md:w-3/5 p-4 flex justify-center flex-col">
+                        <div class="item-highlight">
+                            <span>crafting , sucsess digital</span><br>
+                            <span>Boostilo</span>
+                        </div>
+                        <p class="mt-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima ducimus expedita eaque cum voluptas mollitia libero, consectetur esse unde sunt pariatur autem est aspernatur saepe. Veritatis ad nemo aspernatur corporis.</p>
+                        <div class="mt-2">
+                            <a href="#" class="more-info-button">
+                                <span>learn More</span>
+                                <svg>
+                                    <use xlink:href="#arrow-right"></use>
+                                </Svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+
+<!-- overlay for menu bobile -->
+<div class="overlay"></div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".btn-category");
+    const gridItems = document.querySelectorAll(".grid-item");
+    const elem = document.querySelector('.grid-container');
+    const msnry = new Masonry(elem, {
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-item',
+        percentPosition: true,
+        gutter: 2,
+    });
+
+    function hideAllGridItems() {
+        gridItems.forEach((item) => {
+            item.style.display = "none";
+        });
+    }
+
+    function activeGridItemGallery(item) {
+        item.style.display = "block";
+    }
+
+    function initialFirstCategoryGallery() {
+        hideAllGridItems();
+        const firstButton = buttons[0];
+        if (firstButton) {
+            firstButton.click();
+        }
+        imagesLoaded(elem, function () {
+            msnry.layout();
+        });
+    }
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", function () {
+            const categoryId = this.getAttribute("data-category");
+            hideAllGridItems();
+            gridItems.forEach((item) => {
+                if (item.getAttribute("data-category") === categoryId) {
+                    activeGridItemGallery(item);
+                }
+            });
+            imagesLoaded(elem, function () {
+                msnry.layout();
+            });
+        });
+    });
+
+    // مخفی کردن تمامی عکس‌ها بعد از بارگذاری صفحه
+    hideAllGridItems();
+    // نمایش عکس‌های دسته‌بندی اول
+    initialFirstCategoryGallery();
+    imagesLoaded(elem, function () {
+        msnry.layout();
+    });
+});
+</script>
+
+{% endblock %}

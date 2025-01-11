@@ -233,28 +233,62 @@
 
 <!-- overlay for menu bobile -->
 <div class="overlay"></div>
- <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const buttons = document.querySelectorAll(".btn-category");
-        const gridItems = document.querySelectorAll(".grid-item");
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".btn-category");
+    const gridItems = document.querySelectorAll(".grid-item");
+    const elem = document.querySelector('.grid-container');
+    const msnry = new Masonry(elem, {
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-item',
+        percentPosition: true,
+        gutter: 2,
+    });
 
-        buttons.forEach((button) => {
-            button.addEventListener("click", function () {
-                const categoryId = this.getAttribute("data-category");
+    function hideAllGridItems() {
+        gridItems.forEach((item) => {
+            item.style.display = "none";
+        });
+    }
 
-                // مخفی کردن تمامی آیتم‌ها
-                gridItems.forEach((item) => {
-                    item.style.display = "none";
-                });
+    function activeGridItemGallery(item) {
+        item.style.display = "block";
+    }
 
-                // نمایش فقط آیتم‌های مرتبط با دسته‌بندی
-                gridItems.forEach((item) => {
-                    if (item.getAttribute("data-category") === categoryId) {
-                        item.style.display = "block";
+    function initialFirstCategoryGallery() {
+        hideAllGridItems();
+        const firstButton = buttons[0];
+        if (firstButton) {
+            firstButton.click();
+        }
+        imagesLoaded(elem, function () {
+            msnry.layout();
+        });
+    }
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", function () {
+            const categoryId = this.getAttribute("data-category");
+            hideAllGridItems();
+            gridItems.forEach((item) => {
+                if (item.getAttribute("data-category") === categoryId) {
+                    activeGridItemGallery(item);
                 }
+            });
+            imagesLoaded(elem, function () {
+                msnry.layout();
             });
         });
     });
+
+    // مخفی کردن تمامی عکس‌ها بعد از بارگذاری صفحه
+    hideAllGridItems();
+    // نمایش عکس‌های دسته‌بندی اول
+    initialFirstCategoryGallery();
+    imagesLoaded(elem, function () {
+        msnry.layout();
+    });
 });
- </script>
+</script>
+
 {% endblock %}

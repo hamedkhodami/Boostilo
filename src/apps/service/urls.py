@@ -9,5 +9,6 @@ urlpatterns = [
     path('seo/', views.ServiceSeoPageView.as_view(), name='seo'),
     path('web/', views.ServiceWebPageView.as_view(), name='web'),
     path('marketing/', views.ServiceDigitalMarketingPageView.as_view(), name='marketing'),
+    path('content/', views.ServiceContentCreationPageView.as_view(), name='content'),
 
 ]

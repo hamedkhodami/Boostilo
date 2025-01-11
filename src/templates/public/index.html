@@ -20,7 +20,7 @@
                 </button>
             </div>
             <div class="p-4">
-                <video class="w-full h-auto rounded-lg shadow-lg" controls>
+                <video class="" controls>
                     <source src="{{ review.video.url }}" type="video/mp4">
                     not supported
                 </video>
@@ -127,7 +127,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 p-5">
                 {% for key, portfolio in latest_portfolios.items %}
                 <div class="relative h-[250px] md:h-[300px] lg:h-[350px] xl:h-[420px]">
-                    <div class="rounded-3xl post-img-wrapp h-[50%]">
+                    <div class="rounded-3xl post-img-wrapp h-[90%]">
                        <img src="{{ portfolio.image.url }}" alt="{{ portfolio.name }}" class="rounded-3xl w-full h-full ">
                     </div>
                     <div class="text-gray-300 py-3">
@@ -326,6 +326,7 @@
         </div>
     </section>
     </main>
+
 
 <div class="overlay"></div>
 <!-- overlay for menu bobile -->

@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django_q',
     'ckeditor',
     'ckeditor_uploader',
-    'smart_selects'
+    'smart_selects',
+
 ]
 
 MIDDLEWARE = [
