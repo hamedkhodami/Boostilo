@@ -1464,10 +1464,6 @@ body{
   height: 250px;
 }
 
-.h-\[280px\] {
-  height: 280px;
-}
-
 .h-\[2px\] {
   height: 2px;
 }
@@ -2569,10 +2565,6 @@ body{
   .lg\:mx-96 {
     margin-left: 24rem;
     margin-right: 24rem;
-  }
-
-  .lg\:h-\[300px\] {
-    height: 300px;
   }
 
   .lg\:h-\[320px\] {

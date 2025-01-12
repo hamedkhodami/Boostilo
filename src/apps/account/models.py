@@ -2,8 +2,8 @@ from django.db import models
 from apps.core.models import BaseModel
 from django.contrib.auth.models import User
 from .enums import UserRole
-from .managers import ActiveUserManager
-# Create your models here.
+
+from django.contrib.auth.models import AbstractUser
 
 class ProfileTeam(BaseModel):
     user = models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile')

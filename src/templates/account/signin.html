@@ -39,9 +39,11 @@
                 If you dont have an acount registere,
                 <br>
                 you can 
-                <a href="YOUR_LOGIN_URL" class="text-purple-800 text-bold hover:underline">register here !</a>
+                <a href="{% url 'account:register' %}" class="text-purple-800 text-bold hover:underline">register here !</a>
             </p>
-            <form action="#" onsubmit="return validateLoginForm()" >
+            <form method="POST" action="{% url 'account:login' %}" onsubmit="return validateLoginForm()" >
+              {% csrf_token %}
+              {{ form.non_field_errors }}
               <div class="mb-4">
                 <label class="block text-sm text-gray-500 font-bold mb-2" for="email">Email</label>
                 <div id="email-error"></div> <!-- محل نمایش ارور ایمیل -->
@@ -49,7 +51,7 @@
                   <svg class="w-6 h-6  p-0.5 text-zinc-900">
                     <use xlink:href="#envelope"></use>
                   </svg>
-                  <input class="p-4 w-full py-3 text-sm placeholder-zinc-900 focus:outline-none " id="email" type="text" placeholder="Enter your Email adress">
+                  {{ forms.email }}
                 </div>
               </div>
     
@@ -60,7 +62,7 @@
                   <svg class="w-6 h-6 p-0.5 text-zinc-900">
                     <use xlink:href="#lock-closed"></use>
                   </svg>
-                  <input class="p-4 w-full py-3 text-sm placeholder-zinc-900 focus:outline-none" id="password" type="password" placeholder="Enter your Password">
+                  {{ forms.password }}
                   <svg class="w-6 h-6 p-0.5 text-zinc-900 cursor-pointer" id="togglePassword">
                     <use xlink:href="#eye"></use>
                   </svg>

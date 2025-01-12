@@ -4,10 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    <style>
+        .Portfolio-category-button button.active{
+            background-color: rgb(50, 12, 86);
+            color: white;
+        }
+        .Portfolio-category-img .sample{
+         animation: scatterUp 1s ease-in-out forwards;
+     }
+    </style>
+    <style>
+  .error {
+    border-color: red !important;
+    font-size: 15px;
+  }
 
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+  }
+</style>
     <link rel="stylesheet" href="{% static 'public/styles/swiper-bundle.min.css' %}">
     <link rel="stylesheet" href="{% static 'public/styles/app.css' %}">
-    <link rel="stylesheet" href="{% static 'public/styles/style.css' %}">
 
 </head>
 

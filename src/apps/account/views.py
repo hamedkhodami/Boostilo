@@ -1,29 +1,43 @@
-from django.shortcuts import render
-from django.views.generic import ListView
-from .models import ProfileTeam
-
-# Create your views here.
+from django.shortcuts import render, redirect
+from .forms import LoginUser, RegisterUser
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User, Group
 
 def accountest(request):
-    return render(request,"account/signup.html")
+    return render(request, 'account/signup.html')
 
-class TeamListView(ListView):
-    model = ProfileTeam
-    template_name = ''
-    context_object_name = 'team_members'
+def loginUserInWeb(request):
+    if request.method == "POST":
+        form = LoginUser(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data["email"]
+            password = form.cleaned_data["password"]
+            user = authenticate(request, email=email, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('Home')
+            else:
+                return render(request, 'account/signin.html', {'form': form, 'error': 'Invalid email or password'})
+    else:
+        form = LoginUser()
+    return render(request, 'account/signin.html', {'form': form})
 
-    def get_queryset(self):
-        return ProfileTeam.objects.all()
-
-
-class TeamPhotoListView(ListView):
-    model = ProfileTeam
-    template_name = ''
-    context_object_name = 'photo_members'
-
-    def get_queryset(self):
-        return ProfileTeam.objects.only("photo").filter(photo__isnull=False)[:6]
-
-
-
-
+def registerAction(request):
+    if request.method == "POST":
+        form = RegisterUser(request.POST)
+        if form.is_valid():
+            if User.objects.filter(email=form.cleaned_data["email"]).exists():
+                return render(request, 'account/signup.html', {'form': form, 'error': 'Email already exists'})
+            else:
+                user = User.objects.create_user(username=form.cleaned_data["username"], email=form.cleaned_data["email"], password=form.cleaned_data["password"])
+                user.is_staff = False
+                user.is_superuser = False
+                user.save()
+                customer_group, created = Group.objects.get_or_create(name="Customers")
+                customer_group.user_set.add(user)
+                return redirect('login')
+        else:
+            return render(request, 'account/signup.html', {'form': form})
+    else:
+        form = RegisterUser()
+    return render(request, 'account/signup.html', {'form': form})

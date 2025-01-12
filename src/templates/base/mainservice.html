@@ -209,9 +209,11 @@
                                         <span>about<br>
                                          {{ content_create.name }}</span>
                                         <div class="custom-button-info custom-button-white">
-                                            <svg class="custom-svg">
-                                                <use xlink:href="#arrow-up-right"></use>
-                                            </Svg>
+                                            <a href="{% url 'service:content' %}">
+                                                <svg class="custom-svg">
+                                                    <use xlink:href="#arrow-up-right"></use>
+                                                </Svg>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

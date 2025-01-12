@@ -35,8 +35,6 @@ class CategoryModel(BaseModel):
         verbose_name_plural = "Categories"
 
 
-
-
 class PortfolioModel(BaseModel):
     category = ChainedForeignKey(CategoryModel,chained_field='service',chained_model_field='service',
                                  show_all=False,auto_choose=False,sort=True)
