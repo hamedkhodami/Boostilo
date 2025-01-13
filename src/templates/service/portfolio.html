@@ -3,15 +3,7 @@
 
 
 {% block title %} Portfolio Boostilo {% endblock %}
-<style>
-        .Portfolio-category-button button.active{
-            background-color: rgb(50, 12, 86);
-            color: white;
-        }
-        .Portfolio-category-img .sample{
-         animation: scatterUp 1s ease-in-out forwards;
-     }
-    </style>
+
 {% block body %}
 
    {% include 'base/headers.html' %}
@@ -19,31 +11,29 @@
     <section class="portfolioboostilo mt-10">
         <div class="container flex justify-center flex-col items-center">
             <div class="Portfolio-category-button">
-                {% for srv in services %}
-                <a href="{% url 'service' srv.id %}"
-                   class="btn-portfolio text-gray-600 px-2.5 sm:px-4 md:px-4 py-2 sm:py-1.5 md:py-2 text-xs sm:text-sm md:text-base rounded-full border border-gray-700 {% if srv.id == service.id %}active{% endif %}">
-                   {{ srv.name }}
-                </a>
+                {% for service in services %}
+                <button class="btn-portfolio text-gray-600 px-2.5 sm:px-4 md:px-4 py-2 sm:py-1.5 md:py-2 text-xs sm:text-sm md:text-base rounded-full border border-gray-700 active" data-category="{{ service.id }}">
+                    {{ service.name }}
+                </button>
                 {% endfor %}
              </div>
             <div class="Portfolio-category-img mt-5">
                 <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 p-5">
                         {% for product in products %}
-                        <div class="relative sample hidden h-[250px] md:h-[300px] lg:h-[320px]" data-category="category1">
+                        <div class="relative sample hidden h-[250px] md:h-[300px] lg:h-[320px]" data-category="{{ product.service.id }}">
                             <div class="rounded-3xl post-img-wrapp h-full ">
                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="rounded-3xl w-full h-full ">
                             </div>
                             <div class="text-white  py-3  text-xs md:text-base absolute top-0 left-2 z-20">
-                               <span>{{ product.created_at }}</span>
+                               <span>{{ product.created_at.year }}</span><br>
                                <span>{{ product.name }}</span>
                             </div>
                         </div>
-                        {% empty %}
-                        <p class="text-grey-500">No products found for this service.</p>
                         {% endfor %}
                  </div>
             </div>
          </div>
     </section>
+
 
 {% endblock %}

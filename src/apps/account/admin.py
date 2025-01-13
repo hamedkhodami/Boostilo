@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ProfileTeam,ClientModel
+from .models import ProfileTeam
 
 # Register your models here.
 
@@ -16,15 +16,4 @@ class ProfileTeamAdmin(admin.ModelAdmin):
         ('Timestamps', {'fields': ('created_at','updated_at')}),
     )
 
-@admin.register(ClientModel)
-class ClientModelAdmin(admin.ModelAdmin):
-    list_display = ('id','username','email','created_at')
-    list_display_links = ('id','username')
-    search_fields = ('username','email')
-    list_filter = ('created_at',)
-    readonly_fields = ('created_at',)
-    list_per_page = 20
-    fieldsets = (
-        ('Information', {'fields': ('username','password','email')}),
-        ('Registration Date', {'fields': ('created_at','updated_at')}),
-    )
+

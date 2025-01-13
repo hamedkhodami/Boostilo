@@ -1,27 +1,16 @@
-from django.shortcuts import render
 from apps.service.models import ServiceModel,PortfolioModel,CategoryModel
-from django.views.generic.list import ListView
-from django.shortcuts import get_object_or_404
 from django.views.generic.base import TemplateView
 
-def ServiceView(request):
-    return render(request,'public/portfolio.html')
-
-class ServiceProductListVeiw(ListView):
-    model = PortfolioModel
-    template_name = 'public/portfolio.html'
-    context_object_name = 'products'
-
-    def get_queryset(self):
-        service_id = self.kwargs.get('service_id')
-        return PortfolioModel.objects.filter(service_id=service_id)
+class PortfolioView(TemplateView):
+    template_name = "service/portfolio.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        service_id = self.kwargs.get('service_id')
-        context['service'] = get_object_or_404(ServiceModel, id=service_id)
         context['services'] = ServiceModel.objects.all()
+        context['products'] = PortfolioModel.objects.all()
+
         return context
+
 
 class ServiceApplicationPageView(TemplateView):
     template_name = 'service/application.html'

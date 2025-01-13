@@ -70,10 +70,10 @@
     <nav>
         <ul class="flex gap-x-9 text-l text-slate-600">
             <li class="text-violet-900">
-                <a href="#">Home</a>
+                <a href="{% url 'public:home' %}">Home</a>
             </li>
             <li>
-                <a href="#">services</a>
+                <a href="{% url 'service:service' %}">services</a>
             </li>
             <li>
                 <a href="#">about</a>
@@ -88,7 +88,7 @@
     </nav>
 
     <div>
-        <a href="#" class="flex justify-center items-center">
+        <a href="{% url 'account:login' %}" class="flex justify-center items-center">
             <svg class="w-6 h-6 border-2 border-stone-700 rounded-xl p-0.5 ">
                 <use xlink:href="#user"></use>
             </svg>

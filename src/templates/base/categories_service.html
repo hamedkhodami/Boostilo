@@ -1,0 +1,40 @@
+
+
+<div class="categories">
+           {% for category in categories %}
+
+           {% if forloop.counter|divisibleby:2 %}<section class="service-item">
+            <div class="container p-2 md:px-10">
+                <div class="flex flex-col-reverse md:flex-row flex-wrap items-center justify-center">
+                    <div class="w-full md:w-3/5 p-4 flex justify-center flex-col">
+                        <div class="item-highlight">
+                            <span>{{ category.name }}</span><br>
+                            <span>{{ category.service.name }}</span>
+                        </div>
+                        <p class="mt-5">{{ category.description }}</p>
+                    </div>
+                    <div class="w-full md:w-2/5 p-4">
+                        <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                    </div>
+                </div>
+            </div>
+           </section>{% else %} <section class="service-item individual-item">
+            <div class="container p-2 md:px-10">
+                <div class="flex  flex-wrap">
+                    <div class="w-full md:w-2/5 p-4">
+                        <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                    </div>
+                    <div class="w-full md:w-3/5 p-4 flex justify-center flex-col">
+                        <div class="item-highlight">
+                            <span>{{ category.name }}</span><br>
+                            <span>{{ category.service.name }}</span>
+                        </div>
+                        <p class="mt-5">{{ category.description }}</p>
+                    </div>
+                </div>
+            </div>
+           </section>{% endif %}
+           {% endfor %}
+
+
+       </div>

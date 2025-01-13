@@ -19,11 +19,4 @@ class ProfileTeam(BaseModel):
         verbose_name = "Profile"
         verbose_name_plural = "Profiles"
 
-class ClientModel(BaseModel):
-    username = models.CharField(max_length=150,verbose_name='Username')
-    password = models.CharField(max_length=150,verbose_name='Password')
-    email = models.EmailField(unique=True,verbose_name='Email Address')
 
-    class Meta:
-        verbose_name = 'Client'
-        verbose_name_plural = 'Clients'

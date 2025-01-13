@@ -39,9 +39,11 @@
                 If you have already registered,
                 <br>
                 you can 
-                <a href="YOUR_LOGIN_URL" class="text-purple-800 text-bold hover:underline">log in here !</a>
+                <a href="{% url 'account:login' %}" class="text-purple-800 text-bold hover:underline">log in here !</a>
             </p>
-            <form action="#" onsubmit="return validateForm()" >
+            <form method="POST" action="{% url 'account:register' %}" onsubmit="return validateForm()" >
+              {% csrf_token %}
+              {{ form.non_field_errors }}
               <div class="mb-4">
                 <label class="block text-sm text-gray-500 font-bold mb-2" for="email">Email</label>
                 <div id="email-error"></div> <!-- محل نمایش ارور ایمیل -->
@@ -49,7 +51,7 @@
                   <svg class="w-6 h-6  p-0.5 text-zinc-900 ">
                     <use xlink:href="#envelope"></use>
                   </svg>
-                  <input class="p-2 w-full py-3 text-sm placeholder-zinc-900  focus:outline-none " id="email" type="text" placeholder="Enter your Email adress">
+                  {{ form.email }}
                 </div>
               </div>
     
@@ -60,7 +62,7 @@
                   <svg class="w-6 h-6  p-0.5 text-zinc-800">
                     <use xlink:href="#user"></use>
                   </svg>
-                  <input class="p-2 w-full py-3 text-sm placeholder-zinc-900  focus:outline-none " id="username" type="text" placeholder="Enter your username">
+                  {{ form.username }}
                 </div>
               </div>
     
@@ -71,7 +73,7 @@
                   <svg class="w-6 h-6 p-0.5 text-zinc-800">
                     <use xlink:href="#lock-closed"></use>
                   </svg>
-                  <input class="p-2 w-full py-3 text-sm placeholder-zinc-800 focus:outline-none" id="password" type="password" placeholder="Enter your Password">
+                  {{ form.password }}
                   <svg class="w-6 h-6 p-0.5 text-zinc-800 cursor-pointer" id="togglePassword">
                     <use xlink:href="#eye"></use>
                   </svg>
@@ -89,7 +91,7 @@
                   <svg class="w-6 h-6 p-0.5 text-zinc-800">
                     <use xlink:href="#lock-closed"></use>
                   </svg>
-                  <input class="p-2 w-full py-3  text-sm placeholder-zinc-800 focus:outline-none" id="confirm-password" type="password" placeholder="Enter your Confirm password">
+                  {{ form.confirm_password }}
                   <svg class="w-6 h-6 p-0.5 text-zinc-800 cursor-pointer" id="toggleConfirmPassword">
                     <use xlink:href="#eye"></use>
                   </svg>

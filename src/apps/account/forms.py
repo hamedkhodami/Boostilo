@@ -17,7 +17,7 @@ class RegisterUser(forms.Form):
 
     email=forms.CharField(required=True,label="Email",widget=forms.EmailInput)
     username=forms.EmailField(required=True,label="Username")
-    Password=forms.CharField(required=True,label="password",widget=forms.PasswordInput)
+    password=forms.CharField(required=True,label="password",widget=forms.PasswordInput)
     confirm_password=forms.CharField(required=True,label="Confirm Password",widget=forms.PasswordInput)
 
     def clean(self):
