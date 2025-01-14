@@ -138,39 +138,7 @@
         
         {% include 'base/mainservice.html' %}
 
-        <section class="Consultation-with-us bg-backcontact bg-no-repeat bg-cover bg-left p-8">
-            <div class="mx-5 lg:mx-96">
-                <div class="flex flex-wrap justify-center items-center ">
-                    <div class="w-full md:w-2/4">
-                        <div class="text-white">
-                        <h3 class="text-2xl">contact us</h3>
-                        <p class="font-thin text-base">for get price or a free meeting</p>
-                        </div>
-                        <div class="flex">
-                            <img src="{% static 'public/images/svg/آیکون تماس.svg' %}" alt="" class="mb-10">
-                            <img src="{% static 'public/images/svg/بردر.svg' %}" alt="">
-                        </div>
-                    </div>
-                    <div class="w-full md:w-2/4">
-                        <form class="space-y-4">
-                            <div>
-                              <input type="text" id="input1" name="input1" placeholder="Full name... 1" class="mt-1 block w-full px-3 py-3 focus:outline-none rounded-full bg-[#9482ad]  sm:text-sm">
-                            </div>
-                          
-                            <div>
-                              <input type="text" id="input2" name="input2" placeholder="Email..." class="mt-1 block w-full px-3 py-3 focus:outline-none rounded-full bg-[#9482ad] sm:text-sm text-black">
-                            </div>
-                          
-                            <div>
-                              <button type="submit" class="w-full inline-flex items-center px-4 py-3 rounded-full  bg-violet-700 focus:outline-none">
-                                Submit
-                              </button>
-                            </div>
-                          </form>
-                    </div>
-                </div>
-            </div>
-        </section>
+        {% include 'base/contactus.html' %}
 
         {% include 'base/categories_service.html' %}
 

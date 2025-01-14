@@ -4,15 +4,15 @@ from .models import ContactModel,ArticleModel,AboutModel,ReviewModel,NewsModel
 
 @admin.register(ContactModel)
 class ContactModelAdmin(admin.ModelAdmin):
-    list_display = ('id','fullname','job_title','email','is_read','created_at')
+    list_display = ('id','fullname','email','is_read','created_at')
     list_display_links = ('id','fullname')
     search_fields = ('fullname','email')
     list_filter = ('is_read','created_at')
     readonly_fields = ('created_at',)
     list_per_page = 20
     fieldsets = (
-        ('Information', {'fields': ('fullname','job_title','email','message','is_read')}),
-        ('Timestamps', {'fields': ('created_at',)}),
+        ('Information', {'fields': ('fullname','email','message','is_read')}),
+        ('Timestamps', {'fields': ('created_at','updated_at')}),
     )
 
 

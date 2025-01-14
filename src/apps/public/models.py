@@ -15,7 +15,6 @@ class NewsModel(BaseModel):
 
 class ContactModel(BaseModel):
     fullname = models.CharField(max_length=150, verbose_name='Full Name')
-    job_title = models.CharField(max_length=150, verbose_name='Job Title')
     email = models.EmailField(unique=True, verbose_name='Email Address')
     is_read = models.BooleanField(default=False, verbose_name='Is_Read')
 
@@ -26,7 +25,7 @@ class ContactModel(BaseModel):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         # senf notif
-        send_notif_to_admins(self.fullname, self.job_title, self.email)
+        send_notif_to_admins(self.fullname, self.email)
 
 
 class ArticleModel(BaseModel):

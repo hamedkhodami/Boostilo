@@ -42,3 +42,4 @@ def registerAction(request):
     else:
         form = RegisterUser()
     return render(request, 'account/signup.html', {'form': form})
+

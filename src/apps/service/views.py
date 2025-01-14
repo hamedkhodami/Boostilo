@@ -11,113 +11,43 @@ class PortfolioView(TemplateView):
 
         return context
 
+class BaseServicePageView(TemplateView):
+    template_name = ''
+    service_name = ''
 
-class ServiceApplicationPageView(TemplateView):
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['seo'] = ServiceModel.objects.filter(name__iexact='SEO').first()
+        context['digital_marketing'] = ServiceModel.objects.filter(name__iexact='Digital Marketing').first()
+        context['web_dev'] = ServiceModel.objects.filter(name__iexact='Web Development').first()
+        context['social_media'] = ServiceModel.objects.filter(name__iexact='Social Media Marketing').first()
+        context['content_create'] = ServiceModel.objects.filter(name__iexact='Content Creation').first()
+
+        context['service'] = ServiceModel.objects.filter(name__iexact=self.service_name).first()
+        context['products'] = PortfolioModel.objects.filter(service__name__iexact=self.service_name)
+
+        categories = CategoryModel.objects.filter(service__name__iexact=self.service_name)
+        context['categories'] = categories
+
+        return context
+
+class ServiceApplicationPageView(BaseServicePageView):
     template_name = 'service/application.html'
+    service_name = 'Social Media Marketing'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        context['seo'] = ServiceModel.objects.filter(name__iexact='SEO').first()
-        context['digital_marketing'] = ServiceModel.objects.filter(name__iexact='Digital Marketing').first()
-        context['web_dev'] = ServiceModel.objects.filter(name__iexact='Web Development').first()
-        context['social_media'] = ServiceModel.objects.filter(name__iexact='Social Media Marketing').first()
-        context['content_create'] = ServiceModel.objects.filter(name__iexact='Content Creation').first()
-
-        context['service'] = ServiceModel.objects.filter(name__iexact='Social Media Marketing').first()
-        context['products'] = PortfolioModel.objects.filter(service__name__iexact='Social Media Marketing')
-
-        categories = CategoryModel.objects.filter(service__name__iexact='Social Media Marketing')
-        context['categories'] = categories
-        context['even_categories'] = [category for category in categories if category.id % 2 == 0]
-        context['odd_categories'] = [category for category in categories if category.id % 2 == 1]
-
-        return context
-
-class ServiceSeoPageView(TemplateView):
+class ServiceSeoPageView(BaseServicePageView):
     template_name = 'service/seo.html'
+    service_name = 'SEO'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        context['seo'] = ServiceModel.objects.filter(name__iexact='SEO').first()
-        context['digital_marketing'] = ServiceModel.objects.filter(name__iexact='Digital Marketing').first()
-        context['web_dev'] = ServiceModel.objects.filter(name__iexact='Web Development').first()
-        context['social_media'] = ServiceModel.objects.filter(name__iexact='Social Media Marketing').first()
-        context['content_create'] = ServiceModel.objects.filter(name__iexact='Content Creation').first()
-
-        context['service'] = ServiceModel.objects.filter(name__iexact='SEO').first()
-        context['products'] = PortfolioModel.objects.filter(service__name__iexact='SEO')
-
-        categories = CategoryModel.objects.filter(service__name__iexact='SEO')
-        context['categories'] = categories
-        context['even_categories'] = [category for category in categories if category.id % 2 == 0]
-        context['odd_categories'] = [category for category in categories if category.id % 2 == 1]
-
-        return context
-
-class ServiceWebPageView(TemplateView):
+class ServiceWebPageView(BaseServicePageView):
     template_name = 'service/site.html'
+    service_name = 'Web Development'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        context['seo'] = ServiceModel.objects.filter(name__iexact='SEO').first()
-        context['digital_marketing'] = ServiceModel.objects.filter(name__iexact='Digital Marketing').first()
-        context['web_dev'] = ServiceModel.objects.filter(name__iexact='Web Development').first()
-        context['social_media'] = ServiceModel.objects.filter(name__iexact='Social Media Marketing').first()
-        context['content_create'] = ServiceModel.objects.filter(name__iexact='Content Creation').first()
-
-        context['service'] = ServiceModel.objects.filter(name__iexact='Web Development').first()
-        context['products'] = PortfolioModel.objects.filter(service__name__iexact='Web Development')
-
-        categories = CategoryModel.objects.filter(service__name__iexact='Web Development')
-        context['categories'] = categories
-        context['even_categories'] = [category for category in categories if category.id % 2 == 0]
-        context['odd_categories'] = [category for category in categories if category.id % 2 == 1]
-
-        return context
-
-class ServiceDigitalMarketingPageView(TemplateView):
+class ServiceDigitalMarketingPageView(BaseServicePageView):
     template_name = 'service/marketing.html'
+    service_name = 'Digital Marketing'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        context['seo'] = ServiceModel.objects.filter(name__iexact='SEO').first()
-        context['digital_marketing'] = ServiceModel.objects.filter(name__iexact='Digital Marketing').first()
-        context['web_dev'] = ServiceModel.objects.filter(name__iexact='Web Development').first()
-        context['social_media'] = ServiceModel.objects.filter(name__iexact='Social Media Marketing').first()
-        context['content_create'] = ServiceModel.objects.filter(name__iexact='Content Creation').first()
-
-        context['service'] = ServiceModel.objects.filter(name__iexact='Digital Marketing').first()
-        context['products'] = PortfolioModel.objects.filter(service__name__iexact='Digital Marketing')
-
-        categories = CategoryModel.objects.filter(service__name__iexact='Digital Marketing')
-        context['categories'] = categories
-        context['even_categories'] = [category for category in categories if category.id % 2 == 0]
-        context['odd_categories'] = [category for category in categories if category.id % 2 == 1]
-
-        return context
-
-class ServiceContentCreationPageView(TemplateView):
+class ServiceContentCreationPageView(BaseServicePageView):
     template_name = 'service/content-creation.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        context['seo'] = ServiceModel.objects.filter(name__iexact='SEO').first()
-        context['digital_marketing'] = ServiceModel.objects.filter(name__iexact='Digital Marketing').first()
-        context['web_dev'] = ServiceModel.objects.filter(name__iexact='Web Development').first()
-        context['social_media'] = ServiceModel.objects.filter(name__iexact='Social Media Marketing').first()
-        context['content_create'] = ServiceModel.objects.filter(name__iexact='Content Creation').first()
-
-        context['service'] = ServiceModel.objects.filter(name__iexact='Content Creation').first()
-        context['products'] = PortfolioModel.objects.filter(service__name__iexact='Content Creation')
-
-        categories = CategoryModel.objects.filter(service__name__iexact='Content Creation')
-        context['categories'] = categories
-        context['even_categories'] = [category for category in categories if category.id % 2 == 0]
-        context['odd_categories'] = [category for category in categories if category.id % 2 == 1]
-
-        return context
+    service_name = 'Content Creation'

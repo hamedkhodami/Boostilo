@@ -6,7 +6,7 @@ class LoginUser(forms.Form):
         for item in LoginUser.visible_fields(self):
             item.field.widget.attrs["class"] = "form-control"
 
-    email=forms.CharField(required=True,label="Email",widget=forms.EmailInput)
+    email=forms.CharField(required=True,label="Email",widget=forms.EmailField)
     password=forms.CharField(required=True,label="Password",widget=forms.PasswordInput)
 
 class RegisterUser(forms.Form):
@@ -15,8 +15,8 @@ class RegisterUser(forms.Form):
         for item in RegisterUser.visible_fields(self):
             item.field.widget.attrs["class"] = "form-control"
 
-    email=forms.CharField(required=True,label="Email",widget=forms.EmailInput)
-    username=forms.EmailField(required=True,label="Username")
+    email=forms.CharField(required=True,label="Email",widget=forms.EmailField)
+    username=forms.CharField(required=True,label="Username")
     password=forms.CharField(required=True,label="password",widget=forms.PasswordInput)
     confirm_password=forms.CharField(required=True,label="Confirm Password",widget=forms.PasswordInput)
 
