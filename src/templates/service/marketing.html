@@ -170,25 +170,7 @@
             </div>
         </section>
 
-        <section class="portfolio-category mt-5 px-2 md:px-10">
-    <div class="container">
-        <div class="category-buttons">
-            {% for category in categories %}
-            <button class="btn-category" data-category="{{ category.id }}">{{ category.name }}</button>
-            {% endfor %}
-        </div>
-
-    <div class="container mx-auto my-5">
-        <div class="grid-container" id="images">
-            {% for product in products %}
-            <div class="test grid-item" data-category="{{ product.category.id }}">
-                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-cover">
-            </div>
-            {% endfor %}
-        </div>
-      </div>
-    </div>
-   </section>
+        {% include 'base/products_in_category.html' %}
         
     </main>
 

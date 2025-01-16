@@ -11,23 +11,45 @@ btns.forEach((button) => {
 });
 
 
-// Masonry gallery
-document.addEventListener("DOMContentLoaded", function() {
-    var elem = document.querySelector('.grid-container');
+document.addEventListener('DOMContentLoaded', () => {
+    const categoryButtons = document.querySelectorAll('.btn-category');
 
-    var msnry = new Masonry(elem, {
-        itemSelector: '.grid-item',
-        columnWidth: '.grid-item',
-        percentPosition: true,
-        gutter: 2,
+    // انتخاب دکمه اول و فعال کردن آن
+    const firstButton = categoryButtons[0];
+    firstButton.classList.add('active');
+
+    // نمایش تصاویر مربوط به دسته اول
+    const firstCategoryId = firstButton.getAttribute('category-id');
+    displayImages(firstCategoryId);
+
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // حذف کلاس‌های فعال از تمامی دکمه‌ها
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const categoryId = button.getAttribute('category-id');
+            displayImages(categoryId);
+        });
     });
 
-    imagesLoaded(elem, function() {
-        msnry.layout();
-    });
+    function displayImages(categoryId) {
+        const gridItems = document.querySelectorAll(".grid-item");
+        const gridContainer = document.querySelector('.grid-container');
 
+        // ابتدا تمام تصاویر را مخفی می‌کنیم
+        gridItems.forEach(image => image.classList.add('hidden'));
 
+        // فقط تصاویری که مربوط به دسته انتخابی هستند را نشان می‌دهیم
+        gridItems.forEach((item) => {
+            if (item.getAttribute("category-img-id") === categoryId) {
+                item.classList.remove('hidden');
+            }
+        });
+    }
 });
+
+
 
 
 

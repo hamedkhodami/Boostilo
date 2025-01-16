@@ -121,89 +121,13 @@
             </div>
         </section>
 
-       <section class="portfolio-category mt-5 px-2 md:px-10">
-        <div class="container">
-            <div class="category-buttons">
-                {% for category in categories %}
-                <button class="btn-category" data-category="{{ category.id }}">{{ category.name }}</button>
-                {% endfor %}
-            </div>
-
-        <div class="container mx-auto my-5">
-            <div class="grid-container" id="images">
-                {% for product in products %}
-                <div class="test grid-item" data-category="{{ product.category.id }}">
-                    <img src="{{ product.get_image }}" alt="{{ product.name }}" class="img-cover">
-                </div>
-                {% endfor %}
-            </div>
-          </div>
-        </div>
-       </section>
-
        {% include 'base/categories_service.html' %}
+
+       {% include 'base/products_in_category.html' %}
 
    </main>
 
 
 <!-- overlay for menu bobile -->
 <div class="overlay"></div>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const buttons = document.querySelectorAll(".btn-category");
-    const gridItems = document.querySelectorAll(".grid-item");
-    const elem = document.querySelector('.grid-container');
-    const msnry = new Masonry(elem, {
-        itemSelector: '.grid-item',
-        columnWidth: '.grid-item',
-        percentPosition: true,
-        gutter: 2,
-    });
-
-    function hideAllGridItems() {
-        gridItems.forEach((item) => {
-            item.style.display = "none";
-        });
-    }
-
-    function activeGridItemGallery(item) {
-        item.style.display = "block";
-    }
-
-    function initialFirstCategoryGallery() {
-        hideAllGridItems();
-        const firstButton = buttons[0];
-        if (firstButton) {
-            firstButton.click();
-        }
-        imagesLoaded(elem, function () {
-            msnry.layout();
-        });
-    }
-
-    buttons.forEach((button) => {
-        button.addEventListener("click", function () {
-            const categoryId = this.getAttribute("data-category");
-            hideAllGridItems();
-            gridItems.forEach((item) => {
-                if (item.getAttribute("data-category") === categoryId) {
-                    activeGridItemGallery(item);
-                }
-            });
-            imagesLoaded(elem, function () {
-                msnry.layout();
-            });
-        });
-    });
-
-    // مخفی کردن تمامی عکس‌ها بعد از بارگذاری صفحه
-    hideAllGridItems();
-    // نمایش عکس‌های دسته‌بندی اول
-    initialFirstCategoryGallery();
-    imagesLoaded(elem, function () {
-        msnry.layout();
-    });
-});
-</script>
-
 {% endblock %}

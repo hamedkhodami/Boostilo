@@ -7,7 +7,7 @@ class PortfolioView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['services'] = ServiceModel.objects.all()
-        context['products'] = PortfolioModel.objects.all()
+        context['products'] = PortfolioModel.objects.all().order_by('-created_at')
 
         return context
 
@@ -25,10 +25,26 @@ class BaseServicePageView(TemplateView):
         context['content_create'] = ServiceModel.objects.filter(name__iexact='Content Creation').first()
 
         context['service'] = ServiceModel.objects.filter(name__iexact=self.service_name).first()
-        context['products'] = PortfolioModel.objects.filter(service__name__iexact=self.service_name)
 
         categories = CategoryModel.objects.filter(service__name__iexact=self.service_name)
         context['categories'] = categories
+
+        limit = self.request.GET.get('limit')
+        category_id = self.request.GET.get('category_id')
+
+        latest_products_by_category = []
+        for category in categories:
+            latest_products = PortfolioModel.objects.filter(
+                service__name__iexact=self.service_name,
+                category=category
+            ).order_by('-created_at')[:2]
+            if latest_products.exists():
+                latest_products_by_category.append({
+                    'category': category,
+                    'products': latest_products
+                })
+
+        context['latest_products_by_category']=latest_products_by_category
 
         return context
 
