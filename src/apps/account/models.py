@@ -3,7 +3,6 @@ from apps.core.models import BaseModel
 from django.contrib.auth.models import User
 from .enums import UserRole
 
-from django.contrib.auth.models import AbstractUser
 
 class ProfileTeam(BaseModel):
     user = models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile')

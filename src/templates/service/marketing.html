@@ -176,28 +176,4 @@
 
 <!-- overlay for menu bobile -->
 <div class="overlay"></div>
- <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const buttons = document.querySelectorAll(".btn-category");
-        const gridItems = document.querySelectorAll(".grid-item");
-
-        buttons.forEach((button) => {
-            button.addEventListener("click", function () {
-                const categoryId = this.getAttribute("data-category");
-
-                // مخفی کردن تمامی آیتم‌ها
-                gridItems.forEach((item) => {
-                    item.style.display = "none";
-                });
-
-                // نمایش فقط آیتم‌های مرتبط با دسته‌بندی
-                gridItems.forEach((item) => {
-                    if (item.getAttribute("data-category") === categoryId) {
-                        item.style.display = "block";
-                }
-            });
-        });
-    });
-});
- </script>
 {% endblock %}

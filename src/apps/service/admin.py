@@ -1,6 +1,5 @@
 from django.contrib import admin
 from .models import ServiceModel,CategoryModel,PortfolioModel
-# Register your models here.
 
 
 

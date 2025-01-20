@@ -2,7 +2,7 @@
 {% load static %}
 
 
-{% block title %} Social Media Marketing {% endblock %}
+{% block title %} Signin {% endblock %}
 
 {% block body %}
 
@@ -43,7 +43,6 @@
             </p>
             <form method="POST" action="{% url 'account:login' %}" onsubmit="return validateLoginForm()" >
               {% csrf_token %}
-              {{ form.non_field_errors }}
               <div class="mb-4">
                 <label class="block text-sm text-gray-500 font-bold mb-2" for="email">Email</label>
                 <div id="email-error"></div> <!-- محل نمایش ارور ایمیل -->
@@ -51,7 +50,7 @@
                   <svg class="w-6 h-6  p-0.5 text-zinc-900">
                     <use xlink:href="#envelope"></use>
                   </svg>
-                  {{ form.email }}
+                  <input class="p-4 w-full py-3 text-sm placeholder-zinc-900 focus:outline-none " id="email" name="email" type="email" placeholder="Enter your Email adress">
                 </div>
               </div>
     
@@ -62,7 +61,7 @@
                   <svg class="w-6 h-6 p-0.5 text-zinc-900">
                     <use xlink:href="#lock-closed"></use>
                   </svg>
-                  {{ form.password }}
+                  <input class="p-4 w-full py-3 text-sm placeholder-zinc-900 focus:outline-none " id="password" name="password" type="password" placeholder="Enter your Email adress">
                   <svg class="w-6 h-6 p-0.5 text-zinc-900 cursor-pointer" id="togglePassword">
                     <use xlink:href="#eye"></use>
                   </svg>

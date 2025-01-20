@@ -1,6 +1,5 @@
 from django.contrib import admin
 from .models import ContactModel,ArticleModel,AboutModel,ReviewModel,NewsModel
-# Register your models here.
 
 @admin.register(ContactModel)
 class ContactModelAdmin(admin.ModelAdmin):
@@ -11,8 +10,8 @@ class ContactModelAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at',)
     list_per_page = 20
     fieldsets = (
-        ('Information', {'fields': ('fullname','email','message','is_read')}),
-        ('Timestamps', {'fields': ('created_at','updated_at')}),
+        ('Information', {'fields': ('fullname','email','is_read')}),
+        ('Timestamps', {'fields': ('created_at',)}),
     )
 
 

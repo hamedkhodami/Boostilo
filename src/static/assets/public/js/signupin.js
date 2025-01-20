@@ -9,11 +9,11 @@ document.getElementById('togglePassword').addEventListener('click', function () 
   });
   
   document.getElementById('toggleConfirmPassword').addEventListener('click', function () {
-    togglePasswordVisibility('confirm-password', 'toggleConfirmPassword', 'toggleConfirmPasswordSlash');
+    togglePasswordVisibility('confirm_password', 'toggleConfirmPassword', 'toggleConfirmPasswordSlash');
   });
   
   document.getElementById('toggleConfirmPasswordSlash').addEventListener('click', function () {
-    togglePasswordVisibility('confirm-password', 'toggleConfirmPassword', 'toggleConfirmPasswordSlash');
+    togglePasswordVisibility('confirm_password', 'toggleConfirmPassword', 'toggleConfirmPasswordSlash');
   });
   
   function togglePasswordVisibility(passwordId, toggleIconId, toggleIconSlashId) {
@@ -35,7 +35,7 @@ document.getElementById('togglePassword').addEventListener('click', function () 
     var email = document.getElementById("email").value;
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    var confirmPassword = document.getElementById("confirm-password").value;
+    var confirmPassword = document.getElementById("confirm_password").value;
 
     var errorMessages = document.querySelectorAll('.error-message');
     var inputFields = document.querySelectorAll('input');
@@ -69,7 +69,7 @@ document.getElementById('togglePassword').addEventListener('click', function () 
 
     // Check password compatibility and password confirmation
     if (password !== confirmPassword) {
-      showError("confirm-password-error", "The password and confirmation password must be the same");
+      showError("confirm_password-error", "The password and confirmation password must be the same");
       isValid = false;
     }
 
@@ -143,4 +143,6 @@ document.getElementById('togglePassword').addEventListener('click', function () 
     errorContainer.innerHTML = ''; // پاک کردن ارورهای قبلی
     errorContainer.appendChild(errorElement);
   }
-  
+  function getCSRFToken() {
+    return document.querySelector('[name=csrfmiddlewaretoken]').value;
+}

@@ -69,20 +69,20 @@
     </div>
     <nav>
         <ul class="flex gap-x-9 text-l text-slate-600">
-            <li class="text-violet-900">
+            <li class="{% if request.resolver_match.url_name == 'home' %}text-violet-900{% endif %}">
                 <a href="{% url 'public:home' %}">Home</a>
             </li>
-            <li>
-                <a href="{% url 'service:service' %}">services</a>
+            <li class="{% if request.resolver_match.url_name == 'service' %}text-violet-900{% endif %}">
+                <a href="{% url 'service:service' %}">Services</a>
             </li>
-            <li>
-                <a href="#">about</a>
+            <li class="{% if request.resolver_match.url_name == 'about' %}text-violet-900{% endif %}">
+                <a href="#">About</a>
             </li>
-            <li>
-                <a href="#">team</a>
+            <li class="{% if request.resolver_match.url_name == 'team' %}text-violet-900{% endif %}">
+                <a href="#">Team</a>
             </li>
-            <li>
-                <a href="#">blog</a>
+            <li class="{% if request.resolver_match.url_name == 'blog' %}text-violet-900{% endif %}">
+                <a href="{% url 'public:blog' %}">Blog</a>
             </li>
         </ul>
     </nav>
@@ -92,10 +92,10 @@
             <svg class="w-6 h-6 border-2 border-stone-700 rounded-xl p-0.5 ">
                 <use xlink:href="#user"></use>
             </svg>
-          <span class="bg-zinc-950 text-zinc-50 rounded-2xl text-sm px-2.5 py-1.5">sign up / Login</span>
+            <span class="bg-zinc-950 text-zinc-50 rounded-2xl text-sm px-2.5 py-1.5">Sign up / Login</span>
         </a>
     </div>
-   </header>
+</header>
    <!--  header desktop -->
    <!-- header mobile -->
    <div class=" flex md:hidden justify-between items-center bg-white px-4 h-16">
@@ -125,8 +125,8 @@
         </div>
 
         <nav>
-            <ul class="text-white child: pl-4 space-y-6 text-sm">
-                <li class="flex items-center bg-purple-600 text-white pr-0 mb-4 h-10 pl-1 rounded-md">
+            <ul class="text-white pl-4 space-y-6 text-sm">
+                <li class="flex items-center {% if request.resolver_match.url_name == 'home' %}bg-purple-600 text-white{% endif %} pr-0 mb-4 h-10 pl-1 rounded-md">
                     <a href="{% url 'public:home' %}" class="flex items-center gap-x-2">
                         <svg class="w-6 h-6">
                             <use xlink:href="#home"></use>
@@ -134,9 +134,9 @@
                         Home
                     </a>
                 </li>
-                <li>
-                    <div class="flex items-center justify-between">
-                        <a href="{% url 'service:service' %}" class="flex items-center gap-x-2">
+                <li class="flex items-center {% if request.resolver_match.url_name == 'service' %}bg-purple-600 text-white{% endif %} pr-0 mb-4 h-10 pl-1 rounded-md">
+                    <div class="flex items-center justify-between w-full">
+                        <a href="{% url 'service:service' %}" class="flex items-center gap-x-2 w-full">
                             <svg class="w-6 h-6">
                                 <use xlink:href="#service"></use>
                             </svg>
@@ -148,7 +148,7 @@
                             </svg>
                         </span>
                     </div>
-                    <div class="submenu ">
+                    <div class="submenu">
                         <a href="#">Special coffee</a>
                         <a href="#" class="submenu_item--active">First class coffee</a>
                         <a href="#">Special</a>
@@ -157,15 +157,15 @@
                         <a href="#">Special coffee</a>
                     </div>
                 </li>
-                <li>
+                <li class="flex items-center {% if request.resolver_match.url_name == 'about' %}bg-purple-600 text-white{% endif %} pr-0 mb-4 h-10 pl-1 rounded-md">
                     <a href="#" class="flex items-center gap-x-2">
                         <svg class="w-6 h-6">
                             <use xlink:href="#about"></use>
                         </svg>
-                        about
+                        About
                     </a>
                 </li>
-                <li>
+                <li class="flex items-center {% if request.resolver_match.url_name == 'team' %}bg-purple-600 text-white{% endif %} pr-0 mb-4 h-10 pl-1 rounded-md">
                     <a href="#" class="flex items-center gap-x-2">
                         <svg class="w-6 h-6">
                             <use xlink:href="#team"></use>
@@ -173,16 +173,15 @@
                         Team
                     </a>
                 </li>
-                <li>
-                    <a href="#" class="flex items-center gap-x-2">
+                <li class="flex items-center {% if request.resolver_match.url_name == 'blog' %}bg-purple-600 text-white{% endif %} pr-0 mb-4 h-10 pl-1 rounded-md">
+                    <a href="{% url 'public:blog' %}" class="flex items-center gap-x-2">
                         <svg class="w-6 h-6">
                             <use xlink:href="#blog"></use>
                         </svg>
                        Blog
                     </a>
                 </li>
-
-                <li>
+                <li class="flex items-center {% if request.resolver_match.url_name == 'contact' %}bg-purple-600 text-white{% endif %} pr-0 mb-4 h-10 pl-1 rounded-md">
                     <a href="#" class="flex items-center gap-x-2">
                         <svg class="w-6 h-6">
                             <use xlink:href="#contact"></use>

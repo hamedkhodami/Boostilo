@@ -65,11 +65,11 @@
    <!-- header desktop -->
    <header class="container h-24 hidden md:flex items-center justify-between  bg-black p-4">
     <div class="max-w-40">
-        <img src="./images/logo-navbar.png" alt="لوگو بوستیلو">
+        <img src="{% static 'public/images/logo.png' %}" alt="لوگو بوستیلو">
     </div>
     <nav>
         <ul class="flex gap-x-9 text-l text-white">
-            <li class="text-violet-900">
+            <li>
                 <a href="{% url 'public:home' %}">Home</a>
             </li>
             <li>
@@ -82,13 +82,13 @@
                 <a href="#">team</a>
             </li>
             <li>
-                <a href="#">blog</a>
+                <a href="{% url 'public:blog' %}">blog</a>
             </li>
         </ul>
     </nav>
 
     <div>
-        <a href="#" class="flex justify-center items-center">
+        <a href="{% url 'account:login' %}" class="flex justify-center items-center">
             <svg class="w-6 h-6 border-2 border-stone-200 rounded-xl p-0.5  text-white">
                 <use xlink:href="#user"></use>
             </svg>
@@ -126,7 +126,7 @@
 
         <nav>
             <ul class="text-white child: pl-4 space-y-6 text-sm">
-                <li class="flex items-center bg-purple-600 text-white pr-0 mb-4 h-10 pl-1 rounded-md">
+                <li>
                     <a href="{% url 'public:home' %}" class="flex items-center gap-x-2">
                         <svg class="w-6 h-6">
                             <use xlink:href="#home"></use>
@@ -174,7 +174,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center gap-x-2">
+                    <a href="{% url 'public:blog' %}" class="flex items-center gap-x-2">
                         <svg class="w-6 h-6">
                             <use xlink:href="#blog"></use>
                         </svg>

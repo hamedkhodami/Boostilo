@@ -12,7 +12,7 @@
         <div class="container flex justify-center flex-col items-center">
             <div class="Portfolio-category-button">
                 {% for service in services %}
-                <button class="btn-portfolio text-gray-600 px-2.5 sm:px-4 md:px-4 py-2 sm:py-1.5 md:py-2 text-xs sm:text-sm md:text-base rounded-full border border-gray-700 active" data-category="{{ service.id }}">
+                <button class="btn-portfolio text-gray-600 px-2.5 sm:px-4 md:px-4 py-2 sm:py-1.5 md:py-2 text-xs sm:text-sm md:text-base rounded-full border border-gray-700" data-category="{{ service.id }}">
                     {{ service.name }}
                 </button>
                 {% endfor %}

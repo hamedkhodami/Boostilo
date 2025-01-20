@@ -1,0 +1,13 @@
+{% load static %}
+
+<section class="article-detail">
+    <div class="container">
+        <div class="article-header">
+            <h1>{{ article.title }}</h1>
+            <span>{{ article.created_at|date:"d F, Y" }}</span>
+        </div>
+        <div class="article-content">
+            {{ article.content|safe }}
+        </div>
+    </div>
+</section>

@@ -1,7 +1,6 @@
 from django.db import models
 from smart_selects.db_fields import ChainedForeignKey
 from apps.core.models import BaseModel
-# Create your models here.
 
 class ServiceModel(BaseModel):
     name = models.CharField(max_length=150,verbose_name='Service')

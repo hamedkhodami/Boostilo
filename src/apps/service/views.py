@@ -1,5 +1,7 @@
 from apps.service.models import ServiceModel,PortfolioModel,CategoryModel
 from django.views.generic.base import TemplateView
+from django.shortcuts import render, redirect
+from apps.public.forms import ContactUsForms
 
 class PortfolioView(TemplateView):
     template_name = "service/portfolio.html"
@@ -29,15 +31,12 @@ class BaseServicePageView(TemplateView):
         categories = CategoryModel.objects.filter(service__name__iexact=self.service_name)
         context['categories'] = categories
 
-        limit = self.request.GET.get('limit')
-        category_id = self.request.GET.get('category_id')
-
         latest_products_by_category = []
         for category in categories:
             latest_products = PortfolioModel.objects.filter(
                 service__name__iexact=self.service_name,
                 category=category
-            ).order_by('-created_at')[:2]
+            ).order_by('-created_at')[:6]
             if latest_products.exists():
                 latest_products_by_category.append({
                     'category': category,
@@ -46,7 +45,14 @@ class BaseServicePageView(TemplateView):
 
         context['latest_products_by_category']=latest_products_by_category
 
+        context['form']=ContactUsForms
+
         return context
+
+
+class ServiceDigitalMarketingPageView(BaseServicePageView):
+    template_name = 'service/marketing.html'
+    service_name = 'Digital Marketing'
 
 class ServiceApplicationPageView(BaseServicePageView):
     template_name = 'service/application.html'
@@ -60,10 +66,22 @@ class ServiceWebPageView(BaseServicePageView):
     template_name = 'service/site.html'
     service_name = 'Web Development'
 
-class ServiceDigitalMarketingPageView(BaseServicePageView):
-    template_name = 'service/marketing.html'
-    service_name = 'Digital Marketing'
+
 
 class ServiceContentCreationPageView(BaseServicePageView):
     template_name = 'service/content-creation.html'
     service_name = 'Content Creation'
+
+class ServicePortfolioPageView(TemplateView):
+        template_name = 'service/portfolio-page.html'
+        service_name = ''
+
+        def get_context_data(self, **kwargs):
+            context = super().get_context_data(**kwargs)
+            service_name = self.kwargs['service_name']
+            service = ServiceModel.objects.filter(name__iexact=service_name).first()
+
+            if service:
+                context['service']: service
+                context['products'] = PortfolioModel.objects.filter(service=service).all()
+            return context

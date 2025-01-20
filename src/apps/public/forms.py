@@ -1,11 +1,17 @@
 from django import forms
+from .models import ContactModel
 
-
-class ContactUsForms(forms.Form):
-    def __init__(self,*args, **kwargs):
-        super(ContactUsForms,self).__init__(*args, **kwargs)
-        for item in ContactUsForms.visible_fields(self):
-            item.field.widget.attrs["class"] = "form-control"
-
-    fullname = forms.CharField(required=True,label='FullName',max_length=100,)
-    email = forms.CharField(required=True,label='Email Address',widget=forms.EmailField)
+class ContactUsForms(forms.ModelForm):
+    class Meta:
+        model = ContactModel
+        fields = ['fullname', 'email']
+        widgets = {
+            'fullname': forms.TextInput(attrs={
+                'class': 'mt-1 block w-full px-3 py-3 focus:outline-none rounded-full bg-[#9482ad] sm:text-sm',
+                'placeholder': 'Full name...'
+            }),
+            'email': forms.EmailInput(attrs={
+                'class': 'mt-1 block w-full px-3 py-3 focus:outline-none rounded-full bg-[#9482ad] sm:text-sm',
+                'placeholder': 'Email...'
+            }),
+        }

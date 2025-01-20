@@ -1,14 +1,40 @@
 from django.views.generic.list import ListView
 from django.views.generic.base import TemplateView
+from django.views.generic import DetailView
 from .models import NewsModel,ArticleModel,AboutModel,ReviewModel
-from apps.account.models import ProfileTeam
 from apps.service.models import ServiceModel,PortfolioModel
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .forms import ContactUsForms
 
+def contact_us_view(request):
+    if request.method == "POST":
+        form = ContactUsForms(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Your message has been sent successfully.")
+            return redirect('public:home')
+        else:
+            messages.error(request, "Please correct the errors below.")
+    else:
+        form = ContactUsForms()
 
-def Test(request):
-    return render(request,'public/test.html')
+    return render(request, 'contactus.html', {'form': form})
 
+class ArticleDetailView(DetailView):
+    model = ArticleModel
+    template_name = 'public/article_detail.html'
+    context_object_name = 'article'
+
+class BlogPageView(TemplateView):
+    template_name = 'public/blog.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['blogs'] = ArticleModel.objects.order_by('-created_at')
+
+        return context
 
 class HomePageView(TemplateView):
     template_name = 'public/index.html'
@@ -33,19 +59,6 @@ class HomePageView(TemplateView):
 
         return context
 
-class ArticleListView(ListView):
-    model = ArticleModel
-    template_name = 'public/article_list.html'
-    context_object_name = 'articles'
 
-    def get_queryset(self):
-        return ArticleModel.objects.order_by('-created_at')
 
-class ReviewListView(ListView):
-    model = ReviewModel
-    template_name = 'public/review_list.html'
-    context_object_name = 'reviews'
-
-    def get_queryset(self):
-        return ReviewModel.objects.order_by('-created_at')
 

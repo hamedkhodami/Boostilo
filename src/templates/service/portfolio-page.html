@@ -1,0 +1,53 @@
+{% extends "base/main_layout.html" %}
+{% load static %}
+
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+
+{% include "base/headers.html" %}
+    <main>
+     <div class="container">
+        <section class="bg-boostilo-portfolio bg-cover bg-no-repeat bg-center mt-10 p-5">
+            <div class="flex flex-col justify-center items-center">
+                <div class="flex items-center space-x-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span> <!-- نقطه گرد بنفش -->
+                  <p class="text-sm md:text-lg text-white">{{ service.name }} portfolio</p> <!-- توضیح عنوان -->
+                </div>
+                <h2 class="text-lg md:text-lg lg:text-4xl font-extrabold text-white pb-2 mt-2">Boostilo Portfolio</h2> <!-- عنوان اصلی -->
+            </div>
+            <div class="container mt-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 p-5">
+                    {% for product in products %}
+
+                    {% if forloop.counter|divisibleby:2 %}
+
+                        <div class="relative h-[250px] md:h-[300px] lg:h-[350px] xl:h-[420px] ">
+                            <div class="rounded-3xl post-img-wrapp h-[90%] ">
+                               <img src="{{ product.image.url }}" alt="{{ product.name }}" class="rounded-3xl w-full h-full ">
+                            </div>
+                            <div class="text-gray-300 py-3 left-2 text-xs md:text-base">
+                               <span>{{ product.created_at.year }}</span>
+                               <span>{{ product.name }}</span>
+                            </div>
+                        </div>
+
+                    {% else %}
+                    <div class=" relative h-[250px] md:h-[300px] lg:h-[300px] xl:h-[420px] mt-0 md:mt-14">
+                            <div class="rounded-3xl post-img-wrapp h-[90%]">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="rounded-3xl w-full h-full ">
+                             </div>
+                             <div class="text-gray-300 py-3 text-xs md:text-base">
+                                <span>{{ product.created_at.year }}</span>
+                                <span>{{ product.name }}</span>
+                             </div>
+                        </div>{% endif %}
+                    {% endfor %}
+                
+            </div>
+                </div>
+        </section>
+     </div>
+    </main>
+{% endblock %}

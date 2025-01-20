@@ -1,0 +1,48 @@
+{% extends "base/main_layout.html" %}
+{% load static %}
+
+
+{% block title %} Blogs {% endblock %}
+
+{% block body %}
+
+{% include "base/headers.html" %}
+
+    <main>
+     <div class="container">
+        <div class="flex items-center justify-center space-x-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span> <!-- نقطه گرد بنفش -->
+            <p class="text-sm md:text-3xl text-black">ALL BLOG</p> <!-- توضیح عنوان -->
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5">
+            {% for blog in blogs %}
+            <div class=" bg-gray-100">
+                <div class="w-full h-48 md:h-72">
+                    <img src="{{ blog.images.url }}" alt="{{ blog.name }}" class="h-full w-full">
+                </div>
+                <div class="px-5 py-2">
+                    <h1>Blog Title</h1>
+                    <p class="mt-1">{{ blog.summary }}</p>
+                    <div class="flex justify-between items-center mt-5">
+                      <div>
+                          <span>{{ blog.created_at|date:"d,F" }}</span><br>
+                          <span>{{ blog.created_at.year }}</span>
+                      </div>
+                      <div>
+                          <button class="bg-purple-950 text-white p-2 rounded-lg">
+                              <a href="{% url 'public:article_detail' blog.pk %}">
+                                  <svg class="w-3 h-3 md:w-[20px] md:h-[20px] text-white ">
+                                      <use xlink:href="#arrow-up-right"></use>
+                                  </Svg>
+                              </a>
+                          </button>
+                      </div>
+                  </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+     </div>
+    </main>
+
+{% endblock %}

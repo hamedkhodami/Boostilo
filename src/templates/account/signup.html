@@ -2,7 +2,7 @@
 {% load static %}
 
 
-{% block title %} Social Media Marketing {% endblock %}
+{% block title %} Signup {% endblock %}
 
 {% block body %}
 
@@ -38,12 +38,11 @@
             <p class="mb-6 text-black text-lg">
                 If you have already registered,
                 <br>
-                you can 
+                you can
                 <a href="{% url 'account:login' %}" class="text-purple-800 text-bold hover:underline">log in here !</a>
             </p>
-            <form method="POST" action="{% url 'account:register' %}" onsubmit="return validateForm()" >
+            <form method="POST" action="{% url 'account:register' %}" onsubmit="return validateForm()">
               {% csrf_token %}
-              {{ form.non_field_errors }}
               <div class="mb-4">
                 <label class="block text-sm text-gray-500 font-bold mb-2" for="email">Email</label>
                 <div id="email-error"></div> <!-- محل نمایش ارور ایمیل -->
@@ -51,10 +50,10 @@
                   <svg class="w-6 h-6  p-0.5 text-zinc-900 ">
                     <use xlink:href="#envelope"></use>
                   </svg>
-                  {{ form.email }}
+                  <input class="p-2 w-full py-3 text-sm placeholder-zinc-900  focus:outline-none " value="{{ form.email.value|default:'' }}" id="email" name="email" type="email"  placeholder="Enter your Email adress">
                 </div>
               </div>
-    
+
               <div class="mb-4">
                 <label class="block text-sm text-gray-500 font-bold mb-2" for="username">username</label>
                 <div id="username-error"></div> <!-- محل نمایش ارور نام کاربری -->
@@ -62,10 +61,10 @@
                   <svg class="w-6 h-6  p-0.5 text-zinc-800">
                     <use xlink:href="#user"></use>
                   </svg>
-                  {{ form.username }}
+                  <input class="p-2 w-full py-3 text-sm placeholder-zinc-900  focus:outline-none " value="{{ form.username.value|default:'' }}" id="username" name="username" type="text" placeholder="Enter your username">
                 </div>
               </div>
-    
+
               <div class="mb-4">
                 <label class="block text-sm text-gray-500 font-bold mb-2" for="password">Password</label>
                 <div id="password-error"></div> <!-- محل نمایش ارور پسورد -->
@@ -73,7 +72,7 @@
                   <svg class="w-6 h-6 p-0.5 text-zinc-800">
                     <use xlink:href="#lock-closed"></use>
                   </svg>
-                  {{ form.password }}
+                  <input class="p-2 w-full py-3 text-sm placeholder-zinc-800 focus:outline-none" id="password" name="password" type="password" placeholder="Enter your Password">
                   <svg class="w-6 h-6 p-0.5 text-zinc-800 cursor-pointer" id="togglePassword">
                     <use xlink:href="#eye"></use>
                   </svg>
@@ -82,16 +81,16 @@
                   </svg>
                 </div>
               </div>
-              
-              
+
+
               <div class="mb-4">
-                <label class="block text-sm text-gray-500 font-bold mb-2" for="confirm-password">Confirm Password</label>
-                <div id="confirm-password-error"></div> <!-- محل نمایش ارور تایید پسورد -->
+                <label class="block text-sm text-gray-500 font-bold mb-2" for="confirm_password">Confirm Password</label>
+                <div id="confirm_password-error"></div> <!-- محل نمایش ارور تایید پسورد -->
                 <div class="flex items-center border-b-2 border-zinc-500">
                   <svg class="w-6 h-6 p-0.5 text-zinc-800">
                     <use xlink:href="#lock-closed"></use>
                   </svg>
-                  {{ form.confirm_password }}
+                  <input class="p-2 w-full py-3  text-sm placeholder-zinc-800 focus:outline-none" id="confirm_password" name="confirm_password" type="password" placeholder="Enter your Confirm password">
                   <svg class="w-6 h-6 p-0.5 text-zinc-800 cursor-pointer" id="toggleConfirmPassword">
                     <use xlink:href="#eye"></use>
                   </svg>
@@ -100,13 +99,13 @@
                   </svg>
                 </div>
               </div>
-              
-              
-    
+
+
+
               <div class="mb-6">
                 <button class="w-full bg-purple-700 text-white font-bold py-2 px-4 rounded-full">Register</button>
               </div>
-              
+
             </form>
           </div>
           <div class=" hidden md:w-1/2 p-4 h-[600px] md:block">

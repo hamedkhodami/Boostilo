@@ -5,6 +5,7 @@ app_name = 'service'
 
 urlpatterns = [
     path('',views.PortfolioView.as_view(),name='service'),
+    path('service/<str:service_name>/',views.ServicePortfolioPageView.as_view(),name='service_portfolios'),
     path('application/', views.ServiceApplicationPageView.as_view(), name='application'),
     path('seo/', views.ServiceSeoPageView.as_view(), name='seo'),
     path('web/', views.ServiceWebPageView.as_view(), name='web'),

@@ -126,7 +126,8 @@
         <div class="container mt-5">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 p-5">
                 {% for key, portfolio in latest_portfolios.items %}
-                <div class="relative h-[250px] md:h-[300px] lg:h-[350px] xl:h-[420px]">
+                <div class="relative h-[250px] md:h-[300px] lg:h-[350px] xl:h-[420px]
+                    {% if forloop.counter|divisibleby:2 %}mt-10{% else %}mt--5{% endif %}">
                     <div class="rounded-3xl post-img-wrapp h-[90%]">
                        <img src="{{ portfolio.image.url }}" alt="{{ portfolio.name }}" class="rounded-3xl w-full h-full ">
                     </div>
@@ -276,11 +277,12 @@
                                 <p class="mt-1">{{ article.summary }}</p>
                                 <div class="flex justify-between items-center mt-5">
                                   <div>
-                                      <span>{{ article.created_at }}</span>
+                                        <span>{{ article.created_at|date:"d,F" }}</span><br>
+                                        <span>{{ article.created_at.year }}</span>
                                   </div>
                                   <div>
                                       <button class="bg-purple-950 text-white p-2 rounded-lg">
-                                          <a href="#">
+                                          <a href="{% url 'public:article_detail' article.pk %}">
                                               <svg class="w-3 h-3 md:w-[20px] md:h-[20px] text-white ">
                                                   <use xlink:href="#arrow-up-right"></use>
                                               </Svg>
