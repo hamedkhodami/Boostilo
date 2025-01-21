@@ -15,6 +15,11 @@ class ServiceModel(BaseModel):
         verbose_name = "Service"
         verbose_name_plural = "Services"
 
+    def get_image(self):
+        if self.image:
+            return self.image.url
+        return '/static/assets/public/images/logo.png' # TODO: should change image
+
 
 class CategoryModel(BaseModel):
     service = models.ForeignKey(ServiceModel,on_delete=models.CASCADE,
@@ -32,6 +37,11 @@ class CategoryModel(BaseModel):
     class Meta:
         verbose_name = "Category"
         verbose_name_plural = "Categories"
+
+    def get_image(self):
+        if self.image:
+            return self.image.url
+        return '/static/assets/public/images/logo.png' # TODO: should change image
 
 
 class PortfolioModel(BaseModel):

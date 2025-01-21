@@ -18,6 +18,7 @@ class ContactModelAdmin(admin.ModelAdmin):
 @admin.register(ArticleModel)
 class ArticleModelAdmin(admin.ModelAdmin):
     list_display = ('id','title','summary','created_at')
+    list_display_links = ('id', 'title')
     search_fields = ('title',)
     list_filter = ('title','created_at')
     readonly_fields = ('created_at','updated_at')
@@ -33,14 +34,15 @@ class AboutModelAdmin(admin.ModelAdmin):
         if AboutModel.objects.exists():
             return False
         return True
-    list_display = ('content','video')
+    list_display = ('content','video','image_cover')
     fieldsets = (
-        ('Information', {'fields': ('content','video')}),
+        ('Information', {'fields': ('content','video','image_cover')}),
     )
 
 @admin.register(ReviewModel)
 class ReviewModelAdmin(admin.ModelAdmin):
     list_display = ('id','name','feedback')
+    list_display_links = ('id', 'name')
     search_fields = ('name','feedback')
     list_filter = ('name',)
     list_per_page = 20
@@ -51,6 +53,7 @@ class ReviewModelAdmin(admin.ModelAdmin):
 @admin.register(NewsModel)
 class NewsModelAdmin(admin.ModelAdmin):
     list_display = ('id','title',)
+    list_display_links = ('id', 'title')
     search_fields = ('title',)
     list_filter = ('title',)
     list_per_page = 20

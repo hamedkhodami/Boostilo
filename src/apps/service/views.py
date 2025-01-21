@@ -83,5 +83,5 @@ class ServicePortfolioPageView(TemplateView):
 
             if service:
                 context['service']: service
-                context['products'] = PortfolioModel.objects.filter(service=service).all()
+                context['products'] = PortfolioModel.objects.filter(service=service).order_by('-created_at').all()
             return context

@@ -18,4 +18,9 @@ class ProfileTeam(BaseModel):
         verbose_name = "Profile"
         verbose_name_plural = "Profiles"
 
+    def get_image(self):
+        if self.images:
+            return self.images.url
+        return '/static/assets/public/images/logo.png' # TODO: should change image
+
 

@@ -9,6 +9,9 @@ class NewsModel(BaseModel):
     title = models.CharField(max_length=250, verbose_name='News Title')
     content = RichTextField(verbose_name='Content News')
 
+    def __str__(self):
+        return self.title
+
     class Meta:
         verbose_name = 'News'
 
@@ -17,6 +20,9 @@ class ContactModel(BaseModel):
     fullname = models.CharField(max_length=150, verbose_name='Full Name')
     email = models.EmailField(unique=True, verbose_name='Email Address')
     is_read = models.BooleanField(default=False, verbose_name='Is_Read')
+
+    def __str__(self):
+        return self.fullname
 
     class Meta:
         verbose_name = 'Contact'
@@ -35,9 +41,18 @@ class ArticleModel(BaseModel):
     images = models.ImageField(upload_to='articles/images/', blank=True
                                , null=True, verbose_name='Images')
 
+    def __str__(self):
+        return self.title
+
     class Meta:
         verbose_name = 'Article'
         verbose_name_plural = 'Articles'
+
+    def get_image(self):
+        if self.images:
+            return self.images.url
+        return '/static/assets/public/images/logo.png' # TODO: should change image
+
 
 
 class AboutModel(models.Model):
@@ -59,6 +74,16 @@ class ReviewModel(BaseModel):
     video = models.FileField(upload_to='reviews/videos/', blank=True, null=True,
                              verbose_name='Video')
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name = 'Review'
         verbose_name_plural = 'Reviews'
+
+    def get_image(self):
+        if self.photo:
+            return self.photo.url
+        return '/static/assets/public/images/logo.png' # TODO: should change image
+
+

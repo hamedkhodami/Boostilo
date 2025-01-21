@@ -87,7 +87,10 @@
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full md:w-1/2 p-4">
-                    <img src="" alt="About">
+                    <video width="100%" controls poster="{{ about.image_cover.url }}" class="rounded-[50px]">
+                        <source src="{{ about.video.url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
                 <div class="w-full md:w-1/2 p-4 flex flex-col items-center md:items-baseline md:justify-around ">
                     <h1 class="text-xl md:text-2xl	xl:text-4xl font-bold mt-2 text-center md:text-start  ">
