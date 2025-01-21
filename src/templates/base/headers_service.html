@@ -65,7 +65,7 @@
    <!-- header desktop -->
    <header class="container h-24 hidden md:flex items-center justify-between  bg-black p-4">
     <div class="max-w-40">
-        <img src="{% static 'public/images/logo.png' %}" alt="لوگو بوستیلو">
+        <img src="{% static 'public/images/logo-navbar.png' %}" alt="لوگو بوستیلو">
     </div>
     <nav>
         <ul class="flex gap-x-9 text-l text-white">
@@ -77,9 +77,6 @@
             </li>
             <li>
                 <a href="#">about</a>
-            </li>
-            <li>
-                <a href="#">team</a>
             </li>
             <li>
                 <a href="{% url 'public:blog' %}">blog</a>
@@ -152,14 +149,6 @@
                             <use xlink:href="#about"></use>
                         </svg>
                         about
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex items-center gap-x-2">
-                        <svg class="w-6 h-6">
-                            <use xlink:href="#team"></use>
-                        </svg>
-                        Team
                     </a>
                 </li>
                 <li>

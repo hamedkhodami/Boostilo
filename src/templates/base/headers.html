@@ -78,9 +78,6 @@
             <li class="{% if request.resolver_match.url_name == 'about' %}text-violet-900{% endif %}">
                 <a href="#">About</a>
             </li>
-            <li class="{% if request.resolver_match.url_name == 'team' %}text-violet-900{% endif %}">
-                <a href="#">Team</a>
-            </li>
             <li class="{% if request.resolver_match.url_name == 'blog' %}text-violet-900{% endif %}">
                 <a href="{% url 'public:blog' %}">Blog</a>
             </li>
@@ -152,14 +149,6 @@
                             <use xlink:href="#about"></use>
                         </svg>
                         About
-                    </a>
-                </li>
-                <li class="flex items-center {% if request.resolver_match.url_name == 'team' %}bg-purple-600 text-white{% endif %} pr-0 mb-4 h-10 pl-1 rounded-md">
-                    <a href="#" class="flex items-center gap-x-2">
-                        <svg class="w-6 h-6">
-                            <use xlink:href="#team"></use>
-                        </svg>
-                        Team
                     </a>
                 </li>
                 <li class="flex items-center {% if request.resolver_match.url_name == 'blog' %}bg-purple-600 text-white{% endif %} pr-0 mb-4 h-10 pl-1 rounded-md">

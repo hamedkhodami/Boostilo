@@ -18,11 +18,11 @@
                 <form method="post" action="{% url 'public:contact_us' %}" class="space-y-4">
                     {% csrf_token %}
                     <div>
-                        {{ form.fullname }}
+                        <input type="text" name="fullname" class="mt-1 block w-full px-3 py-3 focus:outline-none rounded-full bg-[#9482ad] sm:text-sm" placeholder="Full name">
                     </div>
 
                     <div>
-                        {{ form.email }}
+                        <input type="email" name="email" class="mt-1 block w-full px-3 py-3 focus:outline-none rounded-full bg-[#9482ad] sm:text-sm" placeholder="Email">
                     </div>
 
                     <div>
