@@ -58,7 +58,7 @@
 
   });
 
-  const swipercommentuser = new Swiper("#user-comment", {
+  const swipercommentuser = new Swiper(".userk", {
     direction: 'horizontal',
     autoplay: {
       delay: 2000,
