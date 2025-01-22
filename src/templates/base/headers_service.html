@@ -76,7 +76,7 @@
                 <a href="{% url 'service:service' %}">services</a>
             </li>
             <li>
-                <a href="#">about</a>
+                <a href="{% url 'public:about' %}">about</a>
             </li>
             <li>
                 <a href="{% url 'public:blog' %}">blog</a>
@@ -153,7 +153,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center gap-x-2">
+                    <a href="{% url 'public:about' %}" class="flex items-center gap-x-2">
                         <svg class="w-6 h-6">
                             <use xlink:href="#about"></use>
                         </svg>

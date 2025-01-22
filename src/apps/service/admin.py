@@ -6,7 +6,6 @@ from .models import ServiceModel,CategoryModel,PortfolioModel
 @admin.register(ServiceModel)
 class ServiceModelAdmin(admin.ModelAdmin):
     list_display = ('id','name')
-    readonly_fields = ('name',)
     search_fields = ('id','name')
     list_filter = ('name',)
     fieldsets = (
