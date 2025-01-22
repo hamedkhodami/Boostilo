@@ -2,6 +2,22 @@ from apps.service.models import ServiceModel,PortfolioModel,CategoryModel
 from django.views.generic.base import TemplateView
 from django.shortcuts import render, redirect
 from apps.public.forms import ContactUsForms
+from django.views.generic import ListView
+from .models import PortfolioModel, CategoryModel
+
+class CategoryProductListView(ListView):
+    model = PortfolioModel
+    template_name = 'category_products.html'
+    context_object_name = 'products'
+
+    def get_queryset(self):
+        category_id = self.kwargs['category_id']
+        return PortfolioModel.objects.filter(category__id=category_id).order_by('-created_at')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category'] = CategoryModel.objects.get(id=self.kwargs['category_id'])
+        return context
 
 class PortfolioView(TemplateView):
     template_name = "service/portfolio.html"

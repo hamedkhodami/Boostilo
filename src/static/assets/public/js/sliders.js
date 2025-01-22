@@ -14,7 +14,7 @@
           loop:true,
         },
         slidesPerView: 2,
-        spaceBetween: 10, 
+        spaceBetween: 10,
         navigation: {
         nextEl: ".swiper-button-prev-custom",
         prevEl: ".swiper-button-next-custom",
@@ -35,7 +35,7 @@
       breakpoints: {
         340: {
           slidesPerView:1,
-          
+
         },
           600: {
             slidesPerView:1,
@@ -52,10 +52,10 @@
           1200: {
               slidesPerView: 2,
               spaceBetween: 10, // <- doesn't work
-    
+
             },
         },
-     
+
   });
 
   const swipercommentuser = new Swiper("#user-comment", {
