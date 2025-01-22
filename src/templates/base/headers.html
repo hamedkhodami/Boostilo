@@ -85,12 +85,21 @@
     </nav>
 
     <div>
-        <a href="{% url 'account:login' %}" class="flex justify-center items-center">
-            <svg class="w-6 h-6 border-2 border-stone-700 rounded-xl p-0.5 ">
-                <use xlink:href="#user"></use>
-            </svg>
-            <span class="bg-zinc-950 text-zinc-50 rounded-2xl text-sm px-2.5 py-1.5">Sign up / Login</span>
-        </a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'account:profile' %}" class="flex justify-center items-center">
+                <svg class="w-6 h-6 border-2 border-stone-700 rounded-xl p-0.5 ">
+                    <use xlink:href="#user"></use>
+                </svg>
+                <span class="bg-zinc-950 text-zinc-50 rounded-2xl text-sm px-2.5 py-1.5">{{ user.username }}</span>
+            </a>
+        {% else %}
+            <a href="{% url 'account:login' %}" class="flex justify-center items-center">
+                <svg class="w-6 h-6 border-2 border-stone-700 rounded-xl p-0.5 ">
+                    <use xlink:href="#user"></use>
+                </svg>
+                <span class="bg-zinc-950 text-zinc-50 rounded-2xl text-sm px-2.5 py-1.5">Sign up / Login</span>
+            </a>
+        {% endif %}
     </div>
 </header>
    <!--  header desktop -->
@@ -171,14 +180,22 @@
         </nav>
 
         <div class="py-8 mt-8 border-t border-t-white/20 text-violet-400">
-            <a href="{% url 'account:login' %}" class="flex items-center gap-x-2">
-                <svg class="w-6 h-6  text-violet-400">
-                    <use xlink:href="#arrow-left"></use>
-                </svg>
-                signin/up
-            </a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'account:profile' %}" class="flex items-center gap-x-2">
+                    <svg class="w-6 h-6 text-violet-400"><use xlink:href="#user"></use>
+                    </svg>
+                    {{ user.username }}
+                </a>
+            {% else %}
+                <a href="{% url 'account:login' %}" class="flex items-center gap-x-2">
+                    <svg class="w-6 h-6 text-violet-400">
+                        <use xlink:href="#arrow-left"></use>
+                    </svg>
+                    signin/up
+                </a>
+            {% endif %}
         </div>
     </div>
-
-   </div>
+</div>
    <!-- header mobile -->
+

@@ -19,16 +19,6 @@ class CategoryProductListView(ListView):
         context['category'] = CategoryModel.objects.get(id=self.kwargs['category_id'])
         return context
 
-class PortfolioView(TemplateView):
-    template_name = "service/portfolio.html"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['services'] = ServiceModel.objects.all()
-        context['products'] = PortfolioModel.objects.all().order_by('-created_at')
-
-        return context
-
 class BaseServicePageView(TemplateView):
     template_name = ''
     service_name = ''
@@ -65,6 +55,16 @@ class BaseServicePageView(TemplateView):
 
         return context
 
+
+class PortfolioView(TemplateView):
+    template_name = "service/portfolio.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['services'] = ServiceModel.objects.all()
+        context['products'] = PortfolioModel.objects.all().order_by('-created_at')
+
+        return context
 
 class ServiceDigitalMarketingPageView(BaseServicePageView):
     template_name = 'service/marketing.html'

@@ -3,6 +3,12 @@ from django.http import HttpResponse,HttpResponseRedirect
 from .forms import LoginUser, RegisterUser
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.models import User, Group
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def user_profile(request):
+    return render(request, 'user_profile.html', {'user': request.user})
 
 
 def loginUserInWeb(request):
