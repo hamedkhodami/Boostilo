@@ -21,6 +21,11 @@ def contact_us_view(request):
 
     return render(request, 'contactus.html', {'form': form})
 
+class NewsDetailView(DetailView):
+    model = NewsModel
+    template_name = 'public/news_detail.html'
+    context_object_name = 'news'
+
 class ArticleDetailView(DetailView):
     model = ArticleModel
     template_name = 'public/article_detail.html'
@@ -35,6 +40,16 @@ class BlogPageView(TemplateView):
         context['blogs'] = ArticleModel.objects.order_by('-created_at')
 
         return context
+
+class AboutView(TemplateView):
+    template_name = 'public/aboutus.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['about'] = AboutModel.objects.first()
+
+        return context
+
 
 class HomePageView(TemplateView):
     template_name = 'public/index.html'

@@ -1,0 +1,26 @@
+{% extends "base/main_layout.html" %}
+{% load static %}
+
+
+{% block title %} {{ news.title }} {% endblock %}
+
+{% block body %}
+
+   {% include 'base/headers.html' %}
+    
+
+    <section class="portfolioboostilo mt-10">
+        <div class="container flex justify-center flex-col items-center">
+            <div class="news-detail">
+                <h1>{{ news.title }}</h1>
+                <div class="content">
+                    {{ news.content|safe }}
+                </div>
+            </div>
+         </div>
+    </section>
+
+
+<!-- overlay for menu bobile -->
+<div class="overlay"></div>
+{% endblock %}

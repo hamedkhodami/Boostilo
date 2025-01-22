@@ -40,7 +40,7 @@ overlay.addEventListener("click", closeNavAndOverlay);
 
 
 // js for services boostiloo//
- document.addEventListener('DOMContentLoaded', () => {
+
      const buttons = document.querySelectorAll('.btn');
      const contents = document.querySelectorAll('.content');
      buttons.forEach(button => {
@@ -74,11 +74,10 @@ overlay.addEventListener("click", closeNavAndOverlay);
              }
          });
      });
- });
 
 //  تنظیم محتوای اولیه برای عرض‌ کمتر از 768 پیکسل
 
- window.addEventListener('DOMContentLoaded', () => {
+
      if (window.innerWidth <= 768) {
          const contentId = 'content1';
          const activeButton = document.querySelector(`.btn[data-content="${'content1'}"]`);
@@ -90,7 +89,7 @@ overlay.addEventListener("click", closeNavAndOverlay);
          // اضافه کردن محتوای content1 به زیر دکمه اول
          activeButton.insertAdjacentElement('afterend', content);
      }
- });
+
 
 
 //document.addEventListener('DOMContentLoaded', () => {
@@ -128,7 +127,7 @@ overlay.addEventListener("click", closeNavAndOverlay);
 //    });
 //});
 //
-//// تنظیم محتوای اولیه برای عرض‌ کمتر از 768 پیکسل
+
 //window.addEventListener('DOMContentLoaded', () => {
 //    if (window.innerWidth <= 768) {
 //        const contentId = 'content1';
@@ -160,6 +159,11 @@ closePopupButtons.forEach(button => {
   button.addEventListener("click", () => {
     const popup = button.closest('.popup');
     if (popup) {
+      const video = popup.querySelector('video');
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
       popup.classList.add("hidden");
     }
   });

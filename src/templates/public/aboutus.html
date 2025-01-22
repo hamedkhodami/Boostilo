@@ -1,0 +1,194 @@
+{% extends "base/main_layout.html" %}
+{% load static %}
+
+
+{% block title %} {{ news.title }} {% endblock %}
+
+{% block body %}
+
+   {% include 'base/headers.html' %}
+
+   <main>
+    <section class="description">
+        <div class="container mx-auto p-4">
+          <div class="flex flex-col items-center p-2">
+            <h1 class="text-xl md:text-4xl font-bold mb-2 md:mb-4">about finance flow</h1>
+            <p class="text-sm md:text-base text-center text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut maxime beatae sed neque consequuntur accusamus nostrum ullam fugiat inventore aliquid. Nisi deleniti asperiores consectetur quisquam? Fuga qui fugiat tenetur dolore.</p>
+          </div>
+        </div>
+      </section>
+
+    <div class="bg-white p-8 container">
+        <!-- عنوان و متن -->
+        <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+            <h2 class="text-2xl font-bold mb-4 md:mb-0">Distinctive features of our company</h2>
+            <p class="text-sm text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+          </div>
+
+        <!-- باکس ها -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div class="flex flex-col items-center sm:flex-row p-4 md:p-6 bg-[#f6f3fa] rounded-lg">
+              <div class="w-10 sm:w-20 mb-4 sm:mb-0">
+                <img src="./images/svg/advantage2.svg" alt="" class="w-full">
+              </div>
+              <div class="sm:ml-4 text-center sm:text-left">
+                <h3 class="text-xl font-semibold">open sourse</h3>
+                <p class="text-sm text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, mollitia quo laborum dolores obcaecati voluptas deleniti voluptates praesentium placeat</p>
+              </div>
+            </div>
+            <div class="flex flex-col items-center sm:flex-row p-4 md:p-6 bg-[#f6f3fa] rounded-lg">
+                <div class="w-10 sm:w-20 mb-4 sm:mb-0">
+                  <img src="./images/svg/advantage2.svg" alt="" class="w-full">
+                </div>
+                <div class="sm:ml-4 text-center sm:text-left">
+                  <h3 class="text-xl font-semibold">open sourse</h3>
+                  <p class="text-sm text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, mollitia quo laborum dolores obcaecati voluptas deleniti voluptates praesentium placeat</p>
+                </div>
+            </div>
+            <div class="flex flex-col items-center sm:flex-row p-4 md:p-6 bg-[#f6f3fa] rounded-lg">
+                <div class="w-10 sm:w-20 mb-4 sm:mb-0">
+                  <img src="./images/svg/advantage2.svg" alt="" class="w-full">
+                </div>
+                <div class="sm:ml-4 text-center sm:text-left">
+                  <h3 class="text-xl font-semibold">open sourse</h3>
+                  <p class="text-sm text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, mollitia quo laborum dolores obcaecati voluptas deleniti voluptates praesentium placeat</p>
+                </div>
+            </div>
+            <div class="flex flex-col items-center sm:flex-row p-4 md:p-6 bg-[#f6f3fa] rounded-lg">
+                <div class="w-10 sm:w-20 mb-4 sm:mb-0">
+                  <img src="./images/svg/advantage2.svg" alt="" class="w-full">
+                </div>
+                <div class="sm:ml-4 text-center sm:text-left">
+                  <h3 class="text-xl font-semibold">open sourse</h3>
+                  <p class="text-sm text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, mollitia quo laborum dolores obcaecati voluptas deleniti voluptates praesentium placeat</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="boostilo-about mt-5">
+            <div class="container">
+                <div class="flex flex-wrap">
+                    <div class="w-full md:w-1/2 p-4 flex flex-col items-center md:items-baseline md:justify-around ">
+                        <h1 class="text-xl md:text-2xl	xl:text-4xl font-bold mt-2 text-center md:text-start  ">
+                            crafting Success,Digital</br>
+                            <span class="text-purple-600">Boostilo</span>
+                        </h1>
+                        <p class=" text-sm md:text-xl text-zinc-800 mt-2 text-center md:text-start text-justify ">
+                            "Boostilo", soundslike a blend of "boost" and a dynamic innovative sufix,possibly
+                            suggesting and a focuse on growth,improvement,and forward momentum. the "Boost" part
+                            clearly impliese enhancement , while "ilo" gives it a unique , almost teach-savvy or creative twist.
+                        </p>
+                    </div>
+                    <div class="w-full md:w-1/2 p-4">
+                        <img src="./images/videoboostilo.webp" alt="">
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <div class="bg-black text-white p-8">
+            <div class="container">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- قسمت چپ -->
+                    <div>
+                      <h2 class="text-2xl font-bold">TimeLine</h2>
+                      <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quibusdam molestiae, ut nihil doloremque corporis. Sapiente nihil deserunt tenetur, ullam error ipsum corporis provident quis expedita quia nisi necessitatibus harum?</p>
+                    </div>
+
+                    <!-- قسمت راست -->
+                    <div class="space-y-8">
+                      <!-- بخش اول -->
+                      <div>
+                        <div class="flex items-center">
+                          <span class="w-3 h-3 bg-purple-600 rounded-full inline-block mr-2"></span>
+                          <h3 class="text-xl font-semibold">2014 - 2022</h3>
+                        </div>
+                        <p class="text-sm mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta, repudiandae. Rem saepe suscipit nihil vitae at quisquam quae quia, vero fugit tempora cupiditate numquam voluptatum quidem ex consectetur eaque cumque.</p>
+                        <hr class="bg-white mt-4">
+                      </div>
+
+                      <!-- بخش دوم -->
+                      <div>
+                        <div class="flex items-center">
+                          <span class="w-3 h-3 bg-purple-600 rounded-full inline-block mr-2"></span>
+                          <h3 class="text-xl font-semibold">2014 - 2022</h3>
+                        </div>
+                        <p class="text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur error sed enim molestiae nostrum animi, ipsum laborum quo iste blanditiis impedit. Aliquid porro quaerat ipsam blanditiis impedit, iure voluptatem sed.</p>
+                        <hr class="bg-white mt-4">
+                      </div>
+
+                      <!-- بخش سوم -->
+                      <div>
+                        <div class="flex items-center">
+                          <span class="w-3 h-3 bg-purple-600 rounded-full inline-block mr-2"></span>
+                          <h3 class="text-xl font-semibold">2014 - 2022</h3>
+                        </div>
+                        <p class="text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum deserunt, eum perferendis illo nostrum eius! Ut nisi delectus, vitae aperiam, mollitia voluptates itaque nam eligendi harum possimus explicabo repellat reprehenderit?</p>
+                        <hr class="bg-white mt-4">
+                      </div>
+                    </div>
+                  </div>
+            </div>
+    </div>
+
+    <section class="boostilo-team mt-4 px-5">
+            <div class="container">
+                <div class="flex flex-wrap">
+                    <div class="w-full md:w-1/2 p-3">
+                        <img src="./images/team.webp" alt="">
+                    </div>
+                    <div class="w-full md:w-1/2 p-3 flex flex-col items-center md:items-baseline md:justify-around">
+                        <h1 class="text-xl md:text-2xl	xl:text-4xl font-bold mt-2 ">
+                            Meet Our Team
+                        </h1>
+                        <p class=" text-sm md:text-xl text-zinc-700 text-center md:text-start mt-3">
+                            "Boostilo", soundslike a blend of "boost" and a dynamic innovative sufix,possibly
+                            suggesting and a focuse on growth,improvement,and forward momentum. the "Boost" part
+                            clearly impliese enhancement
+                        </p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="Consultation-with-us bg-backcontact bg-no-repeat bg-cover bg-left p-8">
+        <div class="mx-5 lg:mx-96">
+            <div class="flex flex-wrap justify-center items-center">
+                <div class="w-full md:w-2/4">
+                    <div class="text-white">
+                    <h3 class="text-2xl">contact us</h3>
+                    <p class="font-thin text-base">for get price or a free meeting</p>
+                    </div>
+                    <div class="flex">
+                        <img src="./images/svg/آیکون تماس.svg" alt="" class="mb-10">
+                        <img src="./images/svg/بردر.svg" alt="">
+                    </div>
+                </div>
+                <div class="w-full md:w-2/4">
+                    <form class="space-y-4">
+                        <div>
+                          <input type="text" id="input1" name="input1" placeholder="Full name... 1" class="mt-1 block w-full px-3 py-3 focus:outline-none rounded-full bg-[#9482ad]  sm:text-sm">
+                        </div>
+
+                        <div>
+                          <input type="text" id="input2" name="input2" placeholder="Email..." class="mt-1 block w-full px-3 py-3 focus:outline-none rounded-full bg-[#9482ad] sm:text-sm text-black">
+                        </div>
+
+                        <div>
+                          <button type="submit" class="w-full inline-flex items-center px-4 py-3 rounded-full  bg-violet-700 focus:outline-none">
+                            Submit
+                          </button>
+                        </div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   </main>
+
+<div class="overlay"></div>
+<!-- overlay for menu bobile -->
+
+{% endblock %}

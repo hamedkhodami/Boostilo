@@ -1,4 +1,12 @@
+{% extends "base/main_layout.html" %}
 {% load static %}
+
+
+{% block title %} {{ article.title }} {% endblock %}
+
+{% block body %}
+
+   {% include 'base/headers.html' %}
 
 <section class="article-detail">
     <div class="container">
@@ -11,3 +19,7 @@
         </div>
     </div>
 </section>
+
+<!-- overlay for menu bobile -->
+<div class="overlay"></div>
+{% endblock %}
