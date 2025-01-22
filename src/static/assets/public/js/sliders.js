@@ -83,7 +83,7 @@
           spaceBetween: 10, // <- doesn't work
         },
         1200: {
-            slidesPerView: 2,
+            slidesPerView:2,
             spaceBetween: 10, // <- doesn't work
   
           },
