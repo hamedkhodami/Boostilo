@@ -1,4 +1,11 @@
- 
+    // var swipernews = new Swiper(".swiper", {
+    //     loop: true,
+    //   navigation: {
+    //     nextEl: ".swiper-button-prev-custom",
+    //     prevEl: ".swiper-button-next-custom",
+    //   },
+    // });
+
 
     const swiper2 = new Swiper("#jjj", {
         direction: 'horizontal',
@@ -50,7 +57,6 @@
         },
      
   });
-  
 
   const swipercommentuser = new Swiper("#user-comment", {
     direction: 'horizontal',
