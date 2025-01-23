@@ -92,6 +92,6 @@ class ServicePortfolioPageView(TemplateView):
             service = ServiceModel.objects.filter(name__iexact=service_name).first()
 
             if service:
-                context['service']: service
+                context['service'] = service
                 context['products'] = PortfolioModel.objects.filter(service=service).order_by('-created_at').all()
             return context

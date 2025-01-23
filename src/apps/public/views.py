@@ -66,7 +66,7 @@ class HomePageView(TemplateView):
             'seo':PortfolioModel.objects.filter(service__name__iexact='SEO').order_by('-created_at').first(),
             'digital_marketing':PortfolioModel.objects.filter(service__name__iexact='Digital Marketing').order_by('-created_at').first(),
             'web_dev':PortfolioModel.objects.filter(service__name__iexact='Web Development').order_by('-created_at').first(),
-            'social_media':PortfolioModel.objects.filter(service__name__iexact='Social Media Marketing').order_by('-created_at').first(),
+            'social_media':PortfolioModel.objects.filter(service__name__iexact='Application').order_by('-created_at').first(),
         }
         context['latest_articles'] = ArticleModel.objects.order_by('-created_at')[:5]
         context['about'] = AboutModel.objects.first()
