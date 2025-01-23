@@ -28,7 +28,7 @@
                     <button class="btn custom-services-button group" data-content="content4">
                         <div class="flex items-center gap-3">
                             <span class="number group-focus:text-purple-500">04</span>
-                            <span class="text">Social Media Marketing </span>
+                            <span class="text">Application </span>
                         </div>
                         <span class="arrow">&#8594;</span>
                     </button>
@@ -167,7 +167,7 @@
                     <div id="content4" class="content hidden">
                         <div class="custom-flex-container">
                             <div class=" custom-img-container">
-                                <img src="{{ social_media.image.url }}" alt="Social Media Marketing" >
+                                <img src="{{ social_media.image.url }}" alt="Application" >
                             </div>
                             <div class=" custom-info-container">
                                 <div class="custom-gradient-box">
@@ -188,7 +188,7 @@
                                     <p>{{ social_media.description_product }}</p>
                                     <div class="flex justify-between items-end font-bold">
                                         <span>see<br>
-                                         portfolio {{ social_media.name }}</span>
+                                         portfolio<br> {{ social_media.name }}</span>
                                         <div class="custom-button-info custom-button-gray">
                                             <a href="{% url 'service:service_portfolios' service_name=social_media.name %}">
                                                 <svg class="custom-svg">

@@ -26,7 +26,7 @@ class BaseServicePageView(TemplateView):
         context['seo'] = ServiceModel.objects.filter(name__iexact='SEO').first()
         context['digital_marketing'] = ServiceModel.objects.filter(name__iexact='Digital Marketing').first()
         context['web_dev'] = ServiceModel.objects.filter(name__iexact='Web Development').first()
-        context['social_media'] = ServiceModel.objects.filter(name__iexact='Social Media Marketing').first()
+        context['social_media'] = ServiceModel.objects.filter(name__iexact='Application').first()
         context['content_create'] = ServiceModel.objects.filter(name__iexact='Content Creation').first()
 
         context['service'] = ServiceModel.objects.filter(name__iexact=self.service_name).first()
@@ -68,7 +68,7 @@ class ServiceDigitalMarketingPageView(BaseServicePageView):
 
 class ServiceApplicationPageView(BaseServicePageView):
     template_name = 'service/application.html'
-    service_name = 'Social Media Marketing'
+    service_name = 'Application'
 
 class ServiceSeoPageView(BaseServicePageView):
     template_name = 'service/seo.html'

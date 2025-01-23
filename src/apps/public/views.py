@@ -60,7 +60,7 @@ class HomePageView(TemplateView):
         context['seo'] = ServiceModel.objects.filter(name__iexact='SEO').first()
         context['digital_marketing'] = ServiceModel.objects.filter(name__iexact='Digital Marketing').first()
         context['web_dev'] = ServiceModel.objects.filter(name__iexact='Web Development').first()
-        context['social_media'] = ServiceModel.objects.filter(name__iexact='Social Media Marketing').first()
+        context['social_media'] = ServiceModel.objects.filter(name__iexact='Application').first()
         context['content_create'] = ServiceModel.objects.filter(name__iexact='Content Creation').first()
         context['latest_portfolios'] = {
             'seo':PortfolioModel.objects.filter(service__name__iexact='SEO').order_by('-created_at').first(),
