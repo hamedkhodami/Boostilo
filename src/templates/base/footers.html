@@ -6,13 +6,13 @@
             <img src="{% static 'public/images/logo.png' %}" alt="">
         </div>
         <div class="social-media flex space-x-4 items-center">
-            <a href="https://www.instagram.com">
+            <a href="mailto:boostilo405@gmail.com">
                 <img src="{% static 'public/images/svg/ایمیل.svg' %}" alt="">
               </a>
-              <a href="tell:(+1)7787005651">
+              <a href="tel:(+1)7787005651">
                  <img src="{% static 'public/images/svg/شماره.svg' %}" alt="">
               </a>
-              <a href="https://www.instagram.com">
+              <a href="https://instagram.com/Boostilo.ca">
                 <img src="{% static 'public/images/svg/اینستاگرام.svg' %}" alt="">
               </a>
         </div>
@@ -32,10 +32,7 @@
                         <a href="{% url 'service:service' %}">Services</a>
                     </li>
                     <li class="{% if request.resolver_match.url_name == 'about' %}text-violet-900{% endif %}">
-                        <a href="#">About</a>
-                    </li>
-                    <li class="{% if request.resolver_match.url_name == 'team' %}text-violet-900{% endif %}">
-                        <a href="#">Team</a>
+                        <a href="{% url 'public:about' %}">About</a>
                     </li>
                     <li class="{% if request.resolver_match.url_name == 'blog' %}text-violet-900{% endif %}">
                         <a href="{% url 'public:blog' %}">Blog</a>
