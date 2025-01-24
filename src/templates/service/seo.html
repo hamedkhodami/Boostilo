@@ -303,3 +303,29 @@
 <div class="overlay"></div>
 
 {% endblock %}
+
+{% block script %}
+<script>
+    document.querySelectorAll('.btn-category').forEach(function (el) {
+        el.addEventListener('click', function () {
+            hideAllCategoryContainer()
+            let category_id = this.getAttribute('category-id')
+            document.querySelector(`#category-${category_id}`).style.display = 'block'
+        })
+    })
+
+    function hideAllCategoryContainer() {
+        document.querySelectorAll('.category-container').forEach(function (el) {
+            el.style.display = 'none'
+        })
+    }
+
+    function activeFirstCategory() {
+        document.querySelector('.btn-category').click()
+    }
+
+    hideAllCategoryContainer()
+    activeFirstCategory()
+
+</script>
+{% endblock %}

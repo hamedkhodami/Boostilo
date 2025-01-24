@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse,HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from .forms import LoginUser, RegisterUser
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.models import User, Group
-from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
 @login_required
@@ -63,12 +62,6 @@ def registerAction(request):
         form = RegisterUser()
     return render(request, 'account/signup.html', {'form': form})
 
-
-def CheckLogin(request):
-    if request.user.is_authenticated:
-        return HttpResponse("وارد شده است")
-    else:
-        return HttpResponse("وارد نشده است")
 
 def LogOutUser(request):
     logout(request)

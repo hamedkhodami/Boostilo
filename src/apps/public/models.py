@@ -14,6 +14,7 @@ class NewsModel(BaseModel):
 
     class Meta:
         verbose_name = 'News'
+        verbose_name_plural = 'News'
 
 
 class ContactModel(BaseModel):
