@@ -9,12 +9,14 @@
    {% include 'base/headers.html' %}
     
 
-    <section class="portfolioboostilo mt-10">
-        <div class="container flex justify-center flex-col items-center">
+    <section class="p-3 mt-5">
+        <div class="container">
             <div class="news-detail">
+                <div class="mt-2 text-sm md:text-base mt-5 ">
                 <h1>{{ news.title }}</h1>
                 <div class="content">
                     {{ news.content|safe }}
+                </div>
                 </div>
             </div>
          </div>

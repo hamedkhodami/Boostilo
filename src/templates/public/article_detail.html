@@ -8,17 +8,19 @@
 
    {% include 'base/headers.html' %}
 
-<section class="article-detail">
+  <section class="p-3 mt-5">
     <div class="container">
         <div class="article-header">
             <h1>{{ article.title }}</h1>
             <span>{{ article.created_at|date:"d F, Y" }}</span>
         </div>
+       <div class="mt-2 text-sm md:text-base mt-5 ">
         <div class="article-content">
             {{ article.content|safe }}
         </div>
-    </div>
-</section>
+       </div>
+   </div>
+   </section>
 
 <!-- overlay for menu bobile -->
 <div class="overlay"></div>
