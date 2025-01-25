@@ -64,24 +64,27 @@
     </svg>
    <!-- header desktop -->
    <header class="container h-24 hidden md:flex items-center justify-between  bg-black p-4">
-    <div class="max-w-40">
-        <a href="https://boostilo.ca/">
-        <img src="{% static 'public/images/logo-navbar.png' %}" alt="لوگو بوستیلو">
-       </a>
-    </div>
+   <a href="{% url 'public:home' %}">
+        <div class="max-w-40">
+            <img src="{% static 'public/images/logo-navbar.png' %}" alt="لوگو بوستیلو">
+        </div>
+   </a>
     <nav>
         <ul class="flex gap-x-9 text-l text-white">
             <li>
                 <a href="{% url 'public:home' %}">Home</a>
             </li>
             <li class="text-violet-900">
-                <a href="{% url 'service:service' %}">services</a>
+                <a href="{% url 'service:service' %}">Services</a>
             </li>
             <li>
-                <a href="{% url 'public:about' %}">about</a>
+                <a href="{% url 'public:about' %}">About</a>
             </li>
             <li>
-                <a href="{% url 'public:blog' %}">blog</a>
+                <a href="{% url 'public:blog' %}">Blog</a>
+            </li>
+            <li>
+                <a href="{% url 'public:contactuss' %}">ContactUs</a>
             </li>
         </ul>
     </nav>
@@ -104,9 +107,11 @@
     <div class=" nav fixed top-0 -left-64 bottom-0 bg-neutral-900  w-64 min-h-screen pt-3 px-4 z-20 transition-all overflow-y-auto">
         <div class="flex items-center justify-between gap-x-3.5 mb-6 pb-5  border-b border-b-white/20">
 
-            <div class="max-w-40">
-                <img src="{% static 'public/images/logo-navbar.png' %}" alt="لوگو بوستیلو">
-            </div>
+            <a href="{% url 'public:home' %}">
+                <div class="max-w-40">
+                    <img src="{% static 'public/images/logo-navbar.png' %}" alt="لوگو بوستیلو">
+                </div>
+            </a>
 
             <div class="inline-flex items-center nav-close-btn">
                 <svg class="w-6 h-6 text-white">

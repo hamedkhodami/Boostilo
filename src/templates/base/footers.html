@@ -39,6 +39,9 @@
                     <li class="{% if request.resolver_match.url_name == 'blog' %}text-violet-900{% endif %}">
                         <a href="{% url 'public:blog' %}">Blog</a>
                     </li>
+                    <li class="{% if request.resolver_match.url_name == 'contactuss' %}text-violet-900{% endif %}">
+                        <a href="{% url 'public:contactuss' %}">ContactUs</a>
+                    </li>
                 </ul>
             </nav>
         </div>
