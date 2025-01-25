@@ -39,7 +39,7 @@
                 'MARKETING AND BRANDING',
             ],
             datasets: [{
-                label: 'مراحل کانتنت مارکتینگ',
+                label: 'Marketing stages',
                 data: [20, 20, 20, 20, 20],
                 backgroundColor: [
                     '#6b38b4',
