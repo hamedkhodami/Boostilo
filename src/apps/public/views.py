@@ -7,30 +7,34 @@ from django.contrib import messages
 from .forms import ContactUsForms
 
 def contact_us_view(request):
-    form_id = ''
     if request.method == "POST":
         form = ContactUsForms(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, "Your message has been sent successfully.")
-            form_id = request.POST.get('form_id', '')  # دریافت form_id از POST
         else:
             messages.error(request, "Please correct the errors below.")
-            form_id = request.POST.get('form_id', '')  # دریافت form_id از POST
-
-        if form_id == 'contactus':
-            anchor = '#contactus'
-        elif form_id == 'anotherform':
-            anchor = '#anotherform'
-        else:
-            anchor = '#contactus'  # حالت پیش‌فرض
-
-        referer = request.META.get('HTTP_REFERER', '/')
-        return redirect(f'{referer}{anchor}')
+        referer = request.META.get('HTTP_REFERER','/')
+        return redirect(f'{referer}#contactus')
     else:
         form = ContactUsForms()
 
-    return render(request, 'contactus.html', {'form': form, 'form_id': form_id})
+    return render(request, 'contactus.html', {'form': form})
+
+def contact_us_view_in_seo(request):
+    if request.method == "POST":
+        form = ContactUsForms(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Your message has been sent successfully.")
+        else:
+            messages.error(request, "Please correct the errors below.")
+        referer = request.META.get('HTTP_REFERER','/')
+        return redirect(f'{referer}#anotherform')
+    else:
+        form = ContactUsForms()
+
+    return render(request, 'contactus.html', {'form': form})
 
 class NewsDetailView(DetailView):
     model = NewsModel
