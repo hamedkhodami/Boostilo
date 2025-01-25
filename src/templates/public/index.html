@@ -207,7 +207,6 @@
                             <div class="px-2 md:px-10 py-3 bg-white  rounded-3xl flex justify-center flex-col items-center">
                                 <img src="{% static 'public/images/baccomment.svg' %}" alt="" class="w-12 md:w-24">
                                 <p class="text-center text-xs md:text-base text-gray-600">{{ review.feedback }}</p>
-                            <button data-popup-target="popup{{ forloop.counter }}" class="openPopup bg-slate-400 rounded-full py-1 px-3 text-sm mt-3">see video</button>
                                 <div class="w-20 h-20 rounded-full mb-[-24px] mt-2 ">
                                   <img src="{{ review.photo.url }}" alt="{{ review.name }}">
                                 </div>
