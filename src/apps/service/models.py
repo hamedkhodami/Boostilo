@@ -1,6 +1,7 @@
 from django.db import models
 from smart_selects.db_fields import ChainedForeignKey
 from apps.core.models import BaseModel
+from ckeditor.fields import RichTextField
 
 class ServiceModel(BaseModel):
     name = models.CharField(max_length=150,verbose_name='Service')
@@ -50,7 +51,7 @@ class PortfolioModel(BaseModel):
     service = models.ForeignKey(ServiceModel, on_delete=models.CASCADE,
                                 related_name='products')
     name = models.CharField(max_length=150,verbose_name="Product Name")
-    description = models.TextField(verbose_name='Products Description')
+    description = RichTextField(verbose_name='Products Description')
     image = models.ImageField(upload_to="products/images/",null=True,blank=True
                               ,verbose_name="Product Image")
 

@@ -1,4 +1,3 @@
-from django.views.generic.list import ListView
 from django.views.generic.base import TemplateView
 from django.views.generic import DetailView
 from .models import NewsModel,ArticleModel,AboutModel,ReviewModel
@@ -13,9 +12,10 @@ def contact_us_view(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Your message has been sent successfully.")
-            return redirect('public:home')
         else:
             messages.error(request, "Please correct the errors below.")
+        referer = request.META.get('HTTP_REFERER','/')
+        return redirect(f'{referer}#contactus')
     else:
         form = ContactUsForms()
 

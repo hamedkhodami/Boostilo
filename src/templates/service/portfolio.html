@@ -22,7 +22,9 @@
                         {% for product in products %}
                         <div class="relative sample hidden h-[250px] md:h-[300px] lg:h-[320px]" data-category="{{ product.service.id }}">
                             <div class="rounded-3xl post-img-wrapp h-full ">
-                               <img src="{{ product.image.url }}" alt="{{ product.name }}" class="rounded-3xl w-full h-full ">
+                                <a href="{% url 'service:portfolio' product.pk %}">
+                                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="rounded-3xl w-full h-full ">
+                                </a>
                             </div>
                             <div class="text-white  py-3  text-xs md:text-base absolute top-0 left-2 z-20">
                                <span>{{ product.created_at.year }}</span><br>

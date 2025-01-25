@@ -1,7 +1,14 @@
 from apps.service.models import ServiceModel,PortfolioModel,CategoryModel
 from django.views.generic.base import TemplateView
+from django.views.generic import DetailView
 from apps.public.forms import ContactUsForms
 from .models import PortfolioModel, CategoryModel
+from django.shortcuts import render, redirect
+
+class DetailPortfolioView(DetailView):
+    model = PortfolioModel
+    template_name = 'service/single-portfolio.html'
+    context_object_name = 'portfolio'
 
 class CategoryProductsView(TemplateView):
     template_name = 'service/portfolio-in-category-page.html'

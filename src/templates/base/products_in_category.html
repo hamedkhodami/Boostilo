@@ -16,7 +16,9 @@
                 <div class="grid-container grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2" id="images">
                     {% for product in category_data.products.all %}
                     <div id="{{ product.id }}" class="test grid-item h-[180px] md:h-[300px] lg:h-[380px]" category-img-id="{{ product.category.id }}">
-                        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-cover w-full h-full">
+                        <a href="{% url 'service:portfolio' product.pk %}">
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-cover w-full h-full">
+                        </a>
                     </div>
                     {% endfor %}
                 </div>

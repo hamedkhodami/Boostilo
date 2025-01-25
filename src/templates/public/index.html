@@ -132,18 +132,20 @@
                 <div class="relative h-[250px] md:h-[300px] lg:h-[350px] xl:h-[420px]
                     {% if forloop.counter|divisibleby:2 %}mt-10{% else %}mt--5{% endif %}">
                     <div class="rounded-3xl post-img-wrapp h-[90%]">
-                       <img src="{{ portfolio.image.url }}" alt="{{ portfolio.name }}" class="rounded-3xl w-full h-full ">
+                        <a href="{% url 'service:portfolio' portfolio.pk %}">
+                            <img src="{{ portfolio.image.url }}" alt="{{ portfolio.name }}" class="rounded-3xl w-full h-full ">
+                        </a>
                     </div>
                     <div class="text-gray-300 py-3">
                        <span>{{ portfolio.name }}</span>
                     </div>
                     <div class="absolute top-2 left-2 flex gap-2 z-10">
-                        <button class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
-                            <a href="#">{{ portfolio.service }}</a>
-                        </button>
-                        <button class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
-                            <a href="#">{{ portfolio.category }}</a>
-                        </button>
+                        <p class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
+                            <a>{{ portfolio.service }}</a>
+                        </p>
+                        <p class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
+                            <a>{{ portfolio.category }}</a>
+                        </p>
                     </div>
                 </div>
                 {% endfor %}
