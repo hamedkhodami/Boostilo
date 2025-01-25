@@ -46,7 +46,6 @@
                           <div class="swiper-slide">
                             <div class="flex flex-col justify-center items-center md:justify-start md:items-start  ">
                                 <h1 class="text-3xl md:text-5xl	xl:text-5xl font-bold ">
-                                    <span class="text-purple-600">Boostilo</span>crafting</br>
                                     {{ news.title }}
                                 </h1>
                                 <div class="flex justify-start items-center gap-x-3 mt-3 md:mt-6">
@@ -131,11 +130,11 @@
                 {% for key, portfolio in latest_portfolios.items %}
                 <div class="relative h-[250px] md:h-[300px] lg:h-[350px] xl:h-[420px]
                     {% if forloop.counter|divisibleby:2 %}mt-10{% else %}mt--5{% endif %}">
-                    <div class="rounded-3xl post-img-wrapp h-[90%]">
-                        <a href="{% url 'service:portfolio' portfolio.pk %}">
-                            <img src="{{ portfolio.image.url }}" alt="{{ portfolio.name }}" class="rounded-3xl w-full h-full ">
-                        </a>
-                    </div>
+                    <a href="{% url 'service:portfolio' portfolio.pk %}">
+                        <div class="rounded-3xl post-img-wrapp h-[90%]">
+                                <img src="{{ portfolio.image.url }}" alt="{{ portfolio.name }}" class="rounded-3xl w-full h-full ">
+                        </div>
+                    </a>
                     <div class="text-gray-300 py-3">
                        <span>{{ portfolio.name }}</span>
                     </div>
@@ -207,7 +206,6 @@
                             <div class="px-2 md:px-10 py-3 bg-white  rounded-3xl flex justify-center flex-col items-center">
                                 <img src="{% static 'public/images/baccomment.svg' %}" alt="" class="w-12 md:w-24">
                                 <p class="text-center text-xs md:text-base text-gray-600">{{ review.feedback }}</p>
-                            <button data-popup-target="popup{{ forloop.counter }}" class="openPopup bg-slate-400 rounded-full py-1 px-3 text-sm mt-3">see video</button>
                                 <div class="w-20 h-20 rounded-full mb-[-24px] mt-2 ">
                                   <img src="{{ review.photo.url }}" alt="{{ review.name }}">
                                 </div>

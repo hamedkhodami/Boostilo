@@ -151,7 +151,7 @@
                                     {% endfor %}
                                 </div>
                             {% endif %}
-                            <form class="space-y-4"  method="post" action="{% url 'public:contact_us' %}#anotherform" id="anotherform">
+                            <form class="space-y-4"  method="post" action="{% url 'public:contactus_seo' %}#anotherform" id="anotherform">
                                 {% csrf_token %}
                                 <div>
                                   <input type="text" id="input1" name="fullname" placeholder="Full name..." class="mt-1 block w-full px-3 py-3 focus:outline-none rounded-full bg-[#9482ad]  sm:text-sm">
