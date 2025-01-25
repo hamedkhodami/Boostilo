@@ -7,19 +7,30 @@ from django.contrib import messages
 from .forms import ContactUsForms
 
 def contact_us_view(request):
+    form_id = ''
     if request.method == "POST":
         form = ContactUsForms(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, "Your message has been sent successfully.")
+            form_id = request.POST.get('form_id', '')  # دریافت form_id از POST
         else:
             messages.error(request, "Please correct the errors below.")
-        referer = request.META.get('HTTP_REFERER','/')
-        return redirect(f'{referer}#contactus')
+            form_id = request.POST.get('form_id', '')  # دریافت form_id از POST
+
+        if form_id == 'contactus':
+            anchor = '#contactus'
+        elif form_id == 'anotherform':
+            anchor = '#anotherform'
+        else:
+            anchor = '#contactus'  # حالت پیش‌فرض
+
+        referer = request.META.get('HTTP_REFERER', '/')
+        return redirect(f'{referer}{anchor}')
     else:
         form = ContactUsForms()
 
-    return render(request, 'contactus.html', {'form': form})
+    return render(request, 'contactus.html', {'form': form, 'form_id': form_id})
 
 class NewsDetailView(DetailView):
     model = NewsModel
@@ -75,5 +86,6 @@ class HomePageView(TemplateView):
         return context
 
 
-
+class ContactUs(TemplateView):
+    template_name = "public/maincontactus.html"
 

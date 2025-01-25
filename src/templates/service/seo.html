@@ -142,7 +142,16 @@
                         </div>
 
                         <div class="w-full md:w-[40%]">
-                            <form class="space-y-4"  method="post" action="{% url 'public:contact_us' %}">
+                            {% if messages %}
+                                <div class="space-y-4">
+                                    {% for message in messages %}
+                                        <div class="rounded bg-green-500 text-white px-4 py-2">
+                                            {{ message }}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                            <form class="space-y-4"  method="post" action="{% url 'public:contact_us' %}#anotherform" id="anotherform">
                                 {% csrf_token %}
                                 <div>
                                   <input type="text" id="input1" name="fullname" placeholder="Full name... 1" class="mt-1 block w-full px-3 py-3 focus:outline-none rounded-full bg-[#9482ad]  sm:text-sm">

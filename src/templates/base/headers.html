@@ -151,7 +151,7 @@
                     </a>
                 </li>
                 <li class="flex items-center {% if request.resolver_match.url_name == 'contact' %}bg-purple-600 text-white{% endif %} pr-0 mb-4 h-10 pl-1 rounded-md">
-                    <a href="#" class="flex items-center gap-x-2">
+                    <a href="{% url 'public:contactuss' %}" class="flex items-center gap-x-2">
                         <svg class="w-6 h-6">
                             <use xlink:href="#contact"></use>
                         </svg>

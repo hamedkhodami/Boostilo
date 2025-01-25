@@ -24,28 +24,30 @@
                     {% if forloop.counter|divisibleby:2 %}
 
                         <div class="relative h-[250px] md:h-[300px] lg:h-[350px] xl:h-[420px] ">
-                            <div class="rounded-3xl post-img-wrapp h-[90%] ">
-                                <a href="{% url 'service:portfolio' product.pk %}">
-                                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="rounded-3xl w-full h-full ">
-                                </a>
-                            </div>
-                            <div class="text-gray-300 py-3 left-2 text-xs md:text-base">
-                               <span>{{ product.created_at.year }}</span>
-                               <span>{{ product.name }}</span>
-                            </div>
+                            <a href="{% url 'service:portfolio' product.pk %}">
+                                <div class="rounded-3xl post-img-wrapp h-[90%] ">
+                                        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="rounded-3xl w-full h-full ">
+
+                                </div>
+                                <div class="text-gray-300 py-3 left-2 text-xs md:text-base">
+                                   <span>{{ product.created_at.year }}</span>
+                                   <span>{{ product.name }}</span>
+                                </div>
+                            </a>
                         </div>
 
                     {% else %}
                         <div class=" relative h-[250px] md:h-[300px] lg:h-[300px] xl:h-[420px] mt-0 md:mt-14">
-                            <div class="rounded-3xl post-img-wrapp h-[90%]">
-                                <a href="{% url 'service:portfolio' product.pk %}">
-                                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="rounded-3xl w-full h-full ">
-                                </a>
-                             </div>
-                             <div class="text-gray-300 py-3 text-xs md:text-base">
-                                <span>{{ product.created_at.year }}</span>
-                                <span>{{ product.name }}</span>
-                             </div>
+                            <a href="{% url 'service:portfolio' product.pk %}">
+                                <div class="rounded-3xl post-img-wrapp h-[90%]">
+                                        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="rounded-3xl w-full h-full ">
+
+                                 </div>
+                                 <div class="text-gray-300 py-3 text-xs md:text-base">
+                                    <span>{{ product.created_at.year }}</span>
+                                    <span>{{ product.name }}</span>
+                                 </div>
+                            </a>
                         </div>{% endif %}
                     {% endfor %}
                 
