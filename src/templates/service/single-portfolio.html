@@ -15,7 +15,7 @@
                 <img src="{{ portfolio.image.url }}" alt="">
             </div>
             <div class="mt-2 text-sm md:text-base mt-5 ">
-                {{ portfolio.description }}
+                {{ portfolio.description|safe }}
             </div>
         </div>
         </section>
