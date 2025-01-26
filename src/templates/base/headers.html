@@ -97,10 +97,11 @@
             <use xlink:href="#bars-3"></use>
         </svg>
     </div>
-
-    <div class="max-w-40">
-        <img src="{% static 'public/images/logo.png' %}" alt="لوگو بوستیلو">
-    </div>
+    <a href="{% url 'public:home' %}">
+        <div class="max-w-40">
+            <img src="{% static 'public/images/logo.png' %}" alt="لوگو بوستیلو">
+        </div>
+    </a>
 
     <div class=" nav fixed top-0 -left-64 bottom-0 bg-neutral-900  w-64 min-h-screen pt-3 px-4 z-20 transition-all overflow-y-auto">
         <div class="flex items-center justify-between gap-x-3.5 mb-6 pb-5  border-b border-b-white/20">
@@ -157,7 +158,7 @@
                        Blog
                     </a>
                 </li>
-                <li class="flex items-center {% if request.resolver_match.url_name == 'contact' %}bg-purple-600 text-white{% endif %} pr-0 mb-4 h-10 pl-1 rounded-md">
+                <li class="flex items-center {% if request.resolver_match.url_name == 'contactuss' %}bg-purple-600 text-white{% endif %} pr-0 mb-4 h-10 pl-1 rounded-md">
                     <a href="{% url 'public:contactuss' %}" class="flex items-center gap-x-2">
                         <svg class="w-6 h-6">
                             <use xlink:href="#contact"></use>

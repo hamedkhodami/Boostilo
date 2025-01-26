@@ -1,6 +1,6 @@
 {% load static %}
 
-<!-- <section class="Consultation-with-us bg-backcontact bg-no-repeat bg-cover bg-left p-8" id="contactus">
+ <section class="Consultation-with-us bg-backcontact bg-no-repeat bg-cover bg-left p-8" id="contactus">
     <div class="mx-5 lg:mx-96">
         <div class="flex flex-wrap justify-center items-center ">
             <div class="w-full md:w-2/4">
@@ -23,8 +23,7 @@
                         {% endfor %}
                     </div>
                 {% endif %}
-                <!-- فرم تماس -->
-                <!-- <form method="post" action="{% url 'public:contact_us' %}#contactus" class="space-y-4">
+                <form method="post" action="{% url 'public:contact_us' %}#contactus" class="space-y-4">
                     {% csrf_token %}
                     <div>
                         <input type="text" name="fullname" class="mt-1 block w-full px-3 py-3 focus:outline-none rounded-full bg-[#9482ad] sm:text-sm" placeholder="Full name...">
@@ -42,73 +41,5 @@
                 </form>
             </div>
         </div>
-    </div>
-</section>  -->
-
-
-
-
-
-<section class="Consultation-with-us p-3 ">
-    <div class="container">
-        <div class="w-full flex flex-wrap justify-around items-center space-y-4 border-t p-4">
-            <a href="tel:(+1)7787005651" class="text-xs md:text-base flex items-center gap-2 w-full md:w-auto">
-                <img src="{% static 'public/images/svg/شماره.svg' %}" alt="">
-                <span class="text-black">(+1)7787005651</span>
-            </a>
-            <a href="mailto:info@Boostilo.ca" class="text-xs md:text-base flex items-center gap-2 w-full md:w-auto">
-                <img src="{% static 'public/images/svg/ایمیل.svg' %}" alt="">
-                <span class="text-black">info@Boostilo.ca</span>
-            </a>
-            <a href="https://instagram.com/Boostilo.ca" class="text-xs md:text-base flex items-center gap-2 w-full md:w-auto">
-                <img src="{% static 'public/images/svg/اینستاگرام.svg' %}" alt="">
-                <span class="text-black">Boostilo.ca</span>
-            </a>
-            <div class="text-xs md:text-base flex items-center gap-2 w-full md:w-auto">
-                <img src="{% static 'public/images/svg/Location.svg' %}" alt="">
-                <span class="text-black">516 Foster Ave, Coquitlam, BC, V3J0H8</span>
-            </div>
-        </div>
-        
-        <div class="flex justify-center mt-10">
-            <div class=" w-full md:w-2/4">
-                <div class="bg-[#e8e8e9] rounded-md py-2 px-10 ">
-                    <div class=" w-full text-black text-end ">
-                        <h3 class="text-2xl text-center">contact us</h3>
-                        <p class="text-xs text-center">for get price or a free meeting</p>
-                     </div>
-                     <div class="w-full flex justify-center items-center mt-2">
-                        <img src="{% static 'public/images/svg/آیکون تماس.svg' %}" alt="" class="w-20">
-                     </div>
-                    {% if messages %}
-                     <div class="space-y-4">
-                         {% for message in messages %}
-                             <div class="rounded bg-green-500 text-white px-4 py-2">
-                                 {{ message }}
-                             </div>
-                         {% endfor %}
-                     </div>
-                    {% endif %}
-                    
-                     <form method="post" action="{% url 'public:contact_us' %}#contactus" class="space-y-4 p-5">
-                        {% csrf_token %}
-                        <div>
-                          <input type="text" id="input1" name="input1" placeholder="Full name... " class="mt-1 block w-full px-3 py-3 focus:outline-none rounded-full bg-[#b8b7b8] text-black sm:text-sm">
-                        </div>
-                      
-                        <div>
-                          <input type="text" id="input2" name="input2" placeholder="Email..." class="mt-1 block w-full px-3 py-3 focus:outline-none rounded-full bg-[#b8b7b8] sm:text-sm text-black">
-                        </div>
-                      
-                        <div>
-                          <button type="submit" class=" w-full inline-flex items-center px-4 py-3 rounded-full  bg-violet-700 text-cyan-50 focus:outline-none">
-                            Submit
-                          </button>
-                        </div>
-                      </form>
-                </div>
-        </div>
-        </div>
-       
     </div>
 </section>
