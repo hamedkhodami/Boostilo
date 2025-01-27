@@ -1180,6 +1180,35 @@ body{
   }
 }
 
+.item-highlight-landing span:nth-child(1) {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(126 34 206 / var(--tw-text-opacity, 1));
+}
+
+@media (min-width: 768px) {
+  .item-highlight-landing span:nth-child(1) {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+.item-highlight-landing span:nth-child(3) {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
+@media (min-width: 768px) {
+  .item-highlight-landing span:nth-child(3) {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
 /* استایل سفارشی برای نوار اسکرول */
 
 .scrollbar-custom {
@@ -1966,11 +1995,6 @@ body{
 .bg-\[\#0a090f\] {
   --tw-bg-opacity: 1;
   background-color: rgb(10 9 15 / var(--tw-bg-opacity, 1));
-}
-
-.bg-\[\#0a0a0f\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(10 10 15 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[\#130a1f\] {
