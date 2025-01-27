@@ -2723,6 +2723,10 @@ html {
     height: 450px;
   }
 
+  .md\:h-full {
+    height: 100%;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
   }
