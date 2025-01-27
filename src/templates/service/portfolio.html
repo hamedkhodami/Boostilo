@@ -9,14 +9,15 @@
    {% include 'base/headers.html' %}
 
     <section class="portfolioboostilo mt-10">
-        <div class="container flex justify-center flex-col items-center">
-            <div class="Portfolio-category-button">
+        <div class="container">
+            <div class="flex overflow-x-auto whitespace-nowrap gap-1 mb-5 scrollbar-custom pb-2 md:overflow-visible md:flex-wrap">
+              <button class="btn-portfolio text-gray-600 px-2.5 sm:px-4 md:px-4 py-2 sm:py-1.5 md:py-2 text-xs sm:text-sm md:text-base rounded-full border border-gray-700 active" data-category="all">all</button>
                 {% for service in services %}
                 <button class="btn-portfolio text-gray-600 px-2.5 sm:px-4 md:px-4 py-2 sm:py-1.5 md:py-2 text-xs sm:text-sm md:text-base rounded-full border border-gray-700" data-category="{{ service.id }}">
                     {{ service.name }}
                 </button>
                 {% endfor %}
-             </div>
+            </div>
             <div class="Portfolio-category-img mt-5">
                 <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 p-5">
                         {% for product in products %}
@@ -34,7 +35,7 @@
                         {% endfor %}
                  </div>
             </div>
-         </div>
+        </div>
     </section>
 
 

@@ -1,31 +1,27 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const buttonPortfolio = document.querySelectorAll(".btn-portfolio");
-    const samples = document.querySelectorAll(".sample");
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.btn-portfolio');
+    const samples = document.querySelectorAll('.sample');
 
-    if (buttonPortfolio.length > 0) {
-        const defaultButton = buttonPortfolio[0];
-        const defaultCategory = defaultButton.getAttribute("data-category");
+    
+    const allButton = document.querySelector('[data-category="all"]');
+    allButton.classList.add('active'); // دکمه "all" فعال است
+    samples.forEach(sample => sample.classList.remove('hidden')); 
 
-        defaultButton.classList.add("active");
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
 
-        samples.forEach(sample => {
-            if (sample.getAttribute("data-category") === defaultCategory) {
-                sample.classList.remove("hidden");
-            }
-        });
-    }
+            buttons.forEach(btn => btn.classList.remove('active'));
 
-    buttonPortfolio.forEach((button) => {
-        button.addEventListener("click", () => {
-            buttonPortfolio.forEach((btn) => btn.classList.remove("active"));
+            button.classList.add('active');
 
-            button.classList.add("active");
+            const category = button.getAttribute('data-category');
 
-            const category = button.getAttribute("data-category");
-            samples.forEach((sample) => {
-                sample.classList.add("hidden");
-                if (sample.getAttribute("data-category") === category) {
-                    sample.classList.remove("hidden");
+            samples.forEach(sample => {
+                if (category === 'all' || sample.getAttribute('data-category') === category) {
+                    sample.classList.remove('hidden');
+                } else {
+                    sample.classList.add('hidden');
                 }
             });
         });
