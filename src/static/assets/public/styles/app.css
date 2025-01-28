@@ -1204,8 +1204,8 @@ body{
 
 @media (min-width: 768px) {
   .item-highlight-landing span:nth-child(3) {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
@@ -3061,33 +3061,5 @@ html {
   .xl\:text-5xl {
     font-size: 3rem;
     line-height: 1;
-  }
-}
-.item-highlight-landing span:nth-child(1) {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
-  --tw-text-opacity: 1;
-  color: rgb(126 34 206 / var(--tw-text-opacity, 1));
-}
-
-@media (min-width: 768px) {
-  .item-highlight-landing span:nth-child(1) {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-}
-
-.item-highlight-landing span:nth-child(3) {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
-}
-
-@media (min-width: 768px) {
-  .item-highlight-landing span:nth-child(3) {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
   }
 }
