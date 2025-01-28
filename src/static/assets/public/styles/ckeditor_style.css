@@ -1,0 +1,14 @@
+/* استایل برای تمام فیلدهای CKEditor */
+.ckeditor-content ol {
+    margin-left: 20px;
+    list-style-type: decimal; /* برای لیست‌های عددی */
+}
+
+.ckeditor-content ul {
+    margin-left: 20px;
+    list-style-type: disc; /* برای لیست‌های نقطه‌ای */
+}
+
+.ckeditor-content li {
+    margin-bottom: 5px; /* فاصله بین آیتم‌ها */
+}
