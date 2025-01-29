@@ -16,13 +16,13 @@ class ServiceModelAdmin(admin.ModelAdmin):
 
 @admin.register(CategoryModel)
 class CategoryModelAdmin(admin.ModelAdmin):
-    list_display = ('id','service','name')
-    list_display_links = ('id','name')
+    list_display = ('id','service','name','title')
+    list_display_links = ('id','name','title')
     search_fields = ('name',)
     list_filter = ('service',)
     ordering = ('service',)
     fieldsets = (
-        ('Information', {'fields': ('service','name','image')}),
+        ('Information', {'fields': ('service','name','title','image')}),
         ('Description', {'fields': ('description',)}),
     )
 

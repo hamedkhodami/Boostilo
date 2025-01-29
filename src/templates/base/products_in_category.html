@@ -1,43 +1,45 @@
 {% load static %}
 
 
+{% load static %}
+
+{% load static %}
+
 <div class="container">
     <section class="portfolio-category mt-5 px-2 md:px-10">
-            <div class="category-buttons">
-                {% for category in categories %}
+        <div class="category-buttons">
+            {% for category in categories %}
                 <button class="btn-category" category-id="{{ category.id }}">{{ category.name }}</button>
-                {% endfor %}
-            </div>
+            {% endfor %}
+        </div>
 
-        {% for category in categories %}
-            <div id="category-{{ category.id }}" class="category-container">
+        {% for category_data in latest_products_by_category %}
+            <div id="category-{{ category_data.category.id }}" class="category-container">
                 <div class="container mx-auto my-5">
-                {% for category_data in latest_products_by_category %}
-                <div class="grid-container grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2" id="images">
-                    {% for product in category_data.products.all %}
-                        <a href="{% url 'service:portfolio' product.pk %}">
-                            <div id="{{ product.id }}" class="test grid-item h-[180px] md:h-[300px] lg:h-[380px]" category-img-id="{{ product.category.id }}">
-                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-cover w-full h-full">
-                            </div>
-                        </a>
-                    {% endfor %}
+                    <div class="grid-container grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2" id="images">
+                        {% for product in category_data.products %}
+                            <a href="{% url 'service:portfolio' product.pk %}">
+                                <div id="{{ product.id }}" class="test grid-item h-[180px] md:h-[300px] lg:h-[380px]" category-img-id="{{ product.category.id }}">
+                                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-cover w-full h-full">
+                                </div>
+                            </a>
+                        {% endfor %}
+                    </div>
                 </div>
-                {% endfor %}
-            </div>
 
-
-            <a href="{% url 'service:category_products' category_id=category.id %}" class="flex justify-end items-center">
-                <button class="btn-gradient-purple">
-                    see more...
-                </button>
-                <div class="border border-black rounded-full p-1">
-                    <svg class="w-3 h-3 md:w-[20px] md:h-[20px] text-zinc-700 ">
-                        <use xlink:href="#arrow-up-right"></use>
-                     </Svg>
-                </div>
-            </a>
+                {% if category_data.total_count > 6 %}
+                    <a href="{% url 'service:category_products' category_id=category_data.category.id %}" class="flex justify-end items-center">
+                        <button class="btn-gradient-purple">
+                            see more...
+                        </button>
+                        <div class="border border-black rounded-full p-1">
+                            <svg class="w-3 h-3 md:w-[20px] md:h-[20px] text-zinc-700">
+                                <use xlink:href="#arrow-up-right"></use>
+                            </svg>
+                        </div>
+                    </a>
+                {% endif %}
             </div>
         {% endfor %}
-
-   </section>
+    </section>
 </div>

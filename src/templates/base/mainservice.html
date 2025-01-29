@@ -7,14 +7,14 @@
                     <button class="btn custom-services-button group active" data-content="content1"  >
                         <div class="flex items-center gap-3">
                             <span class="number group-focus:text-purple-500">01</span>
-                            <span class="text">Digital Marketing</span>
+                            <span class="text">Web Development</span>
                         </div>
                         <span class="arrow">&#8594;</span>
                     </button>
                     <button class="btn custom-services-button group" data-content="content2">
                         <div class="flex items-center gap-3">
                             <span class="number group-focus:text-purple-500">02</span>
-                            <span class="text">Web Development</span>
+                            <span class="text">Application</span>
                         </div>
                         <span class="arrow">&#8594;</span>
                     </button>
@@ -28,61 +28,20 @@
                     <button class="btn custom-services-button group" data-content="content4">
                         <div class="flex items-center gap-3">
                             <span class="number group-focus:text-purple-500">04</span>
-                            <span class="text">Application </span>
+                            <span class="text">Content Creation</span>
                         </div>
                         <span class="arrow">&#8594;</span>
                     </button>
                     <button class="btn custom-services-button group" data-content="content5">
                         <div class="flex items-center gap-3">
                             <span class="number group-focus:text-purple-500">05</span>
-                            <span class="text">Content Creation</span>
+                            <span class="text">Digital Marketing</span>
                         </div>
                         <span class="arrow">&#8594;</span>
                     </button>
                 </div>
                 <div class=" w-full md:w-3/5">
                     <div id="content1" class="content">
-                        <div class="custom-flex-container">
-                            <div class=" custom-img-container">
-                                <img src="{{ digital_marketing.image.url }}" alt="Digital Marketing" >
-                            </div>
-                            <div class=" custom-info-container">
-                                <div class="custom-gradient-box">
-                                    <p>{{ digital_marketing.description_about }}</p>
-                                    <div class="flex justify-between items-center font-bold">
-                                        <span>About<br>
-                                          {{ digital_marketing.name }}</span>
-                                        <div class="custom-button-info custom-button-white">
-                                            <a href="{% url 'service:marketing' %}">
-                                                <svg class="custom-svg">
-                                                    <use xlink:href="#arrow-up-right"></use>
-                                                </Svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="custom-dark-box ">
-                                    <p>{{ digital_marketing.description_product }}</p>
-                                    <div class="flex justify-between items-end font-bold">
-                                        <span>See<br>
-                                         the Portfolio</span>
-                                        <div class="custom-button-info custom-button-gray">
-                                            <a href="{% url 'service:service_portfolios' service_name=digital_marketing.name %}">
-                                                <svg class="custom-svg">
-                                                    <use xlink:href="#arrow-up-right"></use>
-                                                </Svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="custom-box-container">
-                                        <span class="custom-box"></span>
-                                        <span class="custom-box-alternate"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="content2" class="content hidden">
                         <div class="custom-flex-container">
                             <div class=" custom-img-container">
                                 <img src="{{ web_dev.image.url }}" alt="Web Development" >
@@ -109,6 +68,47 @@
                                          the Portfolio</span>
                                         <div class="custom-button-info custom-button-gray">
                                             <a href="{% url 'service:service_portfolios' service_name=web_dev.name %}">
+                                                <svg class="custom-svg">
+                                                    <use xlink:href="#arrow-up-right"></use>
+                                                </Svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="custom-box-container">
+                                        <span class="custom-box"></span>
+                                        <span class="custom-box-alternate"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content2" class="content hidden">
+                        <div class="custom-flex-container">
+                            <div class=" custom-img-container">
+                                <img src="{{ social_media.image.url }}" alt="Application" >
+                            </div>
+                            <div class=" custom-info-container">
+                                <div class="custom-gradient-box">
+                                    <p>{{ social_media.description_about }}</p>
+                                    <div class="flex justify-between items-center font-bold">
+                                        <span>About<br>
+                                          {{ social_media.name }}</span>
+                                        <div class="custom-button-info custom-button-white">
+                                            <a href="{% url 'service:application' %}">
+                                                <svg class="custom-svg">
+                                                    <use xlink:href="#arrow-up-right"></use>
+                                                </Svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="custom-dark-box ">
+                                    <p>{{ application.description_product }}</p>
+                                    <div class="flex justify-between items-end font-bold">
+                                        <span>See<br>
+                                         the Portfolio</span>
+                                        <div class="custom-button-info custom-button-gray">
+                                            <a href="{% url 'service:service_portfolios' service_name=social_media.name %}">
                                                 <svg class="custom-svg">
                                                     <use xlink:href="#arrow-up-right"></use>
                                                 </Svg>
@@ -167,48 +167,7 @@
                     <div id="content4" class="content hidden">
                         <div class="custom-flex-container">
                             <div class=" custom-img-container">
-                                <img src="{{ social_media.image.url }}" alt="Application" >
-                            </div>
-                            <div class=" custom-info-container">
-                                <div class="custom-gradient-box">
-                                    <p>{{ social_media.description_about }}</p>
-                                    <div class="flex justify-between items-center font-bold">
-                                        <span>About<br>
-                                          {{ social_media.name }}</span>
-                                        <div class="custom-button-info custom-button-white">
-                                            <a href="{% url 'service:application' %}">
-                                                <svg class="custom-svg">
-                                                    <use xlink:href="#arrow-up-right"></use>
-                                                </Svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="custom-dark-box ">
-                                    <p>{{ social_media.description_product }}</p>
-                                    <div class="flex justify-between items-end font-bold">
-                                        <span>See<br>
-                                         the Portfolio</span>
-                                        <div class="custom-button-info custom-button-gray">
-                                            <a href="{% url 'service:service_portfolios' service_name=social_media.name %}">
-                                                <svg class="custom-svg">
-                                                    <use xlink:href="#arrow-up-right"></use>
-                                                </Svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="custom-box-container">
-                                        <span class="custom-box"></span>
-                                        <span class="custom-box-alternate"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="content5" class="content hidden">
-                        <div class="custom-flex-container">
-                            <div class=" custom-img-container">
-                                <img src="{{ content_create.image.url }}" alt="Create Condition" >
+                                <img src="{{ content_create.image.url }}" alt="Content Creation" >
                             </div>
                             <div class=" custom-info-container">
                                 <div class="custom-gradient-box">
@@ -232,6 +191,47 @@
                                          the Portfolio</span>
                                         <div class="custom-button-info custom-button-gray">
                                             <a href="{% url 'service:service_portfolios' service_name=content_create.name %}">
+                                                <svg class="custom-svg">
+                                                    <use xlink:href="#arrow-up-right"></use>
+                                                </Svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="custom-box-container">
+                                        <span class="custom-box"></span>
+                                        <span class="custom-box-alternate"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content5" class="content hidden">
+                        <div class="custom-flex-container">
+                            <div class=" custom-img-container">
+                                <img src="{{ digital_marketing.image.url }}" alt="Digital Marketing" >
+                            </div>
+                            <div class=" custom-info-container">
+                                <div class="custom-gradient-box">
+                                    <p>{{ digital_marketing.description_about }}</p>
+                                    <div class="flex justify-between items-center font-bold">
+                                        <span>About<br>
+                                          {{ digital_marketing.name }}</span>
+                                        <div class="custom-button-info custom-button-white">
+                                            <a href="{% url 'service:marketing' %}">
+                                                <svg class="custom-svg">
+                                                    <use xlink:href="#arrow-up-right"></use>
+                                                </Svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="custom-dark-box ">
+                                    <p>{{ digital_marketing.description_product }}</p>
+                                    <div class="flex justify-between items-end font-bold">
+                                        <span>See<br>
+                                         the Portfolio</span>
+                                        <div class="custom-button-info custom-button-gray">
+                                            <a href="{% url 'service:service_portfolios' service_name=digital_marketing.name %}">
                                                 <svg class="custom-svg">
                                                     <use xlink:href="#arrow-up-right"></use>
                                                 </Svg>

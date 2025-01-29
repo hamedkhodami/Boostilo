@@ -50,7 +50,9 @@ class BaseServicePageView(TemplateView):
             if latest_products.exists():
                 latest_products_by_category.append({
                     'category': category,
-                    'products': latest_products
+                    'products': latest_products,
+                    'total_count': PortfolioModel.objects.filter(service__name__iexact=self.service_name,
+                                                                 category=category).count()
                 })
 
         context['latest_products_by_category']=latest_products_by_category

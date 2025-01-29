@@ -26,7 +26,8 @@ class CategoryModel(BaseModel):
     service = models.ForeignKey(ServiceModel,on_delete=models.CASCADE,
                                 related_name='categories')
     name = models.CharField(max_length=150,verbose_name='Category Name')
-    description = models.TextField(verbose_name='Category Description')
+    title = models.CharField(max_length=150,verbose_name='Category Title',null=True,blank=True)
+    description = RichTextField(verbose_name='Category Description')
     image = models.ImageField(upload_to='category/images/',null=True,blank=True,
                               verbose_name='Category Image')
 
