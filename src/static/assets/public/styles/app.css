@@ -741,11 +741,18 @@ body{
   padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+@media (min-width: 768px) {
+  .btn-gradient-purple {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
 }
 
 .btn-transparent {
@@ -755,8 +762,17 @@ body{
   border-color: rgb(156 163 175 / var(--tw-border-opacity, 1));
   padding-left: 1rem;
   padding-right: 1rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity, 1));
+}
+
+@media (min-width: 768px) {
+  .btn-transparent {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
 }
 
 /* تعریف استایل سفارشی برای discover-more-button */
@@ -2512,6 +2528,16 @@ body{
 .placeholder-zinc-900::placeholder {
   --tw-placeholder-opacity: 1;
   color: rgb(24 24 27 / var(--tw-placeholder-opacity, 1));
+}
+
+.placeholder-white::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-placeholder-opacity, 1));
+}
+
+.placeholder-white::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-placeholder-opacity, 1));
 }
 
 .opacity-0 {
