@@ -12,9 +12,7 @@
                             <span>{{ category.service.name }}</span>
                         </div>
                         <div class="mt-2 text-sm md:text-base ">
-                            <div class="ckeditor-content">
-                                <p class="mt-5 font-xs md:font-base">{{ category.description|safe }}</p>
-                            </div>
+                            <p class="ckeditor-content mt-5 font-xs md:font-base">{{ category.description|safe }}</p>
                         </div>
                     </div>
                     <div class="w-full md:w-2/5 p-4 flex justify-center items-center">
@@ -33,8 +31,8 @@
                             <span>{{ category.name }}</span><br>
                             <span>{{ category.service.name }}</span>
                         </div>
-                        <div class="mt-2 text-sm md:text-base ">
-                        <p class="mt-5">{{ category.description }}</p>
+                        <div class="ckeditor-content mt-2 text-sm md:text-base ">
+                        <p class="mt-5">{{ category.description|safe }}</p>
                        </div>
                     </div>
                 </div>
