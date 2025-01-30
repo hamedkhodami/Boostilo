@@ -71,5 +71,8 @@
 
             },
         },
-
+        navigation: {
+          nextEl: ".swiper-button-prev-custom",
+          prevEl: ".swiper-button-next-custom",
+        }
   });
