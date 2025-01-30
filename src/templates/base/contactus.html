@@ -6,7 +6,7 @@
             <div class="w-full md:w-2/4">
                 <div class="text-white">
                     <h3 class="text-2xl">contact us</h3>
-                    <p class="font-thin text-base">for get price or a free meeting</p>
+                    <p class="font-thin text-base">For pricing details and to schedule a consultation</p>
                 </div>
                 <div class="flex">
                     <img src="{% static 'public/images/svg/آیکون تماس.svg' %}" alt="" class="mb-10">
@@ -26,15 +26,15 @@
                 <form method="post" action="{% url 'public:contact_us' %}#contactus" class="space-y-4">
                     {% csrf_token %}
                     <div>
-                        <input type="text" name="fullname" class="mt-1 block w-full px-3 py-3 focus:outline-none rounded-full placeholder-white bg-[#9482ad] sm:text-sm" placeholder="Full name...">
+                        <input type="text" name="fullname" class="mt-1 block w-full px-3 py-3 focus:outline-none rounded-full placeholder-white text-white bg-[#9482ad] sm:text-sm" placeholder="Full name...">
                     </div>
 
                     <div>
-                        <input type="email" name="email" class="mt-1 block w-full px-3 py-3 focus:outline-none rounded-full placeholder-white bg-[#9482ad] sm:text-sm" placeholder="Email...">
+                        <input type="email" name="email" class="mt-1 block w-full px-3 py-3 focus:outline-none rounded-full placeholder-white text-white bg-[#9482ad] sm:text-sm" placeholder="Email...">
                     </div>
 
                     <div>
-                        <button type="submit" class="w-full inline-flex items-center px-4 py-3 rounded-full bg-violet-700 focus:outline-none">
+                        <button type="submit" class="w-full text-white inline-flex items-center px-4 py-3 rounded-full bg-violet-700 focus:outline-none">
                             Submit
                         </button>
                     </div>

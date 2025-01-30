@@ -674,7 +674,7 @@ body{
   border-radius: 9999px;
   border-width: 2px;
   --tw-border-opacity: 1;
-  border-color: rgb(15 23 42 / var(--tw-border-opacity, 1));
+  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
@@ -1979,6 +1979,11 @@ body{
   border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
 }
 
+.border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
+}
+
 .border-gray-700 {
   --tw-border-opacity: 1;
   border-color: rgb(55 65 81 / var(--tw-border-opacity, 1));
@@ -2025,16 +2030,6 @@ body{
 .bg-\[\#9482ad\] {
   --tw-bg-opacity: 1;
   background-color: rgb(148 130 173 / var(--tw-bg-opacity, 1));
-}
-
-.bg-\[\#b8b7b8\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(184 183 184 / var(--tw-bg-opacity, 1));
-}
-
-.bg-\[\#e8e8e9\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(232 232 233 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[\#f1ecf7\] {
@@ -2100,6 +2095,15 @@ body{
 .bg-slate-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(148 163 184 / var(--tw-bg-opacity, 1));
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.bg-violet-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(139 92 246 / var(--tw-bg-opacity, 1));
 }
 
 .bg-violet-700 {
@@ -2251,6 +2255,11 @@ body{
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}
+
+.px-7 {
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
 }
 
 .py-1 {
@@ -2410,11 +2419,6 @@ body{
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
-.text-cyan-50 {
-  --tw-text-opacity: 1;
-  color: rgb(236 254 255 / var(--tw-text-opacity, 1));
-}
-
 .text-gray-200 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity, 1));
@@ -2478,6 +2482,11 @@ body{
 .text-violet-900 {
   --tw-text-opacity: 1;
   color: rgb(76 29 149 / var(--tw-text-opacity, 1));
+}
+
+.text-violet-950 {
+  --tw-text-opacity: 1;
+  color: rgb(46 16 101 / var(--tw-text-opacity, 1));
 }
 
 .text-white {
@@ -2760,10 +2769,6 @@ html {
     margin-right: 5rem;
   }
 
-  .md\:mb-0 {
-    margin-bottom: 0px;
-  }
-
   .md\:mb-4 {
     margin-bottom: 1rem;
   }
@@ -2985,6 +2990,11 @@ html {
     padding-right: 2.5rem;
   }
 
+  .md\:px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
   .md\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -3008,6 +3018,11 @@ html {
   .md\:py-2 {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+  }
+
+  .md\:py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
 
   .md\:py-5 {
