@@ -81,7 +81,7 @@
                 <div class="flex flex-wrap">
                   <div class="w-full md:w-1/2 flex justify-center flex-col items-center">
                       <h1 class="text-2xl md:text-4xl text-violet-950 text-bold">Contact Us</h1>
-                      <img src="{% static 'public/images/svg/تماس با ما تصویر 2.webp' %}" alt="" class="w-[70%] mt-5">
+                      <img src="{% static 'public/images/تماس با ما تصویر 2.webp' %}" alt="" class="w-[70%] mt-5">
                   </div>
 
                   <div class="w-full md:w-1/2">
@@ -98,13 +98,13 @@
                       <form method="post" action="{% url 'public:contact_us' %}#contactus" class="space-y-4 p-5" id="contactus">
                         {% csrf_token %}
                           <div>
-                            <label for="">Name:</label>
-                            <input type="text" id="input1" name="input1" class="mt-2 block w-full px-2 py-2 md:px-3 md:py-3 focus:outline-none rounded-lg border-2 border-bg border-gray-300 bg-transparent sm:text-sm">
+                            <label for="fullname">Name:</label>
+                            <input type="text" id="fullname" name="fullname" class="mt-2 block w-full px-2 py-2 md:px-3 md:py-3 focus:outline-none rounded-lg border-2 border-bg border-gray-300 bg-transparent sm:text-sm">
                           </div>
                         
                           <div>
-                            <label for="input2">Email:</label>
-                            <input type="text" id="input2" name="input2" class="mt-2 block w-full px-2 py-2 md:px-3 md:py-3 focus:outline-none rounded-lg border-2 border-gray-300 bg-transparent sm:text-sm">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" class="mt-2 block w-full px-2 py-2 md:px-3 md:py-3 focus:outline-none rounded-lg border-2 border-gray-300 bg-transparent sm:text-sm">
                           </div>
                         
                           <div>
