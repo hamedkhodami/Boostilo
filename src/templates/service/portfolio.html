@@ -11,7 +11,7 @@
     <section class="portfolioboostilo mt-10">
         <div class="container">
             <div class="flex overflow-x-auto whitespace-nowrap gap-1 mb-5 scrollbar-custom pb-2 md:overflow-visible md:flex-wrap">
-              <button class="btn-portfolio text-gray-600 px-2.5 sm:px-4 md:px-4 py-2 sm:py-1.5 md:py-2 text-xs sm:text-sm md:text-base rounded-full border border-gray-700 active" data-category="all">all</button>
+              <button class="btn-portfolio text-gray-600 px-2.5 sm:px-4 md:px-4 py-2 sm:py-1.5 md:py-2 text-xs sm:text-sm md:text-base rounded-full border border-gray-700 active" data-category="all">All</button>
                 {% for service in services %}
                 <button class="btn-portfolio text-gray-600 px-2.5 sm:px-4 md:px-4 py-2 sm:py-1.5 md:py-2 text-xs sm:text-sm md:text-base rounded-full border border-gray-700" data-category="{{ service.id }}">
                     {{ service.name }}
@@ -24,7 +24,10 @@
                         <div class="relative sample hidden h-[250px] md:h-[300px] lg:h-[320px]" data-category="{{ product.service.id }}">
                             <a href="{% url 'service:portfolio' product.pk %}">
                                 <div class="rounded-3xl post-img-wrapp h-full ">
-                                        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="rounded-3xl w-full h-full ">
+                                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="rounded-3xl w-full h-full ">
+                                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-xs md:text-base font-semibold opacity-0 transition-opacity duration-300">
+                                        Click to see more
+                                    </div>
                                 </div>
                             </a>
                             <div class="text-white  py-3  text-xs md:text-base absolute top-0 left-2 z-20">

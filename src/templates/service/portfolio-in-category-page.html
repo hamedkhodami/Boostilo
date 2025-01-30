@@ -25,25 +25,47 @@
                     <div class="relative h-[250px] md:h-[300px] lg:h-[350px] xl:h-[420px] ">
                         <a href="{% url 'service:portfolio' product.pk %}">
                             <div class="rounded-3xl post-img-wrapp h-[90%] ">
-                                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="rounded-3xl w-full h-full ">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="rounded-3xl w-full h-full ">
+                                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-xs md:text-base font-semibold opacity-0 transition-opacity duration-300">
+                                    Click to see more
+                                </div>
                             </div>
                             <div class="text-gray-300 py-3 left-2 text-xs md:text-base">
                                <span>{{ product.created_at.year }}</span>
                                <span>{{ product.name }}</span>
                             </div>
+                            <div class="absolute top-2 left-2 flex gap-2 z-10">
+                                    <p class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
+                                        <a>{{ product.service }}</a>
+                                    </p>
+                                    <p class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
+                                        <a>{{ product.category }}</a>
+                                    </p>
+                                </div>
                         </a>
                     </div>
                     {% else %}
                     <div class=" relative h-[250px] md:h-[300px] lg:h-[300px] xl:h-[420px] mt-0 md:mt-14">
                         <a href="{% url 'service:portfolio' product.pk %}">
                                 <div class="rounded-3xl post-img-wrapp h-[90%]">
-                                        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="rounded-3xl w-full h-full ">
+                                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="rounded-3xl w-full h-full ">
+                                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-xs md:text-base font-semibold opacity-0 transition-opacity duration-300">
+                                        Click to see more
+                                    </div>
 
                                  </div>
                                  <div class="text-gray-300 py-3 text-xs md:text-base">
                                     <span>{{ product.created_at.year }}</span>
                                     <span>{{ product.name }}</span>
                                  </div>
+                                 <div class="absolute top-2 left-2 flex gap-2 z-10">
+                                    <p class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
+                                        <a>{{ product.service }}</a>
+                                    </p>
+                                    <p class="rounded-full text-gray-300 text-xs md:text-base bg-zinc-800 px-4 py-1">
+                                        <a>{{ product.category }}</a>
+                                    </p>
+                                </div>
                         </a>
                     </div>{% endif %}
                     {% endfor %}
