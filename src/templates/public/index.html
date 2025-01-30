@@ -90,8 +90,8 @@
                 </div>
                 <div class="w-full md:w-1/2 p-4 flex flex-col items-center md:items-baseline md:justify-around ">
                     <h1 class="text-xl md:text-2xl	xl:text-4xl font-bold mt-2 text-center md:text-start  ">
-                        crafting Success,Digital</br>
-                        <span class="text-purple-600">Boostilo</span>
+                        Crafting Success,Digitally</br>
+                        <span class="text-purple-600">Who We Are</span>
                     </h1>
                     <p class=" text-sm md:text-xl text-zinc-800 mt-2 text-center md:text-start ">
                         {{ about.content }}
@@ -167,7 +167,57 @@
             <div class="container">
                 <div class="flex flex-wrap">
                     <div class="w-full md:w-1/2 p-3">
-                        <img src="{% static 'public/images/aboutt.webp' %}" alt="">
+                        <div class="grid grid-cols-3 sm:grid-cols-3 gap-3">
+                            <div class=" rounded-3xl team-image-container">
+                                <img src="{% static 'public/images/arezoozarkesh.png' %}" alt="عکس1" class="w-full h-auto rounded-3xl ">
+                                <div
+                                 class="information md:text-sm">
+                                   <span>Arezoo Zarkesh</span><br />
+                                    <span>Graphic designer</span>
+                                </div>
+                            </div>
+                            <div class=" rounded-3xl team-image-container">
+                                <img src="{% static 'public/images/amirabbasmehdizadeh.png' %}" alt="عکس1" class="w-full h-auto rounded-3xl ">
+                                <div
+                                 class="information md:text-sm">
+                                   <span>Amir Abbas Mehdizadeh</span><br />
+                                    <span>Editor</span>
+                                </div>
+                            </div>
+                            <div class=" rounded-full team-image-container">
+                                <img src="{% static 'public/images/faezehporhasani.png' %}" alt="عکس1" class="w-full h-auto rounded-full ">
+                                <div
+                                 class="information md:text-sm">
+                                   <span>FaezehPorhasani</span><br />
+                                    <span>Web developer</span>
+                                </div>
+                            </div>
+                            <div class=" rounded-full team-image-container">
+                                <img src="{% static 'public/images/reyhanghasemi.png' %}" alt="عکس1" class="w-full h-auto rounded-full ">
+                                <div
+                                 class="information md:text-sm">
+                                   <span>Reyhandokht Ghasem Nejad</span><br />
+                                    <span>Content Creator</span>
+                                </div>
+                            </div>
+
+                            <div class=" rounded-3xl team-image-container">
+                                <img src="{% static 'public/images/zahrabahadori.png' %}" alt="عکس1" class="w-full h-auto rounded-3xl ">
+                                <div
+                                 class="information md:text-sm">
+                                   <span>Zahra Bahadori</span><br />
+                                    <span>Social Media Manager</span>
+                                </div>
+                            </div>
+                            <div class=" rounded-3xl team-image-container">
+                                <img src="{% static 'public/images/amirabbasmehdizadeh.png' %}" alt="عکس1" class="w-full h-auto rounded-3xl ">
+                                <div
+                                 class="information md:text-sm">
+                                   <span>amir abbas mehdizadeh</span><br />
+                                    <span>editor</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="w-full md:w-1/2 p-3 flex flex-col items-center md:items-baseline md:justify-around">
                         <h1 class="text-xl md:text-2xl	xl:text-4xl font-bold mt-2 ">
@@ -184,18 +234,6 @@
         <section class="user-comments">
             <div class="container">
                 <div class="py-7 px-3 md:px-6" >
-                    <div class="flex gap-x-3">
-                        <div class="swiper-button-prev-custom">
-                            <svg class="w-5 h-5 md:w-[20px] md:h-[20px]">
-                                <use xlink:href="#chevron-left"></use>
-                            </Svg>
-                        </div>
-                        <div class="swiper-button-next-custom">
-                            <svg class="w-5 h-5 md:w-[20px] md:h-[20px]">
-                                <use xlink:href="#chevron-right"></use>
-                            </Svg>
-                        </div>
-                    </div>
                     <div class="flex flex-wrap gap-3 mt-8 p-3">
                         <div class="swiper" id="jjj">
                         <!-- Additional required wrapper -->
@@ -215,7 +253,18 @@
                         </div>
                     </div>
                     </div>
-
+                    <div class="flex justify-center gap-x-3">
+                        <div class="swiper-button-prev-custom">
+                            <svg class="w-5 h-5 md:w-[20px] md:h-[20px]">
+                                <use xlink:href="#chevron-left"></use>
+                            </Svg>
+                        </div>
+                        <div class="swiper-button-next-custom">
+                            <svg class="w-5 h-5 md:w-[20px] md:h-[20px]">
+                                <use xlink:href="#chevron-right"></use>
+                            </Svg>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

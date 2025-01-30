@@ -1763,6 +1763,10 @@ body{
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -2510,6 +2514,16 @@ body{
   text-decoration-line: underline;
 }
 
+.placeholder-white::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-placeholder-opacity, 1));
+}
+
+.placeholder-white::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-placeholder-opacity, 1));
+}
+
 .placeholder-zinc-800::-moz-placeholder {
   --tw-placeholder-opacity: 1;
   color: rgb(39 39 42 / var(--tw-placeholder-opacity, 1));
@@ -2528,16 +2542,6 @@ body{
 .placeholder-zinc-900::placeholder {
   --tw-placeholder-opacity: 1;
   color: rgb(24 24 27 / var(--tw-placeholder-opacity, 1));
-}
-
-.placeholder-white::-moz-placeholder {
-  --tw-placeholder-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-placeholder-opacity, 1));
-}
-
-.placeholder-white::placeholder {
-  --tw-placeholder-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-placeholder-opacity, 1));
 }
 
 .opacity-0 {
@@ -2610,6 +2614,65 @@ body{
 
 html {
   scroll-behavior: smooth;
+}
+
+.team-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.team-image-container img {
+  transition: transform 0.4s ease;
+}
+
+.team-image-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: rgb(60,11,102);
+  background: linear-gradient(0deg, rgba(60,11,102,0.9781162464985994) 0%, rgba(0,0,0,0.10696778711484589) 100%);
+  filter: blur(20px);
+  transition: height 0.5s ease;
+}
+
+.information {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  font-size: 13px;
+  transform: translateY(20px);
+  z-index: 2000;
+  transition: transform 0.4s ease;
+}
+
+@media(max-width:500px){
+  .information{
+    font-size: 10px;
+  }
+}
+
+.team-image-container:hover .information {
+  opacity: 1;
+  transform: translateY(0);
+  /* ظاهر شدن نام با حرکت */
+}
+
+.team-image-container:hover::after {
+  height: 50%;
+  /* وقتی ماوس روی تصویر میاد، از پایین به وسط میره */
+}
+
+.team-image-container:hover img {
+  transform: scale(1.05);
+  /* زوم کردن تصویر */
 }
 
 .hover\:scale-100:hover {
