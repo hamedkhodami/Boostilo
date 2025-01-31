@@ -57,6 +57,9 @@
         <symbol id="arrow-up-right" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
         </symbol>
+        <svg id="chevron-up" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+        </svg>
 
 
 
@@ -74,8 +77,37 @@
             <li>
                 <a href="{% url 'public:home' %}">Home</a>
             </li>
-            <li class="text-violet-900">
-                <a href="{% url 'service:service' %}">Services</a>
+            <li class="text-violet-900 relative submenu-open-btn">
+                <div class="flex items-center justify-between">
+                    <a href="{% url 'service:service' %}" class="flex items-center gap-x-2">
+                        Services
+                    </a>
+                    <span class="submenu-toggle-icons">
+                        <svg class="w-4 h-5 open-icon">
+                            <use xlink:href="#chevron-down"></use>
+                        </svg>
+                        <svg class="w-4 h-5 close-icon hidden">
+                            <use xlink:href="#chevron-up"></use>
+                        </svg>
+                    </span>
+                </div>
+                <ul class="absolute cursor-pointer gap-y-3 w-52 bg-white border border-gray-200 rounded-md shadow-lg z-20 submenu p-4">
+                    <li>
+                        <a href="{% url 'service:web' %}">Web Development</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'service:application' %}">Application</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'service:seo' %}">SEO</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'service:content' %}">Content Creation</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'service:marketing' %}">Digital Marketing</a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="{% url 'public:about' %}">About Us</a>
@@ -131,7 +163,7 @@
                         Home
                     </a>
                 </li>
-                <li>
+                <li class="submenu-open-btn">
                     <div class="flex items-center justify-between">
                         <a href="{% url 'service:service' %}" class="flex items-center gap-x-2">
                             <svg class="w-6 h-6">
@@ -139,8 +171,19 @@
                             </svg>
                             Service
                         </a>
-                        <span class="submenu-open-btn">
+                        <span>
+                            <svg class="w-6 h-6">
+                                <use xlink:href="#chevron-down"></use>
+                            </svg>
                         </span>
+                    </div>
+                    <div class="submenu ">
+                        <a href="{% url 'service:web' %}">Web Development</a>
+                        <a href="{% url 'service:application' %}">Application</a>
+                        <a href="{% url 'service:seo' %}">SEO</a>
+                        <a href="{% url 'service:content' %}">Content Creation</a>
+                        <a href="{% url 'service:marketing' %}">Digital Marketing</a>
+                        
                     </div>
                 </li>
                 <li>
