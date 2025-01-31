@@ -126,7 +126,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 p-5">
                 {% for key, portfolio in latest_portfolios.items %}
                 <div class="relative h-[250px] md:h-[300px] lg:h-[350px] xl:h-[420px]
-                    {% if forloop.counter|divisibleby:2 %}mt-10{% else %}mt-1{% endif %}">
+                    {% if forloop.counter|divisibleby:2 %}mt-10{% else %}mt-3{% endif %}">
                     <a href="{% url 'service:portfolio' portfolio.pk %}">
                         <div class="rounded-3xl post-img-wrapp overflow-hidden h-[90%]">
                                 <img src="{{ portfolio.image.url }}" alt="{{ portfolio.name }}" class="rounded-3xl w-full">

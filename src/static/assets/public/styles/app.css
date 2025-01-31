@@ -2705,6 +2705,18 @@ html {
   /* زوم کردن تصویر */
 }
 
+.swiper-button-prev ,.swiper-button-next{
+  background-color: rgb(66, 8, 104);
+  width: 30px;
+  height:30px;
+  border-radius: 100px;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size: 20px !important;
+  color: #ffffff;
+}
+
 .hover\:scale-100:hover {
   --tw-scale-x: 1;
   --tw-scale-y: 1;
@@ -3093,6 +3105,11 @@ html {
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .md\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 }
 
