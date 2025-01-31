@@ -128,8 +128,8 @@
                 <div class="relative h-[250px] md:h-[300px] lg:h-[350px] xl:h-[420px]
                     {% if forloop.counter|divisibleby:2 %}mt-10{% else %}mt-5{% endif %}">
                     <a href="{% url 'service:portfolio' portfolio.pk %}">
-                        <div class="rounded-3xl post-img-wrapp h-[90%]">
-                                <img src="{{ portfolio.image.url }}" alt="{{ portfolio.name }}" class="rounded-3xl w-full h-full ">
+                        <div class="rounded-3xl post-img-wrapp overflow-hidden h-[90%]">
+                                <img src="{{ portfolio.image.url }}" alt="{{ portfolio.name }}" class="rounded-3xl w-full">
                                 <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-xs md:text-base font-semibold opacity-0 transition-opacity duration-300">
                                     Click to see more
                                 </div>

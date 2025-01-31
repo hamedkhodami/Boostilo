@@ -1902,6 +1902,10 @@ body{
   margin-bottom: calc(15px * var(--tw-space-y-reverse));
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .overflow-x-auto {
   overflow-x: auto;
 }
