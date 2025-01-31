@@ -74,9 +74,14 @@
    </a>
     <nav>
         <ul class="flex gap-x-9 text-l text-slate-600">
-            <li class="{% if request.resolver_match.url_name == 'home' %}text-violet-900{% endif %} relative submenu-open-btn">
+            <li class="{% if request.resolver_match.url_name == 'home' %}text-violet-900{% endif %}">
+                <a href="{% url 'public:home' %}">Home</a>
+            </li>
+
+
+            <li class="{% if request.resolver_match.url_name == 'service' %}text-violet-900{% endif %} relative submenu-open-btn">
                 <div class="flex items-center justify-between">
-                    <a href="{% url 'public:home' %}" class="flex items-center gap-x-2">
+                    <a href="{% url 'service:service' %}" class="flex items-center gap-x-2">
                         Services
                     </a>
                     <span class="submenu-toggle-icons">
@@ -105,9 +110,6 @@
                         <a href="{% url 'service:marketing' %}">Digital Marketing</a>
                     </li>
                 </ul>
-            </li>
-            <li class="{% if request.resolver_match.url_name == 'service' %}text-violet-900{% endif %}">
-                <a href="{% url 'service:service' %}">Services</a>
             </li>
             <li class="{% if request.resolver_match.url_name == 'about' %}text-violet-900{% endif %}">
                 <a href="{% url 'public:about' %}">About US</a>
@@ -162,7 +164,7 @@
                         Home
                     </a>
                 </li>
-                <li class="flex items-center {% if request.resolver_match.url_name == 'service' %}bg-purple-600 text-white{% endif %} pr-0 mb-4 h-10 pl-1 rounded-md submenu-open-btn">
+                <li class="flex items-center {% if request.resolver_match.url_name == 'service' %}bg-purple-600 text-white{% endif %} pr-0 mb-4 h-10 pl-1 rounded-md">
                     <div class="flex items-center justify-between w-full">
                         <a href="{% url 'service:service' %}" class="flex items-center gap-x-2 w-full">
                             <svg class="w-6 h-6">
@@ -170,18 +172,8 @@
                             </svg>
                             Service
                         </a>
-                        <span>
-                            <svg class="w-6 h-6">
-                                <use xlink:href="#chevron-down"></use>
-                            </svg>
+                        <span class="submenu-open-btn">
                         </span>
-                    </div>
-                    <div class="submenu">
-                        <a href="{% url 'service:web' %}">Web Development</a>
-                        <a href="{% url 'service:application' %}">Application</a>
-                        <a href="{% url 'service:seo' %}">SEO</a>
-                        <a href="{% url 'service:content' %}">Content Creation</a>
-                        <a href="{% url 'service:marketing' %}">Digital Marketing</a>    
                     </div>
                 </li>
                 <li class="flex items-center {% if request.resolver_match.url_name == 'about' %}bg-purple-600 text-white{% endif %} pr-0 mb-4 h-10 pl-1 rounded-md">

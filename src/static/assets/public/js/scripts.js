@@ -1,16 +1,53 @@
+const submenu_open_btn = document.querySelectorAll(".submenu-open-btn");
+const submenu = document.querySelectorAll(".submenu");
+const openIcons = document.querySelectorAll(".open-icon");
+const closeIcons = document.querySelectorAll(".close-icon");
 
-const submenu_open_btn = document.querySelector(".submenu-open-btn")
-const submenu = document.querySelector(".submenu")
+if (window.innerWidth <= 768) {
+    submenu_open_btn.forEach((item, index) => {
+        item.addEventListener("click", () => {
+            const submenuEl = submenu[index];
+            submenuEl.classList.toggle("submenu--open");
+        });
+    });
+}
+
+const submenu_open_btns = document.querySelectorAll(".submenu-open-btn");
+const submenus = document.querySelectorAll(".submenu");
+
+if (window.innerWidth > 768) {
+    submenu_open_btns.forEach((item, index) => {
+        const submenu = submenus[index];
+        const openIcon = openIcons[index];
+        const closeIcon = closeIcons[index];
+
+        item.addEventListener("mouseenter", () => {
+            submenu.classList.add("submenu--open");  
+            openIcon.classList.add("hidden");
+            closeIcon.classList.remove("hidden");
+        });
+
+        
+        submenu.addEventListener("mouseenter", () => {
+            submenu.classList.add("submenu--open"); 
+           
+        });
+
+        submenu.addEventListener("mouseleave", () => {
+            submenu.classList.remove("submenu--open"); 
+            openIcon.classList.remove("hidden");
+            closeIcon.classList.add("hidden");
+        });
+    });
+}
+
+
+
+
 const navOpenBtn = document.querySelector(".nav-icon")
 const navCloseBtn = document.querySelector(".nav-close-btn")
 const nav = document.querySelector(".nav")
 const overlay = document.querySelector(".overlay")
-
-// -------show/hide submenu in mobile----------//
-submenu_open_btn.addEventListener("click", (e) => {
-    e.currentTarget.parentElement.classList.toggle("text-purple-600")
-    submenu.classList.toggle("submenu--open")
-})
 
 //---------show/hide menu bar in mobile--------------//
 navOpenBtn.addEventListener("click", () => {
