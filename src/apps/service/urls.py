@@ -4,7 +4,7 @@ from . import views
 app_name = 'service'
 
 urlpatterns = [
-    path('',views.PortfolioView.as_view(),name='service'),
+    path('',views.PortfolioView.as_view(),name='portfolios'),
     path('service/<str:service_name>/',views.ServicePortfolioPageView.as_view(),name='service_portfolios'),
     path('category/<int:category_id>/',views.CategoryProductsView.as_view(), name='category_products'),
     path('application/', views.ServiceApplicationPageView.as_view(), name='application'),

@@ -79,7 +79,7 @@
             </li>
             <li class="{% if request.resolver_match.url_name == 'service' %}text-violet-900{% endif %} relative submenu-open-btn">
                 <div class="flex items-center justify-between">
-                    <a href="{% url 'service:service' %}" class="flex items-center gap-x-2">
+                    <a href="#" class="flex items-center gap-x-2">
                         Services
                     </a>
                     <span class="submenu-toggle-icons">
@@ -109,8 +109,8 @@
                     </li>
                 </ul>
             </li>
-            <li class="{% if request.resolver_match.url_name == 'about' %}text-violet-900{% endif %}">
-                <a href="{% url 'service:service' %}">Portfolio</a>
+            <li class="{% if request.resolver_match.url_name == 'portfolios' %}text-violet-900{% endif %}">
+                <a href="{% url 'service:portfolios' %}">Portfolios</a>
             </li>
             <li class="{% if request.resolver_match.url_name == 'about' %}text-violet-900{% endif %}">
                 <a href="{% url 'public:about' %}">About US</a>
@@ -167,7 +167,7 @@
                 </li>
                 <li class="submenu-open-btn">
                     <div class="flex items-center justify-between">
-                        <a href="{% url 'service:service' %}" class="flex items-center gap-x-2">
+                        <a href="#" class="flex items-center gap-x-2">
                             <svg class="w-6 h-6">
                                 <use xlink:href="#service"></use>
                             </svg>
@@ -187,8 +187,8 @@
                         <a href="{% url 'service:marketing' %}">Digital Marketing</a>
                     </div>
                 </li>
-                <li class="flex items-center {% if request.resolver_match.url_name == 'about' %}bg-purple-600 text-white{% endif %} pr-0 mb-4 h-10 pl-1 rounded-md">
-                    <a href="{% url 'service:service' %}" class="flex items-center gap-x-2">
+                <li class="flex items-center {% if request.resolver_match.url_name == 'portfolios' %}bg-purple-600 text-white{% endif %} pr-0 mb-4 h-10 pl-1 rounded-md">
+                    <a href="{% url 'service:portfolios' %}" class="flex items-center gap-x-2">
                         <svg class="w-6 h-6">
                             <use xlink:href="#about"></use>
                         </svg>
