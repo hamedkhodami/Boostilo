@@ -10,7 +10,7 @@
     const swiper2 = new Swiper("#jjj", {
         direction: 'horizontal',
         autoplay: {
-          delay: 4000,
+          delay:5000,
           loop:true,
         },
         breakpoints: {
