@@ -2670,17 +2670,18 @@ html {
 
 .information {
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   left: 0;
   right: 0;
   color: white;
   font-weight: bold;
   text-align: center;
   opacity: 0;
-  font-size: 13px;
+  font-size: 12px;
   transform: translateY(20px);
   z-index: 2000;
   transition: transform 0.4s ease;
+  padding: 5px 10px;
 }
 
 @media(max-width:500px){
