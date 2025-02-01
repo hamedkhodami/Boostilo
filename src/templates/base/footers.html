@@ -31,7 +31,7 @@
                         <a href="{% url 'public:home' %}">Home</a>
                     </li>
                     <li class="{% if request.resolver_match.url_name == 'service' %}text-violet-900{% endif %}">
-                        <a href="{% url 'service:service' %}">Services</a>
+                        <a href="{% url 'service:service' %}">Portfolios</a>
                     </li>
                     <li class="{% if request.resolver_match.url_name == 'about' %}text-violet-900{% endif %}">
                         <a href="{% url 'public:about' %}">About Us</a>

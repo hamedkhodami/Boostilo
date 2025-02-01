@@ -39,25 +39,6 @@
             </div>
         </section>
 
-        {% include 'base/products_in_category.html' %}
-
-        {% include 'base/mainservice.html' %}
-
-        {% include 'base/contactus.html' %}
-
-        <section class="presales-process mt-5">
-            
-            <div class="container">
-                <h2 class="text-lg md:text-xl text-black font-bold text-center ">Pre-sales Process</h2>
-                <div class=" mt-5 flex justify-center items-center flex-col">
-                    <div class="w-[90%] md:w-[75%] ">
-                        <img src="{% static 'public/images/presales-process-desktop.webp' %}" alt="" class="hidden md:block">
-                        <img src="{% static 'public/images/presales-process-mobile.webp' %}" alt="" class="block md:hidden">
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section class="service-item individual-item">
             <div class="container p-2 md:px-10">
                 <div class="flex  flex-wrap">
@@ -118,62 +99,23 @@
             </div>
         </section>
 
-        <section class="Consultation-with-us mt-20">
-            <div class="container">
-                <div class="bg-backcontact bg-no-repeat bg-cover bg-left py-3 px-5 rounded-3xl md:rounded-full">
-                    <div class="flex flex-wrap justify-center items-center mx-5 md:mx-20 ">
-                        <div class="w-full mt-[-15%] md:w-[40%]">
-                            <img src="{% static 'public/images/تماس با ما تصویر 2.webp' %}" alt="" >
-                        </div>
-                        <div class="w-full md:w-[20%]">
-                            <div class="text-white text-base md:text-xl"> contact-us</div>
-                            <div class="list-icon">
-                                <div class="flex space-x-2 p-2">
-                                    <img src="{% static 'public/images/svg/شماره.svg' %}" alt="">
-                                    <span class="text-sm text-white"><a href="tel:(+1)7787005651">(+1)7787005651</a></span>
-                                </div>
-                                <div class="flex items-center space-x-2 p-2">
-                                    <img src="{% static 'public/images/svg/اینستاگرام.svg' %}" alt="">
-                                    <span class="text-sm text-white"><a href="https://instagram.com/Boostilo.ca">Boostilo.ca</a></span>
-                                </div>
-                                <div class="flex items-center space-x-2 p-2">
-                                    <img src="{% static 'public/images/svg/ایمیل.svg' %}" alt="">
-                                    <span class="text-sm text-white"><a href="mailto:info@boostilo.ca">info@Boostilo.ca</a></span>
-                                </div>
-                             </div>
-                        </div>
 
-                        <div class="w-full md:w-[40%]">
-                            {% if messages %}
-                                <div class="space-y-4">
-                                    {% for message in messages %}
-                                        <div class="rounded bg-green-500 text-white px-4 py-2">
-                                            {{ message }}
-                                        </div>
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
-                            <form class="space-y-4"  method="post" action="{% url 'public:contactus_seo' %}#anotherform" id="anotherform">
-                                {% csrf_token %}
-                                <div>
-                                  <input type="text" id="input1" name="fullname" placeholder="Full name..." class="mt-1 block w-full px-3 py-3 focus:outline-none rounded-full placeholder-white bg-[#9482ad] text-white sm:text-sm">
-                                </div>
-                              
-                                <div>
-                                  <input type="email" id="input2" name="email" placeholder="Email..." class="mt-1 block w-full px-3 py-3 focus:outline-none rounded-full placeholder-white bg-[#9482ad]  sm:text-sm text-white">
-                                </div>
-                              
-                                <div>
-                                  <button type="submit" class="w-full inline-flex items-center px-4 py-3 rounded-full text-white  bg-violet-700 focus:outline-none">
-                                    Submit
-                                  </button>
-                                </div>
-                              </form>
-                        </div>
+        <section class="presales-process mt-5">
+            
+            <div class="container">
+                <h2 class="text-lg md:text-xl text-black font-bold text-center ">Pre-sales Process</h2>
+                <div class=" mt-5 flex justify-center items-center flex-col">
+                    <div class="w-[90%] md:w-[75%] ">
+                        <img src="{% static 'public/images/presales-process-desktop.webp' %}" alt="" class="hidden md:block">
+                        <img src="{% static 'public/images/presales-process-mobile.webp' %}" alt="" class="block md:hidden">
                     </div>
                 </div>
             </div>
         </section>
+
+        {% include 'base/mainservice.html' %}
+        {% include 'base/contactus.html' %}
+        {% include 'base/products_in_category.html' %}
 
         <section class="services bg-gray-100 p-2 mt-10">
             <div class="container">
@@ -271,8 +213,7 @@
                 </div>
             </div>
         </section>
-
-
+       
         <section class="service-item individual-item">
             <div class="container p-2 md:px-10">
                 <div class="flex  flex-wrap">
@@ -337,6 +278,64 @@
                     </div>
                     <div class="w-full md:w-2/5 flex justify-center items-center">
                         <img src="{% static 'public/images/seo-with-boostilo.webp' %}" alt="" class="w-[50%] md:w-[70%]">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="Consultation-with-us mt-20">
+            <div class="container">
+                <div class="bg-backcontact bg-no-repeat bg-cover bg-left py-3 px-5 rounded-3xl md:rounded-full">
+                    <div class="flex flex-wrap justify-center items-center mx-5 md:mx-20 ">
+                        <div class="w-full mt-[-15%] md:w-[40%]">
+                            <img src="{% static 'public/images/تماس با ما تصویر 2.webp' %}" alt="" >
+                        </div>
+                        <div class="w-full md:w-[20%]">
+                            <div class="text-white text-base md:text-xl"> contact-us</div>
+                            <div class="list-icon">
+                                <div class="flex space-x-2 p-2">
+                                    <img src="{% static 'public/images/svg/شماره.svg' %}" alt="">
+                                    <span class="text-sm text-white"><a href="tel:(+1)7787005651">(+1)7787005651</a></span>
+                                </div>
+                                <div class="flex items-center space-x-2 p-2">
+                                    <img src="{% static 'public/images/svg/اینستاگرام.svg' %}" alt="">
+                                    <span class="text-sm text-white"><a href="https://instagram.com/Boostilo.ca">Boostilo.ca</a></span>
+                                </div>
+                                <div class="flex items-center space-x-2 p-2">
+                                    <img src="{% static 'public/images/svg/ایمیل.svg' %}" alt="">
+                                    <span class="text-sm text-white"><a href="mailto:info@boostilo.ca">info@Boostilo.ca</a></span>
+                                </div>
+                             </div>
+                        </div>
+
+                        <div class="w-full md:w-[40%]">
+                            {% if messages %}
+                                <div class="space-y-4">
+                                    {% for message in messages %}
+                                        <div class="rounded bg-green-500 text-white px-4 py-2">
+                                            {{ message }}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                            <form class="space-y-4"  method="post" action="{% url 'public:contactus_seo' %}#anotherform" id="anotherform">
+                                {% csrf_token %}
+                                <div>
+                                  <input type="text" id="input1" name="fullname" placeholder="Full name..." class="mt-1 block w-full px-3 py-3 focus:outline-none rounded-full placeholder-white bg-[#9482ad] text-white sm:text-sm">
+                                </div>
+                              
+                                <div>
+                                  <input type="email" id="input2" name="email" placeholder="Email..." class="mt-1 block w-full px-3 py-3 focus:outline-none rounded-full placeholder-white bg-[#9482ad]  sm:text-sm text-white">
+                                </div>
+                              
+                                <div>
+                                  <button type="submit" class="w-full inline-flex items-center px-4 py-3 rounded-full text-white  bg-violet-700 focus:outline-none">
+                                    Submit
+                                  </button>
+                                </div>
+                              </form>
+                        </div>
                     </div>
                 </div>
             </div>
