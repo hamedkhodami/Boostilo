@@ -1,4 +1,4 @@
-     var swipernews = new Swiper(".swiper", {
+     var swipernews = new Swiper(".news", {
          loop: true,
        navigation: {
          nextEl: ".swiper-button-prev-custom",
