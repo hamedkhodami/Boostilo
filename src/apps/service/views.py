@@ -59,6 +59,19 @@ class BaseServicePageView(TemplateView):
 
         context['form']=ContactUsForms
 
+        if self.service_name.lower() == 'web development':
+            context['active_content'] = 'content1'
+        elif self.service_name.lower() == 'application':
+            context['active_content'] = 'content2'
+        elif self.service_name.lower() == 'seo':
+            context['active_content'] = 'content3'
+        elif self.service_name.lower() == 'content creation':
+            context['active_content'] = 'content4'
+        elif self.service_name.lower() == 'digital marketing':
+            context['active_content'] = 'content5'
+        else:
+            context['active_content'] = 'content1'
+
         return context
 
 class PortfolioView(TemplateView):
