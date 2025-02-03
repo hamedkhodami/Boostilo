@@ -76,58 +76,60 @@ overlay.addEventListener("click", closeNavAndOverlay);
 
 
 
-// js for services boostiloo//
+    // js for services boostiloo//
 
-     const buttons = document.querySelectorAll('.btn');
-     const contents = document.querySelectorAll('.content');
-     buttons.forEach(button => {
-         button.addEventListener('click', () => {
-             const contentId = button.getAttribute('data-content');
-             const content = document.getElementById(contentId);
-           
-             if (window.innerWidth > 768) {
-                 buttons.forEach(btn => btn.classList.remove('active'));
-                 contents.forEach(content => {
-                     content.classList.remove('active');
-                     content.style.display = 'none';
-                 });
+    const buttons = document.querySelectorAll('.btn');
+    const contents = document.querySelectorAll('.content');
 
-                 button.classList.add('active');
-                 content.classList.add('active');
-                 content.style.display = 'block';
-             } else {
-                 buttons.forEach(btn => {
-                     btn.classList.remove('active');
-                     // document.getElementById(btn.getAttribute('data-content')).style.display = 'none';
-                 });
-                 contents.forEach(item => {
-                     item.style.display = "none";
-                 })
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const contentId = button.getAttribute('data-content');
+            const content = document.getElementById(contentId);
 
-                 button.classList.toggle('active');
-                 content.style.display = 'block';
-                 button.insertAdjacentElement('afterend', content);
+            if (window.innerWidth > 768) {
+                buttons.forEach(btn => btn.classList.remove('active'));
+                contents.forEach(content => {
+                    content.classList.remove('active');
+                    content.style.display = 'none';
+                });
 
-             }
-         });
-     });
+                button.classList.add('active');
+                content.classList.add('active');
+                content.style.display = 'block';
+            } else {
+                buttons.forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                contents.forEach(item => {
+                    item.style.display = "none";
+                })
 
-//  تنظیم محتوای اولیه برای عرض‌ کمتر از 768 پیکسل
+                button.classList.toggle('active');
+                content.style.display = 'block';
+                button.parentNode.insertBefore(content, button.nextSibling);
+            }
+        });
+    });
 
+    // تنظیم محتوای اولیه برای عرض‌ کمتر از ۷۶۸ پیکسل
 
-     if (window.innerWidth <= 768) {
-         const contentId = 'content1';
-         const activeButton = document.querySelector(`.btn[data-content="${'content1'}"]`);
-         const content = document.getElementById(contentId);
+    if (window.innerWidth <= 768) {
+        // پیدا کردن دکمه فعال و محتوای مربوطه
+        const activeButton = document.querySelector('.btn.active');
+        const activeContentId = activeButton ? activeButton.getAttribute('data-content') : 'content1'; // اگر دکمه‌ای فعال نبود، از content1 استفاده کن
+        const activeContent = document.getElementById(activeContentId);
 
-         // activeButton.classList.add('active');
-         content.style.display = 'block';
+        // مخفی کردن همه محتواها
+        document.querySelectorAll('.content').forEach(content => {
+            content.style.display = 'none';
+        });
 
-         // اضافه کردن محتوای content1 به زیر دکمه اول
-         activeButton.insertAdjacentElement('afterend', content);
-     }
-
-
+        // نمایش محتوای فعال
+        if (activeContent) {
+            activeContent.style.display = 'block';
+            activeButton.parentNode.insertBefore(activeContent, activeButton.nextSibling);
+        }
+    }
 
 //document.addEventListener('DOMContentLoaded', () => {
 //    const buttons = document.querySelectorAll('.btn');
