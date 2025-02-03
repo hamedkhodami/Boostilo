@@ -60,41 +60,59 @@
       },
      });
 
-     
-    const swiperblog = new Swiper(".blog", {
+
+
+     const swiperblog = new Swiper(".blog", {
       direction: 'horizontal',
       autoplay: {
-        delay: 4000,
-        loop:true,
+        delay: 3000,
+        disableOnInteraction: false, 
+        loop: true,
       },
       breakpoints: {
         340: {
-          slidesPerView:1,
-
+          slidesPerView: 1,
         },
-          600: {
-            slidesPerView:1,
-            spaceBetween: 10, // <- doesn't work
-          },
-          700: {
-            slidesPerView:2,
-            spaceBetween: 10, // <- doesn't work
-          },
-          992: {
-            slidesPerView:2,
-            spaceBetween: 10, // <- doesn't work
-          },
-          1200: {
-              slidesPerView: 2,
-              spaceBetween: 10, // <- doesn't work
-
-            },
+        600: {
+          slidesPerView: 1,
+          spaceBetween: 10,
         },
-        navigation: {
-          nextEl: ".swiper-button-prev-custom",
-          prevEl: ".swiper-button-next-custom",
-        }
-  });
+        700: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        992: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        1200: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+      },
+      navigation: {
+        nextEl: ".swiper-button-prev-custom",
+        prevEl: ".swiper-button-next-custom",
+      },
+      on: {
+        init: function () {
+          this.slides.forEach((slide) => {
+            slide.addEventListener('mouseenter', () => {
+              this.autoplay.stop();
+            });
+            slide.addEventListener('mouseleave', () => {
+              this.autoplay.start();
+            });
+            slide.addEventListener('touchstart', () => { 
+              this.autoplay.stop();
+            });
+            slide.addEventListener('touchend', () => { 
+              this.autoplay.start();
+            });
+          });
+        },
+      },
+    });
 
 
   
