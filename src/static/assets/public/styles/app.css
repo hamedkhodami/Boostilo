@@ -2540,6 +2540,11 @@ body{
   color: rgb(9 9 11 / var(--tw-text-opacity, 1));
 }
 
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity, 1));
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -3190,6 +3195,14 @@ html {
 
   .xl\:h-\[420px\] {
     height: 420px;
+  }
+
+  .xl\:h-\[450px\] {
+    height: 450px;
+  }
+
+  .xl\:h-\[460px\] {
+    height: 460px;
   }
 
   .xl\:w-2\/3 {
