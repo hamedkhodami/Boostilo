@@ -98,13 +98,14 @@
                       <form method="post" action="{% url 'public:contact_us' %}#contactus" class="space-y-4 p-5" id="contactus">
                         {% csrf_token %}
                           <div>
-                            <label for="fullname">Name:</label>
-                            <input type="text" id="fullname" name="fullname" class="mt-2 block w-full px-2 py-2 md:px-3 md:py-3 focus:outline-none rounded-lg border-2 border-bg border-gray-300 bg-transparent sm:text-sm">
+                            <label for="fullname">Full name:</label>
+                            <input type="text" id="fullname" name="fullname" class="mt-2 block w-full px-2 py-2 md:px-3 md:py-3 focus:outline-none rounded-lg border-2 border-bg border-gray-300 bg-transparent sm:text-sm" placeholder="Please enter your Full name...">
                           </div>
                         
                           <div>
                             <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" class="mt-2 block w-full px-2 py-2 md:px-3 md:py-3 focus:outline-none rounded-lg border-2 border-gray-300 bg-transparent sm:text-sm">
+                            <span class="text-red-600">*</span>
+                            <input type="email" id="email" name="email" class="mt-2 block w-full px-2 py-2 md:px-3 md:py-3 focus:outline-none rounded-lg border-2 border-gray-300 bg-transparent sm:text-sm" placeholder="Please enter your Email...">
                           </div>
                         
                           <div>
